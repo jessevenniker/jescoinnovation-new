@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Web design Curaçao & Bonaire · Jesco Innovation</title>
+  <meta name="description" content="Premium web design for local businesses on Curaçao and Bonaire. Fast, clear, conversion-focused websites — built by a one-person studio you can actually reach.">
+  <link rel="canonical" href="https://jescoinnovation.com/">
+  <link rel="icon" type="image/svg+xml" href="assets/icon-light.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="main.css">
+  <style>
+    /* ── Homepage Work — Browser-window showcase ──────────────────── */
+
+    .hw-grid {
+      display: grid;
+      grid-template-columns: 1.3fr 1fr;
+      grid-template-rows: auto auto;
+      gap: clamp(0.85rem, 1.1vw, 1.25rem);
+    }
+
+    .hw-card {
+      display: flex;
+      flex-direction: column;
+      text-decoration: none;
+      color: inherit;
+      border-radius: 10px;
+      overflow: hidden;
+      /* Custom props scoped to the dark card context */
+      --card-text:         #F0E4D0;
+      --card-muted:        rgba(240, 228, 208, 0.52);
+      --card-accent:       #C8A46A;
+      --card-accent-muted: #9C7E52;
+      --card-turq:         #3FC4B2;
+      background: #131F28;
+      border: 1px solid rgba(255, 255, 255, 0.07);
+      box-shadow:
+        0 4px 12px  rgba(28, 45, 52, 0.10),
+        0 16px 48px rgba(28, 45, 52, 0.16),
+        0 40px 80px rgba(28, 45, 52, 0.10);
+      transition:
+        transform 0.65s cubic-bezier(0.16, 1, 0.3, 1),
+        box-shadow 0.65s cubic-bezier(0.16, 1, 0.3, 1),
+        border-color 0.4s ease;
+      will-change: transform;
+    }
+
+    .hw-card--featured {
+      grid-row: 1 / 3;
+    }
+
+    .hw-card:hover {
+      transform: translateY(-8px);
+      box-shadow:
+        0 6px 18px  rgba(28, 45, 52, 0.12),
+        0 28px 70px rgba(28, 45, 52, 0.26),
+        0 60px 100px rgba(28, 45, 52, 0.14),
+        0 0 0 1px rgba(140, 94, 28, 0.22);
+      border-color: rgba(140, 94, 28, 0.18);
+    }
+
+    /* ── Browser chrome ── */
+    .hw-chrome {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      padding: 0.52rem 0.85rem;
+      background: #0C1820;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      position: relative;
+    }
+
+    .hw-chrome-dots {
+      display: flex;
+      gap: 0.27rem;
+      flex-shrink: 0;
+    }
+
+    .hw-chrome-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+    }
+    .hw-chrome-dot:nth-child(1) { background: rgba(255, 95,  86,  0.65); }
+    .hw-chrome-dot:nth-child(2) { background: rgba(255, 189, 46,  0.65); }
+    .hw-chrome-dot:nth-child(3) { background: rgba(39,  201, 63,  0.65); }
+
+    .hw-chrome-bar {
+      flex: 1;
+      height: 20px;
+      background: rgba(255, 255, 255, 0.06);
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      padding: 0 0.55rem;
+      min-width: 0;
+    }
+
+    .hw-chrome-url {
+      font-size: 0.59rem;
+      font-family: var(--sans);
+      color: rgba(255, 255, 255, 0.36);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      letter-spacing: 0.01em;
+    }
+
+    .hw-live-badge {
+      flex-shrink: 0;
+      font-size: 0.49rem;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(63, 196, 178, 0.90);
+      background: rgba(63, 196, 178, 0.09);
+      border: 1px solid rgba(63, 196, 178, 0.22);
+      border-radius: 20px;
+      padding: 0.18em 0.6em;
+      line-height: 1.7;
+    }
+
+    /* ── Viewport / iframe area ── */
+    .hw-viewport {
+      position: relative;
+      overflow: hidden;
+      background: #0A1620;
+    }
+
+    .hw-viewport--featured { flex: 1; min-height: 280px; }
+    .hw-viewport--small    { height: clamp(168px, 18.5vw, 248px); }
+
+    /* Inner shadow — depth & containment */
+    .hw-viewport::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      box-shadow:
+        inset 0 0 0 1px rgba(0, 0, 0, 0.25),
+        inset 0 18px 36px rgba(0, 0, 0, 0.09);
+      z-index: 3;
+      pointer-events: none;
+    }
+
+    /* Soft bottom fade so iframe clips gracefully */
+    .hw-viewport-fade {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 64px;
+      background: linear-gradient(to top, rgba(8, 20, 30, 0.72), transparent);
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    .hw-iframe {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      width: 1440px;
+      height: 900px;
+      border: 0;
+      display: block;
+      pointer-events: none;
+      transform-origin: top center;
+      transition: transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .hw-iframe--featured { height: 1300px; transform: translateX(-50%) scale(0.50); }
+    .hw-iframe--small    { transform: translateX(-50%) scale(0.42); }
+
+    .hw-card:hover .hw-iframe--featured { transform: translateX(-50%) scale(0.515); }
+    .hw-card:hover .hw-iframe--small    { transform: translateX(-50%) scale(0.432); }
+
+    /* ── Card footer ── */
+    .hw-card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 0.85rem 1rem 0.95rem;
+      background: #0E1C28;
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .hw-card-meta { min-width: 0; }
+
+    .hw-card-location {
+      font-size: 0.57rem;
+      font-weight: 500;
+      letter-spacing: 0.20em;
+      text-transform: uppercase;
+      color: var(--card-accent-muted);
+      margin: 0 0 0.22rem;
+      opacity: 0.72;
+      transition: opacity 0.3s;
+    }
+    .hw-card:hover .hw-card-location { opacity: 1; }
+
+    .hw-card-title {
+      font-family: var(--serif);
+      font-size: clamp(0.9rem, 1.15vw, 1.1rem);
+      font-weight: 600;
+      color: var(--card-text);
+      letter-spacing: -0.01em;
+      line-height: 1.2;
+      margin: 0;
+    }
+
+    .hw-card-cta {
+      font-size: 0.57rem;
+      font-weight: 400;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--card-accent-muted);
+      white-space: nowrap;
+      flex-shrink: 0;
+      display: inline-block;
+      transition: color 0.3s, transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .hw-card:hover .hw-card-cta {
+      color: var(--card-accent);
+      transform: translateX(3px);
+    }
+
+    /* ── How it works — horizontal triptych ──────────────────────── */
+
+    .how-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .hiw-triptych {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .hiw-step {
+      position: relative;
+      padding: clamp(2rem, 3.5vw, 3rem) clamp(1.5rem, 3vw, 2.75rem);
+      transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+      cursor: default;
+    }
+
+    .hiw-step:hover { transform: translateY(-5px); }
+
+    /* Vertical hairline dividers */
+    .hiw-step + .hiw-step::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 8%; height: 84%;
+      width: 1px;
+      background: linear-gradient(
+        to bottom,
+        transparent 0%,
+        rgba(28, 45, 52, 0.11) 25%,
+        rgba(28, 45, 52, 0.11) 75%,
+        transparent 100%
+      );
+    }
+
+    .hiw-num {
+      display: block;
+      font-family: var(--serif);
+      font-size: clamp(4.5rem, 8vw, 9rem);
+      font-weight: 700;
+      color: var(--sand);
+      opacity: 0.065;
+      line-height: 1;
+      letter-spacing: -0.02em;
+      margin-bottom: 1.25rem;
+      transition: opacity 0.55s ease;
+      user-select: none;
+      pointer-events: none;
+    }
+
+    .hiw-step:hover .hiw-num { opacity: 0.13; }
+
+    .hiw-heading {
+      font-family: var(--serif);
+      font-size: clamp(1.65rem, 2.4vw, 2.4rem);
+      font-weight: 400;
+      font-style: italic;
+      color: var(--white);
+      letter-spacing: -0.012em;
+      line-height: 1.08;
+      margin-bottom: 1.1rem;
+      transition: color 0.4s ease;
+    }
+
+    .hiw-step:hover .hiw-heading { color: var(--sand); }
+
+    .hiw-text {
+      font-size: 0.85rem;
+      line-height: 1.88;
+      color: var(--muted);
+      max-width: 260px;
+    }
+
+    /* Extending underline — draws in on hover */
+    .hiw-step::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: clamp(1.5rem, 3vw, 2.75rem);
+      width: 2rem;
+      height: 1px;
+      background: var(--sand);
+      opacity: 0;
+      transform: scaleX(0);
+      transform-origin: left;
+      transition:
+        width 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+        opacity 0.4s ease,
+        transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .hiw-step:hover::after {
+      opacity: 0.30;
+      transform: scaleX(1);
+      width: 3rem;
+    }
+
+    @media (max-width: 700px) {
+      .hiw-triptych { grid-template-columns: 1fr; }
+      .hiw-step + .hiw-step::before {
+        top: 0; left: 0; right: 0;
+        width: 100%; height: 1px;
+        background: linear-gradient(
+          to right,
+          transparent 0%,
+          rgba(28, 45, 52, 0.11) 25%,
+          rgba(28, 45, 52, 0.11) 75%,
+          transparent 100%
+        );
+      }
+      .hiw-step:hover { transform: none; }
+      .hiw-text { max-width: none; }
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 780px) {
+      .hw-grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+      }
+      .hw-card--featured { grid-row: auto; }
+      /* Restore fixed height on mobile — flex:1 needs a constrained parent */
+      .hw-viewport--featured { flex: none; height: clamp(195px, 52vw, 330px); }
+      .hw-viewport--small    { height: clamp(155px, 46vw, 280px); }
+      .hw-iframe--featured { height: 900px; transform: translateX(-50%) scale(0.35); }
+      .hw-iframe--small    { transform: translateX(-50%) scale(0.33); }
+      .hw-card:hover .hw-iframe--featured,
+      .hw-card:hover .hw-iframe--small { transform: translateX(-50%) scale(0.345); }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="nav">
+    <a href="index.html" class="nav-logo">
+      <img src="assets/logo-horizontal-light.svg" alt="Jesco Innovation" class="nav-logo-img">
+    </a>
+    <ul class="nav-links">
+      <li><a href="projects.html" class="nav-link">Work</a></li>
+      <li><a href="packages.html" class="nav-link">Packages</a></li>
+      <li><a href="about.html" class="nav-link">About</a></li>
+      <li><a href="contact.html" class="nav-link">Contact</a></li>
+    </ul>
+    <a href="contact.html" class="nav-cta">Let's talk</a>
+  </nav>
+
+  <!-- ═══ HERO ═══ -->
+  <section class="hero">
+    <canvas id="hero-canvas" class="hero-canvas"></canvas>
+    <video class="hero-video" autoplay muted loop playsinline preload="metadata">
+      <source src="assets/hero.mp4" type="video/mp4">
+    </video>
+    <div class="hero-overlay"></div>
+    <div class="hero-inner">
+      <p class="hero-eyebrow">Web designer · Curaçao &amp; Bonaire</p>
+      <h1 class="hero-heading">
+        <span class="h-line">A website</span>
+        <em class="h-line h-line--em">that simply</em>
+        <span class="hero-climax">works.</span>
+      </h1>
+    </div>
+    <p class="hero-sub">For local businesses that deserve more<br>than a template and an overpriced agency.</p>
+    <div class="hero-scroll-hint">
+      <span class="scroll-line"></span>
+    </div>
+  </section>
+
+  <!-- ═══ TRUST ═══ -->
+  <!-- <section class="trust">
+    <div class="trust-inner">
+      <p class="trust-text fade-in">
+        Most agencies make it complicated. Long proposals, vague prices, and at the end — a website that's almost what you wanted.
+      </p>
+      <p class="trust-text trust-text--bright fade-in">
+        <em>I work differently.</em> You talk, I listen, I build. No surprises, no nonsense.
+      </p>
+    </div>
+  </section> -->
+
+  <!-- ═══ WHAT I DO ═══ -->
+  <section class="what">
+    <div class="what-inner">
+      <span class="section-label fade-in">What I do</span>
+      <div class="what-body">
+        <p class="what-lead fade-in">I build websites for local entrepreneurs on Curaçao and Bonaire. Real businesses — a restaurant in Willemstad, a dive shop in Hato, a boutique in Otrobanda.</p>
+        <p class="what-para fade-in">You get a website that reflects who you are. Fast, clear, easy to find on Google. Something you're actually proud to send to customers.</p>
+        <p class="what-para fade-in">I handle everything. Design, copy, setup. You just tell me what matters to your business. That's it.</p>
+        <a href="packages.html" class="what-packages-link fade-in">See what's included →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ WORK ═══ -->
+  <section class="examples">
+    <div class="examples-inner">
+
+      <div class="examples-header fade-in">
+        <span class="section-label">Work</span>
+        <a href="projects.html" class="examples-view-all">View all projects <span aria-hidden="true">→</span></a>
+      </div>
+
+      <div class="hw-grid">
+
+        <!-- ── Visit Bonaire — featured ── -->
+        <a href="bonaire.html" class="hw-card hw-card--featured fade-in" aria-label="View Visit Bonaire case study">
+          <div class="hw-chrome">
+            <div class="hw-chrome-dots">
+              <span class="hw-chrome-dot"></span>
+              <span class="hw-chrome-dot"></span>
+              <span class="hw-chrome-dot"></span>
+            </div>
+            <div class="hw-chrome-bar">
+              <span class="hw-chrome-url">visit-bonaire.com</span>
+            </div>
+            <span class="hw-live-badge">Live</span>
+          </div>
+          <div class="hw-viewport hw-viewport--featured">
+            <iframe
+              src="https://visit-bonaire.com"
+              class="hw-iframe hw-iframe--featured"
+              title="Visit Bonaire — live preview"
+              loading="lazy"
+              scrolling="no"
+              tabindex="-1"
+              aria-hidden="true"
+            ></iframe>
+            <div class="hw-viewport-fade"></div>
+          </div>
+          <div class="hw-card-footer">
+            <div class="hw-card-meta">
+              <p class="hw-card-location">Bonaire · Tour operator</p>
+              <h3 class="hw-card-title">Visit Bonaire</h3>
+            </div>
+            <span class="hw-card-cta">View case →</span>
+          </div>
+        </a>
+
+        <!-- ── CityChronicles ── -->
+        <a href="citychronicals.html" class="hw-card hw-card--small fade-in" aria-label="View CityChronicles case study">
+          <div class="hw-chrome">
+            <div class="hw-chrome-dots">
+              <span class="hw-chrome-dot"></span>
+              <span class="hw-chrome-dot"></span>
+              <span class="hw-chrome-dot"></span>
+            </div>
+            <div class="hw-chrome-bar">
+              <span class="hw-chrome-url">citychronicles.app</span>
+            </div>
+            <span class="hw-live-badge">Live</span>
+          </div>
+          <div class="hw-viewport hw-viewport--small">
+            <iframe
+              src="https://citychronicles.app/"
+              class="hw-iframe hw-iframe--small"
+              title="CityChronicles — live preview"
+              loading="lazy"
+              scrolling="no"
+              tabindex="-1"
+              aria-hidden="true"
+            ></iframe>
+            <div class="hw-viewport-fade"></div>
+          </div>
+          <div class="hw-card-footer">
+            <div class="hw-card-meta">
+              <p class="hw-card-location">Global · Web design</p>
+              <h3 class="hw-card-title">CityChronicles</h3>
+            </div>
+            <span class="hw-card-cta">View case →</span>
+          </div>
+        </a>
+
+        <!-- ── Caribbean Sailing Experience ── -->
+        <a href="sailing.html" class="hw-card hw-card--small fade-in" aria-label="View Caribbean Sailing Experience case study">
+          <div class="hw-chrome">
+            <div class="hw-chrome-dots">
+              <span class="hw-chrome-dot"></span>
+              <span class="hw-chrome-dot"></span>
+              <span class="hw-chrome-dot"></span>
+            </div>
+            <div class="hw-chrome-bar">
+              <span class="hw-chrome-url">marvelous-puppy-311706.netlify.app</span>
+            </div>
+            <span class="hw-live-badge">Case</span>
+          </div>
+          <div class="hw-viewport hw-viewport--small">
+            <iframe
+              src="https://marvelous-puppy-311706.netlify.app"
+              class="hw-iframe hw-iframe--small"
+              title="Caribbean Sailing Experience — live preview"
+              loading="lazy"
+              scrolling="no"
+              tabindex="-1"
+              aria-hidden="true"
+            ></iframe>
+            <div class="hw-viewport-fade"></div>
+          </div>
+          <div class="hw-card-footer">
+            <div class="hw-card-meta">
+              <p class="hw-card-location">Bonaire · Tour operator</p>
+              <h3 class="hw-card-title">Caribbean Sailing</h3>
+            </div>
+            <span class="hw-card-cta">View case →</span>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ HOW IT WORKS ═══ -->
+  <section class="how">
+    <div class="how-inner">
+      <span class="section-label fade-in">How it works</span>
+      <div class="hiw-triptych">
+
+        <div class="hiw-step fade-in">
+          <span class="hiw-num" aria-hidden="true">01</span>
+          <h3 class="hiw-heading">We start<br>simple.</h3>
+          <p class="hiw-text">A call or message. You tell me what matters to your business.</p>
+        </div>
+
+        <div class="hiw-step fade-in">
+          <span class="hiw-num" aria-hidden="true">02</span>
+          <h3 class="hiw-heading">I design<br>&amp; build.</h3>
+          <p class="hiw-text">Design, copy, setup — all handled. Ready in two weeks.</p>
+        </div>
+
+        <div class="hiw-step fade-in">
+          <span class="hiw-num" aria-hidden="true">03</span>
+          <h3 class="hiw-heading">You go<br>live.</h3>
+          <p class="hiw-text">Your site is online, fast, and clear. I stay reachable.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ PERSONAL ═══ -->
+  <section class="personal">
+    <img src="assets/atm.jpg" class="atm-bg" alt="">
+    <div class="personal-inner">
+      <div class="personal-portrait fade-in">
+        <div class="portrait-frame">
+          <img src="assets/jesse.jpg" class="portrait-img" alt="Jesse">
+        </div>
+      </div>
+      <div class="personal-words fade-in">
+        <h2 class="personal-heading">One person.<br>One island.</h2>
+        <p>Based on Curaçao, close to Bonaire. I know the businesses here, the kind of tourists that come, and what local customers actually search for. That context goes into everything I build.</p>
+        <p>You deal with me directly — no agency layers, no account manager, no handoff. Same person from first message to launch, and still reachable after.</p>
+        <span class="personal-sig">— Jesse</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ CTA ═══ -->
+  <section class="cta" id="contact">
+    <div class="cta-inner">
+      <h2 class="cta-heading fade-in">Let's build<br><em>something.</em></h2>
+      <p class="cta-sub fade-in">No forms to fill in. Just send a message — and we'll figure out the rest.</p>
+      <div class="cta-actions fade-in">
+        <a href="https://wa.me/31637660930" class="btn-primary">WhatsApp me</a>
+        <span class="cta-sep">or</span>
+        <a href="mailto:info@jescoinnovation.com" class="btn-text">send an email</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a href="index.html" class="footer-logo">
+          <img src="assets/logo-horizontal-light.svg" alt="Jesco Innovation" class="footer-logo-img">
+        </a>
+        <span class="footer-descriptor">Web design &middot; Cura&ccedil;ao &amp; Bonaire</span>
+      </div>
+
+      <div class="footer-mid">
+        <span class="footer-tag">Websites that simply work.</span>
+        <a href="contact.html" class="footer-cta-link">Send me your website &rarr;</a>
+      </div>
+
+      <span class="footer-copy">&copy; 2026 Jesco Innovation &middot; Cura&ccedil;ao &amp; Bonaire</span>
+    </div>
+
+    <div class="footer-links">
+      <span class="footer-links-label">Explore</span>
+      <nav class="footer-links-nav" aria-label="Site navigation">
+        <a href="index.html" class="footer-link">Home</a>
+        <a href="about.html" class="footer-link">About</a>
+        <a href="contact.html" class="footer-link">Contact</a>
+        <span class="footer-link-sep" aria-hidden="true">&middot;</span>
+        <a href="bonaire-webdesign.html" class="footer-link">Website Bonaire</a>
+        <a href="curacao-webdesign.html" class="footer-link">Website Cura&ccedil;ao</a>
+        <a href="website-tour-operators.html" class="footer-link">Tour operators</a>
+        <a href="website-restaurants.html" class="footer-link">Restaurants</a>
+        <span class="footer-link-sep" aria-hidden="true">&middot;</span>
+        <a href="bonaire.html" class="footer-link">Visit Bonaire</a>
+        <a href="sailing.html" class="footer-link">Caribbean Sailing</a>
+        <a href="citychronicals.html" class="footer-link">CityChronicles</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>

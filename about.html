@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About · Web design studio Curaçao · Jesco Innovation</title>
+  <meta name="description" content="Jesco Innovation is a one-person web design studio based on Curaçao. Direct contact, transparent pricing, and websites that actually work for local businesses.">
+  <link rel="canonical" href="https://jescoinnovation.com/about.html">
+  <link rel="icon" type="image/svg+xml" href="assets/icon-light.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="main.css">
+  <style>
+
+    /* ── About page ──────────────────────────────────────────── */
+
+    .about-intro {
+      padding: calc(var(--py) * 1.65) var(--px) var(--py);
+      position: relative;
+      overflow: hidden;
+
+      /* Dark atmospheric — same system as homepage hero */
+      --white:      #F2E8D8;
+      --muted:      rgba(242, 232, 216, 0.50);
+      --very-muted: rgba(242, 232, 216, 0.22);
+      --sand:       #C8A46A;
+      --sand-light: #E2CA9E;
+      --sand-muted: #9C7E52;
+      --turq:       #3FC4B2;
+
+      background:
+        radial-gradient(ellipse 65% 75% at 105% 55%, rgba(190, 120, 42, 0.10) 0%, transparent 62%),
+        radial-gradient(ellipse 55% 60% at -5% 50%,  rgba(44, 172, 152, 0.07) 0%, transparent 60%),
+        linear-gradient(to bottom, #152A32 0%, #1A2C35 100%);
+    }
+
+    .about-intro-inner {
+      position: relative;
+      z-index: 2;
+      max-width: 1080px;
+    }
+
+    .about-heading {
+      font-family: var(--serif);
+      font-size: clamp(3.2rem, 7.5vw, 9.5rem);
+      font-weight: 600;
+      line-height: 0.94;
+      letter-spacing: -0.022em;
+      color: var(--white);
+      margin-bottom: clamp(3rem, 6vh, 5rem);
+    }
+
+    .about-heading em {
+      font-style: italic;
+      font-weight: 400;
+      color: var(--sand);
+    }
+
+    .about-intro-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(3rem, 7vw, 7rem);
+      align-items: start;
+      max-width: 860px;
+      margin-left: clamp(2rem, 18%, 220px);
+    }
+
+    .about-intro-lead {
+      font-family: var(--serif);
+      font-size: clamp(1.3rem, 2.2vw, 1.9rem);
+      font-style: italic;
+      font-weight: 400;
+      line-height: 1.44;
+      color: var(--sand-light);
+    }
+
+    .about-intro-body {
+      font-size: clamp(0.9rem, 1.1vw, 1.02rem);
+      line-height: 1.9;
+      color: var(--muted);
+    }
+
+    .about-intro-body p + p { margin-top: 1.1em; }
+
+    /* ── Portrait section ────────────────────────────────────── */
+
+    .about-person {
+      padding: var(--py) var(--px);
+      background:
+        radial-gradient(ellipse 75% 80% at 100% 55%, rgba(190, 120, 42, 0.09) 0%, transparent 60%),
+        radial-gradient(ellipse 55% 60% at 0% 50%,   rgba(44, 172, 152, 0.05) 0%, transparent 60%),
+        var(--navy-3);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .about-person-atm {
+      position: absolute; inset: 0;
+      width: 100%; height: 100%;
+      object-fit: cover; object-position: 65% 35%;
+      opacity: 0.07;
+      filter: blur(28px) saturate(0.3) brightness(1.3);
+      z-index: 0; pointer-events: none;
+    }
+
+    .about-person-inner {
+      position: relative; z-index: 1;
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: clamp(3rem, 6vw, 6rem);
+      align-items: center;
+      max-width: 860px;
+    }
+
+    .about-portrait-wrap {
+      position: relative;
+      line-height: 0;
+      flex-shrink: 0;
+    }
+
+    .about-portrait-img {
+      display: block;
+      width: 180px;
+      height: 230px;
+      object-fit: cover;
+      object-position: center top;
+      border-radius: 2px;
+      opacity: 0.72;
+      filter: saturate(0.75) contrast(0.88) brightness(0.92) sepia(0.08);
+    }
+
+    .about-portrait-wrap::after {
+      content: '';
+      position: absolute; inset: 0; border-radius: 2px;
+      background:
+        linear-gradient(to right, transparent 55%, var(--navy-3) 100%),
+        linear-gradient(to bottom, var(--navy-3) 0%, transparent 16%, transparent 75%, var(--navy-3) 100%);
+      pointer-events: none;
+    }
+
+    .about-person-words {}
+
+    .about-person-heading {
+      font-family: var(--serif);
+      font-size: clamp(2rem, 4vw, 4.5rem);
+      font-weight: 600;
+      line-height: 1.05;
+      letter-spacing: -0.015em;
+      color: var(--white);
+      margin-bottom: 1.75rem;
+    }
+
+    .about-person-heading em {
+      font-style: italic;
+      font-weight: 400;
+      color: var(--sand);
+    }
+
+    .about-person-words p {
+      font-size: clamp(0.9rem, 1.1vw, 1.02rem);
+      color: var(--muted);
+      line-height: 1.9;
+      max-width: 480px;
+      margin-bottom: 1rem;
+    }
+    .about-person-words p:last-of-type { margin-bottom: 0; }
+
+    .about-sig {
+      display: block;
+      margin-top: 2rem;
+      font-family: var(--serif);
+      font-size: 1.5rem;
+      font-style: italic;
+      color: var(--sand);
+      opacity: 0.82;
+    }
+
+    /* ── Why section ─────────────────────────────────────────── */
+
+    .about-why {
+      padding: var(--py) var(--px);
+      background:
+        var(--warm-glow),
+        linear-gradient(to bottom, var(--navy-2) 0%, var(--navy-1) 100%);
+    }
+
+    .about-why-inner {
+      display: grid;
+      grid-template-columns: 120px 1fr;
+      gap: 0 clamp(3rem, 5vw, 6rem);
+      max-width: 860px;
+    }
+
+    .about-why-inner .section-label { padding-top: 0.5rem; margin-bottom: 0; }
+
+    .about-why-body {}
+
+    .about-why-heading {
+      font-family: var(--serif);
+      font-size: clamp(1.6rem, 2.8vw, 2.5rem);
+      font-weight: 600;
+      line-height: 1.15;
+      letter-spacing: -0.01em;
+      color: var(--white);
+      margin-bottom: 2rem;
+    }
+
+    .about-why-heading em {
+      font-style: italic;
+      font-weight: 400;
+      color: var(--sand);
+    }
+
+    .about-why-body p {
+      font-size: clamp(0.9rem, 1.1vw, 1.02rem);
+      color: var(--muted);
+      line-height: 1.9;
+      max-width: 520px;
+      margin-bottom: 1.1em;
+    }
+    .about-why-body p:last-child { margin-bottom: 0; }
+
+    /* ── Values strip ────────────────────────────────────────── */
+
+    .about-values {
+      padding: var(--py) var(--px);
+      background:
+        radial-gradient(ellipse 65% 75% at 105% 55%, rgba(190, 120, 42, 0.06) 0%, transparent 62%),
+        var(--navy-2);
+    }
+
+    .about-values-inner {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: clamp(2rem, 4vw, 4rem);
+      max-width: 860px;
+    }
+
+    .about-value {
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(28, 45, 52, 0.1);
+    }
+
+    .about-value-title {
+      font-family: var(--serif);
+      font-size: clamp(1.1rem, 1.8vw, 1.55rem);
+      font-weight: 600;
+      color: var(--sand-light);
+      margin-bottom: 0.75rem;
+      letter-spacing: -0.005em;
+    }
+
+    .about-value-title em {
+      font-style: italic;
+      font-weight: 400;
+    }
+
+    .about-value-text {
+      font-size: 0.88rem;
+      line-height: 1.85;
+      color: var(--muted);
+    }
+
+    /* ── About CTA ───────────────────────────────────────────── */
+
+    .about-cta {
+      padding: var(--py) var(--px);
+      padding-bottom: calc(var(--py) * 1.2);
+      background:
+        radial-gradient(ellipse 60% 80% at 105% 60%, rgba(190, 120, 42, 0.09) 0%, transparent 65%),
+        var(--navy-1);
+    }
+
+    .about-cta-heading {
+      font-family: var(--serif);
+      font-size: clamp(2.5rem, 6vw, 7rem);
+      font-weight: 600;
+      line-height: 0.95;
+      letter-spacing: -0.02em;
+      color: var(--white);
+      margin-bottom: 2rem;
+    }
+
+    .about-cta-heading em {
+      font-style: italic;
+      font-weight: 400;
+      color: var(--sand);
+    }
+
+    .about-cta-sub {
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: clamp(1rem, 1.5vw, 1.25rem);
+      color: var(--muted);
+      margin-bottom: 3rem;
+      max-width: 400px;
+      line-height: 1.62;
+    }
+
+    /* ── Personal Gallery ─────────────────────────────────────── */
+
+    .pg-section {
+      position: relative;
+      overflow: hidden;
+      padding: clamp(5rem, 9vw, 8rem) 0;
+
+      --white:      #F2E8D8;
+      --muted:      rgba(242, 232, 216, 0.50);
+      --sand:       #C8A46A;
+      --turq:       #3FC4B2;
+
+      background:
+        radial-gradient(ellipse 60% 70% at 100% 50%, rgba(190, 120, 42, 0.10) 0%, transparent 62%),
+        radial-gradient(ellipse 50% 60% at 0%  55%,  rgba(44, 172, 152, 0.07) 0%, transparent 56%),
+        linear-gradient(to bottom, #1A2C35 0%, #152A32 100%);
+    }
+
+    .pg-bg-video {
+      position: absolute;
+      inset: 0;
+      width: 100%; height: 100%;
+      object-fit: cover;
+      object-position: center 40%;
+      opacity: 0.13;
+      filter: blur(12px) saturate(0.5) brightness(0.55);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .pg-inner {
+      position: relative;
+      z-index: 1;
+    }
+
+    .pg-header {
+      padding: 0 var(--px);
+      margin-bottom: clamp(2.5rem, 5vh, 4rem);
+    }
+
+    .pg-label {
+      display: block;
+      font-size: 0.65rem;
+      font-weight: 500;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--turq);
+      opacity: 0.65;
+      margin-bottom: 1.5rem;
+      border-left: 1px solid rgba(63, 196, 178, 0.3);
+      padding-left: 0.85rem;
+    }
+
+    .pg-heading {
+      font-family: var(--serif);
+      font-size: clamp(2.8rem, 6vw, 7rem);
+      font-weight: 600;
+      line-height: 0.96;
+      letter-spacing: -0.02em;
+      color: var(--white);
+      margin-bottom: 1.25rem;
+    }
+
+    .pg-heading em {
+      font-style: italic;
+      font-weight: 400;
+      color: var(--sand);
+    }
+
+    .pg-sub {
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: clamp(0.95rem, 1.3vw, 1.15rem);
+      color: var(--muted);
+      max-width: 380px;
+      line-height: 1.62;
+    }
+
+    .pg-track-wrap { position: relative; }
+
+    .pg-track {
+      display: flex;
+      gap: clamp(1rem, 1.5vw, 1.5rem);
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      scroll-behavior: smooth;
+      -webkit-overflow-scrolling: touch;
+      padding: 0 var(--px) clamp(2rem, 4vh, 3rem);
+      scrollbar-width: none;
+      cursor: grab;
+    }
+
+    .pg-track::-webkit-scrollbar { display: none; }
+    .pg-track.is-dragging { cursor: grabbing; scroll-behavior: auto; }
+
+    .pg-slide {
+      flex-shrink: 0;
+      scroll-snap-align: start;
+      width: clamp(280px, 40vw, 560px);
+      aspect-ratio: 4 / 3;
+      border-radius: 4px;
+      overflow: hidden;
+      position: relative;
+      box-shadow: 0 4px 24px rgba(0, 0, 0, 0.30), 0 1px 4px rgba(0, 0, 0, 0.14);
+      transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+                  box-shadow 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .pg-slide:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.38), 0 2px 8px rgba(0, 0, 0, 0.16);
+    }
+
+    .pg-slide--wide {
+      width: clamp(320px, 52vw, 700px);
+      aspect-ratio: 16 / 10;
+    }
+
+    .pg-slide img,
+    .pg-slide video {
+      display: block;
+      width: 100%; height: 100%;
+      object-fit: cover;
+      object-position: center;
+      transition: transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .pg-slide:hover img,
+    .pg-slide:hover video {
+      transform: scale(1.02);
+    }
+
+    .pg-nav {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0 var(--px);
+      margin-top: 0.75rem;
+    }
+
+    .pg-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 38px; height: 38px;
+      background: transparent;
+      border: 1px solid rgba(242, 232, 216, 0.14);
+      border-radius: 2px;
+      color: rgba(242, 232, 216, 0.42);
+      font-size: 0.95rem;
+      line-height: 1;
+      cursor: pointer;
+      transition: background 0.22s, color 0.22s, border-color 0.22s;
+      padding: 0;
+      flex-shrink: 0;
+    }
+
+    .pg-btn:hover {
+      background: rgba(200, 164, 106, 0.08);
+      border-color: rgba(200, 164, 106, 0.28);
+      color: var(--sand);
+    }
+
+    /* ── Responsive ──────────────────────────────────────────── */
+
+    @media (max-width: 600px) {
+      .pg-slide,
+      .pg-slide--wide {
+        width: 82vw;
+        aspect-ratio: 4 / 3;
+      }
+    }
+
+    @media (max-width: 780px) {
+      .about-intro-grid { grid-template-columns: 1fr; margin-left: 0; gap: 2rem; }
+      .about-person-inner { grid-template-columns: 1fr; }
+      .about-portrait-wrap { display: none; }
+      .about-why-inner { grid-template-columns: 1fr; gap: 1.5rem; }
+      .about-why-inner .section-label { margin-bottom: 1rem; }
+      .about-values-inner { grid-template-columns: 1fr; gap: 2rem; }
+    }
+
+  </style>
+</head>
+<body>
+
+  <nav class="nav">
+    <a href="index.html" class="nav-logo">
+      <img src="assets/logo-horizontal-light.svg" alt="Jesco Innovation" class="nav-logo-img">
+    </a>
+    <ul class="nav-links">
+      <li><a href="projects.html" class="nav-link">Work</a></li>
+      <li><a href="packages.html" class="nav-link">Packages</a></li>
+      <li><a href="about.html" class="nav-link active">About</a></li>
+      <li><a href="contact.html" class="nav-link">Contact</a></li>
+    </ul>
+    <a href="contact.html" class="nav-cta">Let's talk</a>
+  </nav>
+
+  <!-- ═══ INTRO ═══ -->
+  <section class="about-intro">
+    <video class="hero-video" autoplay muted loop playsinline preload="metadata">
+      <source src="assets/hero.mp4" type="video/mp4">
+    </video>
+    <div class="about-intro-inner">
+      <h1 class="about-heading fade-in">
+        One person.<br>
+        <em>One island.</em>
+      </h1>
+      <div class="about-intro-grid">
+        <p class="about-intro-lead fade-in">
+          Not an agency. Not a freelance platform. Just someone who builds websites that work — for businesses that deserve better.
+        </p>
+        <div class="about-intro-body fade-in">
+          <p>Jesco Innovation is a one-person web design studio based on Curaçao, focused entirely on local entrepreneurs on Curaçao and Bonaire.</p>
+          <p>Every project is handled directly — design, copy, development, launch. No account managers, no handoffs, no team of six who've never seen your island.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ PORTRAIT / PERSONAL ═══ -->
+  <section class="about-person">
+    <img src="assets/atm.jpg" class="about-person-atm" alt="">
+    <div class="about-person-inner">
+      <div class="about-portrait-wrap fade-in">
+        <img src="assets/jesse.jpg" class="about-portrait-img" alt="Jesse">
+      </div>
+      <div class="about-person-words fade-in">
+        <h2 class="about-person-heading">
+          I know<br><em>this island.</em>
+        </h2>
+        <p>I grew up watching local businesses struggle with the same problem — they were good at what they did, but their online presence didn't reflect it. Templates that felt generic, agencies that felt distant, prices that felt wrong.</p>
+        <p>I built Jesco Innovation because I believed local businesses here deserved a different kind of web designer. Someone close. Someone who picks up the phone. Someone whose standard for the work is: would I be proud to show this to someone I know?</p>
+        <p>That's still the standard. Every project.</p>
+        <span class="about-sig">— Jesse</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ PERSONAL GALLERY ═══ -->
+  <section class="pg-section">
+    <video class="pg-bg-video" autoplay muted loop playsinline preload="metadata">
+      <source src="assets/personal-bonaire-video.mp4" type="video/mp4">
+    </video>
+
+    <div class="pg-inner">
+      <div class="pg-header fade-in">
+        <span class="pg-label">Personal archive</span>
+        <h2 class="pg-heading">Bonaire &amp;<br><em>Curaçao.</em></h2>
+        <p class="pg-sub">The islands behind every project. Not a backdrop — home.</p>
+      </div>
+
+      <div class="pg-track-wrap fade-in">
+        <div class="pg-track" id="pgTrack">
+
+          <!-- Video — featured wide slide -->
+          <div class="pg-slide pg-slide--wide">
+            <video autoplay muted loop playsinline preload="metadata">
+              <source src="assets/personal-bonaire-video.mp4" type="video/mp4">
+            </video>
+          </div>
+
+          <!-- Bonaire -->
+          <div class="pg-slide"><img src="assets/personal-bonaire-picture-1.jpeg"   alt="Bonaire" loading="lazy"></div>
+          <div class="pg-slide"><img src="assets/personal-bonaire-picture-2.jpeg"   alt="Bonaire" loading="lazy"></div>
+          <div class="pg-slide"><img src="assets/personal-bonaire-picture--3.jpeg"  alt="Bonaire" loading="lazy"></div>
+          <div class="pg-slide"><img src="assets/personal-bonaire-picture-4.jpeg"   alt="Bonaire" loading="lazy"></div>
+          <div class="pg-slide"><img src="assets/personal-bonaire-picture-5.jpeg"   alt="Bonaire" loading="lazy"></div>
+          <div class="pg-slide"><img src="assets/personal-bonaire-picture-6.jpeg"   alt="Bonaire" loading="lazy"></div>
+          <div class="pg-slide"><img src="assets/personal-bonaire-picture-7.JPG"    alt="Bonaire" loading="lazy"></div>
+          <div class="pg-slide"><img src="assets/personal-bonaire-picture-8.jpg"    alt="Bonaire" loading="lazy"></div>
+          <div class="pg-slide"><img src="assets/personal-bonaire-picture-9.jpeg"   alt="Bonaire" loading="lazy"></div>
+          <div class="pg-slide"><img src="assets/personal-bonaire-picture-10.jpeg"  alt="Bonaire" loading="lazy"></div>
+
+          <!-- Curaçao -->
+          <div class="pg-slide"><img src="assets/personal-curacao-picture-1.jpeg"   alt="Curaçao" loading="lazy"></div>
+          <div class="pg-slide"><img src="assets/personal-curacao-picture-2.jpeg"   alt="Curaçao" loading="lazy"></div>
+          <div class="pg-slide"><img src="assets/personal-curacao-picture-3.jpeg"   alt="Curaçao" loading="lazy"></div>
+          <div class="pg-slide"><img src="assets/personal-curacao-picture-4.jpeg"   alt="Curaçao" loading="lazy"></div>
+          <div class="pg-slide"><img src="assets/personal-curacao-picture-5.jpeg"   alt="Curaçao" loading="lazy"></div>
+
+        </div>
+
+        <nav class="pg-nav" aria-label="Gallery navigation">
+          <button class="pg-btn" id="pgPrev" aria-label="Previous photo">←</button>
+          <button class="pg-btn" id="pgNext" aria-label="Next photo">→</button>
+        </nav>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ WHY DIFFERENT ═══ -->
+  <section class="about-why">
+    <div class="about-why-inner">
+      <span class="section-label fade-in">The difference</span>
+      <div class="about-why-body">
+        <h2 class="about-why-heading fade-in">
+          No proposals.<br>No surprises.<br><em>Just the work.</em>
+        </h2>
+        <p class="fade-in">Most agencies make the process feel complicated on purpose. Long intake forms, discovery phases, unclear pricing, and then a website delivered by someone you've never spoken to. You end up paying more for something that's almost what you wanted.</p>
+        <p class="fade-in">My process is different. We have a conversation. I understand your business. I build something that reflects who you are. You review it before anything goes live. If something isn't right, we fix it.</p>
+        <p class="fade-in">No contracts with small print. No monthly retainer unless you want one. Direct contact from day one to after launch.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ VALUES ═══ -->
+  <section class="about-values">
+    <div class="about-values-inner">
+
+      <div class="about-value fade-in">
+        <h3 class="about-value-title">Direct <em>contact</em></h3>
+        <p class="about-value-text">You talk to the person building your site. Not a project manager, not a ticketing system. Just a direct line — phone, WhatsApp, email.</p>
+      </div>
+
+      <div class="about-value fade-in">
+        <h3 class="about-value-title">Clear <em>pricing</em></h3>
+        <p class="about-value-text">No vague estimates. You know what you're getting and what it costs before anything starts. No surprises at invoice time.</p>
+      </div>
+
+      <div class="about-value fade-in">
+        <h3 class="about-value-title">Still <em>reachable</em></h3>
+        <p class="about-value-text">After your site goes live, I don't disappear. If something needs updating, I'm still available. Your site isn't an archived project — it's an ongoing responsibility.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══ CTA ═══ -->
+  <section class="about-cta">
+    <h2 class="about-cta-heading fade-in">
+      Ready to<br><em>get started?</em>
+    </h2>
+    <p class="about-cta-sub fade-in">No forms, no pressure. Just a conversation to see if we're a good fit.</p>
+    <div class="cta-actions fade-in">
+      <a href="contact.html" class="btn-primary">Get in touch</a>
+      <span class="cta-sep">or</span>
+      <a href="projects.html" class="btn-text">see the work first</a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a href="index.html" class="footer-logo">
+          <img src="assets/logo-horizontal-light.svg" alt="Jesco Innovation" class="footer-logo-img">
+        </a>
+        <span class="footer-descriptor">Web design &middot; Cura&ccedil;ao &amp; Bonaire</span>
+      </div>
+
+      <div class="footer-mid">
+        <span class="footer-tag">Websites that simply work.</span>
+        <a href="contact.html" class="footer-cta-link">Send me your website &rarr;</a>
+      </div>
+
+      <span class="footer-copy">&copy; 2026 Jesco Innovation &middot; Cura&ccedil;ao &amp; Bonaire</span>
+    </div>
+
+    <div class="footer-links">
+      <span class="footer-links-label">Explore</span>
+      <nav class="footer-links-nav" aria-label="Site navigation">
+        <a href="index.html" class="footer-link">Home</a>
+        <a href="about.html" class="footer-link">About</a>
+        <a href="contact.html" class="footer-link">Contact</a>
+        <span class="footer-link-sep" aria-hidden="true">&middot;</span>
+        <a href="bonaire-webdesign.html" class="footer-link">Website Bonaire</a>
+        <a href="curacao-webdesign.html" class="footer-link">Website Cura&ccedil;ao</a>
+        <a href="website-tour-operators.html" class="footer-link">Tour operators</a>
+        <a href="website-restaurants.html" class="footer-link">Restaurants</a>
+        <span class="footer-link-sep" aria-hidden="true">&middot;</span>
+        <a href="bonaire.html" class="footer-link">Visit Bonaire</a>
+        <a href="sailing.html" class="footer-link">Caribbean Sailing</a>
+        <a href="citychronicals.html" class="footer-link">CityChronicles</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      const els = document.querySelectorAll('.fade-in');
+      if (!els.length) return;
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1 });
+      els.forEach(el => observer.observe(el));
+    })();
+
+    // Personal gallery slider
+    (function () {
+      const track = document.getElementById('pgTrack');
+      const prev  = document.getElementById('pgPrev');
+      const next  = document.getElementById('pgNext');
+      if (!track) return;
+
+      const slideWidth = () => {
+        const slide = track.querySelector('.pg-slide');
+        if (!slide) return track.clientWidth;
+        const gap = parseFloat(getComputedStyle(track).columnGap) || 20;
+        return slide.offsetWidth + gap;
+      };
+
+      if (next) next.addEventListener('click', () => track.scrollBy({ left:  slideWidth(), behavior: 'smooth' }));
+      if (prev) prev.addEventListener('click', () => track.scrollBy({ left: -slideWidth(), behavior: 'smooth' }));
+
+      // Drag-to-scroll (mouse)
+      let isDragging = false, startX = 0, startScroll = 0;
+      track.addEventListener('mousedown', e => {
+        isDragging = true;
+        startX = e.pageX - track.offsetLeft;
+        startScroll = track.scrollLeft;
+        track.classList.add('is-dragging');
+      });
+      document.addEventListener('mouseup', () => {
+        isDragging = false;
+        track.classList.remove('is-dragging');
+      });
+      track.addEventListener('mousemove', e => {
+        if (!isDragging) return;
+        e.preventDefault();
+        track.scrollLeft = startScroll - (e.pageX - track.offsetLeft - startX);
+      });
+    })();
+
+    (function () {
+      const nav = document.querySelector('.nav');
+      if (!nav) return;
+      window.addEventListener('scroll', () => {
+        nav.classList.toggle('nav--scrolled', window.scrollY > 60);
+      }, { passive: true });
+    })();
+  </script>
+</body>
+</html>

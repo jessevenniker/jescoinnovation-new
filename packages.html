@@ -1,0 +1,2069 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Web design packages Curaçao & Bonaire · Jesco Innovation</title>
+  <meta name="description" content="Transparent web design packages for businesses on Curaçao and Bonaire. Starter from €695, Growth from €1,350, Premium from €2,500. One-time payment, no hidden fees.">
+  <link rel="canonical" href="https://jescoinnovation.com/packages.html">
+  <link rel="icon" type="image/svg+xml" href="assets/icon-light.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="main.css">
+  <style>
+
+    /* ── Override body bg ───────────────────────────────────────── */
+    body { background: #152A32; }
+
+    /* ══════════════════════════════════════════════════════════════
+       HERO
+       ══════════════════════════════════════════════════════════════ */
+
+    .pkg-hero {
+      position: relative;
+      height: 100vh;
+      min-height: 580px;
+      max-height: 860px;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+
+      --white:      #F2E8D8;
+      --muted:      rgba(242, 232, 216, 0.50);
+      --very-muted: rgba(242, 232, 216, 0.22);
+      --sand:       #C8A46A;
+      --sand-light: #E2CA9E;
+      --sand-muted: #9C7E52;
+      --turq:       #3FC4B2;
+
+      background:
+        radial-gradient(ellipse 68% 80% at 102% 55%, rgba(190, 120, 42, 0.13) 0%, transparent 62%),
+        radial-gradient(ellipse 52% 62% at -4%  50%, rgba(44, 172, 152, 0.08) 0%, transparent 58%),
+        linear-gradient(to bottom, #152A32 0%, #1A2C35 100%);
+    }
+
+    .pkg-hero-video {
+      position: absolute;
+      inset: 0;
+      width: 100%; height: 100%;
+      object-fit: cover;
+      object-position: center 30%;
+      opacity: 0.09;
+      filter: blur(14px) saturate(0.55) brightness(0.7);
+      pointer-events: none;
+    }
+
+    .pkg-hero-overlay {
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 90% 55% at 50% 115%, rgba(200, 118, 38, 0.28) 0%, transparent 65%),
+        radial-gradient(ellipse 55% 45% at -5% 88%,  rgba(44, 172, 152, 0.10) 0%, transparent 58%);
+      pointer-events: none;
+    }
+
+    .pkg-hero-inner {
+      position: relative;
+      z-index: 2;
+      padding: 0 var(--px);
+    }
+
+    .pkg-hero-eyebrow {
+      display: block;
+      font-size: 0.65rem;
+      font-weight: 500;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      color: var(--turq);
+      opacity: 0.68;
+      margin-bottom: 2rem;
+      border-left: 1px solid rgba(63, 196, 178, 0.35);
+      padding-left: 0.85rem;
+    }
+
+    .pkg-hero-heading {
+      font-family: var(--serif);
+      font-size: clamp(4rem, 9.5vw, 12rem);
+      font-weight: 600;
+      line-height: 0.9;
+      letter-spacing: -0.026em;
+      color: var(--white);
+      margin-bottom: clamp(1.5rem, 3vh, 2.5rem);
+    }
+
+    .pkg-hero-heading em {
+      font-style: italic;
+      font-weight: 400;
+      color: var(--sand);
+    }
+
+    .pkg-hero-sub {
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: clamp(1rem, 1.6vw, 1.35rem);
+      color: var(--muted);
+      max-width: 420px;
+      line-height: 1.62;
+    }
+
+    .pkg-scroll-hint {
+      position: absolute;
+      bottom: 2.5rem;
+      left: var(--px);
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+    }
+
+    .pkg-scroll-line {
+      width: 44px;
+      height: 1px;
+      background: rgba(242, 232, 216, 0.18);
+      display: block;
+    }
+
+    .pkg-scroll-label {
+      font-size: 0.58rem;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: rgba(242, 232, 216, 0.22);
+    }
+
+    /* ══════════════════════════════════════════════════════════════
+       PACKAGES WRAPPER  (warm linen)
+       ══════════════════════════════════════════════════════════════ */
+
+    .packages {
+      background: #F2E8D8;
+    }
+
+    .packages-intro {
+      padding: clamp(5rem, 10vw, 9rem) var(--px) clamp(2rem, 4vw, 3rem);
+      max-width: 900px;
+    }
+
+    .packages-intro-label {
+      display: block;
+      font-size: 0.65rem;
+      font-weight: 500;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--turq);
+      opacity: 0.72;
+      margin-bottom: 2rem;
+    }
+
+    .packages-intro-heading {
+      font-family: var(--serif);
+      font-size: clamp(2.2rem, 4.8vw, 5.5rem);
+      font-weight: 600;
+      line-height: 1.02;
+      letter-spacing: -0.02em;
+      color: var(--white);
+      margin-bottom: 1.5rem;
+    }
+
+    .packages-intro-heading em {
+      font-style: italic;
+      font-weight: 400;
+      color: var(--sand);
+    }
+
+    .packages-intro-body {
+      font-size: clamp(0.95rem, 1.4vw, 1.1rem);
+      color: var(--muted);
+      line-height: 1.78;
+      max-width: 520px;
+    }
+
+    .pkg-divider {
+      border: 0;
+      border-top: 1px solid rgba(28, 45, 52, 0.07);
+      margin: 0 var(--px);
+    }
+
+    /* ══════════════════════════════════════════════════════════════
+       PACKAGE SECTION LAYOUT
+       ══════════════════════════════════════════════════════════════ */
+
+    .pkg-section {
+      padding: clamp(4rem, 9vw, 7rem) var(--px);
+    }
+
+    .pkg-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(2.5rem, 7vw, 6rem);
+      align-items: center;
+      max-width: 1240px;
+    }
+
+    .pkg-row--flip .pkg-visual { order: 2; }
+    .pkg-row--flip .pkg-body   { order: 1; }
+
+    /* ══════════════════════════════════════════════════════════════
+       PACKAGE BODY  (copy side)
+       ══════════════════════════════════════════════════════════════ */
+
+    /* Popular / recommendation badge */
+    @keyframes pkg-dot-pulse {
+      0%, 100% { opacity: 1; }
+      50%       { opacity: 0.35; }
+    }
+
+    .pkg-popular-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.58rem;
+      font-weight: 500;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--sand);
+      background: rgba(140, 94, 28, 0.09);
+      border: 1px solid rgba(140, 94, 28, 0.24);
+      border-radius: 20px;
+      padding: 0.35rem 0.9rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .pkg-popular-dot {
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--sand);
+      animation: pkg-dot-pulse 2.4s ease-in-out infinite;
+      flex-shrink: 0;
+    }
+
+    .pkg-num {
+      display: block;
+      font-size: 0.6rem;
+      font-weight: 500;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      color: var(--sand-muted);
+      margin-bottom: 0.65rem;
+    }
+
+    .pkg-tag {
+      display: inline-block;
+      font-size: 0.58rem;
+      font-weight: 500;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--turq);
+      border: 1px solid rgba(26, 145, 132, 0.32);
+      border-radius: 20px;
+      padding: 0.3rem 0.85rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .pkg-title {
+      font-family: var(--serif);
+      font-size: clamp(2.4rem, 4.2vw, 4.8rem);
+      font-weight: 600;
+      line-height: 0.97;
+      letter-spacing: -0.022em;
+      color: var(--white);
+      margin-bottom: 0.75rem;
+    }
+
+    .pkg-title em {
+      font-style: italic;
+      font-weight: 400;
+      color: var(--sand);
+    }
+
+    /* micro-copy right below title */
+    .pkg-micro {
+      font-size: 0.78rem;
+      color: var(--sand);
+      letter-spacing: 0.06em;
+      margin-bottom: 1.25rem;
+      opacity: 0.8;
+    }
+
+    .pkg-desc {
+      font-size: clamp(0.9rem, 1.3vw, 1.04rem);
+      color: var(--muted);
+      line-height: 1.78;
+      max-width: 380px;
+      margin-bottom: 2rem;
+    }
+
+    .pkg-ideal {
+      font-size: 0.78rem;
+      color: var(--very-muted);
+      line-height: 1.6;
+      margin-bottom: 2rem;
+    }
+
+    .pkg-ideal strong {
+      color: var(--muted);
+      font-weight: 400;
+    }
+
+    .pkg-features {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.58rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .pkg-features li {
+      display: flex;
+      align-items: baseline;
+      gap: 0.75rem;
+      font-size: 0.87rem;
+      color: rgba(28, 45, 52, 0.65);
+      line-height: 1.5;
+    }
+
+    .pkg-features li::before {
+      content: '—';
+      color: var(--sand);
+      font-size: 0.7rem;
+      flex-shrink: 0;
+    }
+
+    .pkg-price-block {
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(28, 45, 52, 0.08);
+      margin-bottom: 2rem;
+    }
+
+    .pkg-price-row {
+      display: flex;
+      align-items: baseline;
+      gap: 0.5rem;
+      margin-bottom: 0.35rem;
+    }
+
+    .pkg-price-label {
+      font-size: 0.62rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--sand-muted);
+      font-weight: 500;
+    }
+
+    .pkg-price-amount {
+      font-family: var(--serif);
+      font-size: clamp(1.9rem, 3.2vw, 2.8rem);
+      font-weight: 600;
+      color: var(--white);
+      letter-spacing: -0.02em;
+      line-height: 1;
+    }
+
+    .pkg-price-note {
+      font-size: 0.72rem;
+      color: var(--very-muted);
+      letter-spacing: 0.04em;
+    }
+
+    .pkg-cta-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-size: 0.68rem;
+      font-weight: 500;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--sand);
+      border: 1px solid rgba(140, 94, 28, 0.30);
+      border-radius: 3px;
+      padding: 0.9rem 1.8rem;
+      text-decoration: none;
+      transition: background 0.3s, color 0.3s, border-color 0.3s;
+    }
+
+    .pkg-cta-btn:hover {
+      background: var(--sand);
+      color: #F2E8D8;
+      border-color: var(--sand);
+    }
+
+    /* ══════════════════════════════════════════════════════════════
+       BROWSER CHROME FRAME
+       ══════════════════════════════════════════════════════════════ */
+
+    .pkg-browser {
+      width: 100%;
+      max-width: 560px;
+      border-radius: 13px;
+      overflow: hidden;
+      background: #fff;
+      position: relative;
+    }
+
+    /* Starter — intentionally restrained, clean but not exciting */
+    .pkg-browser--starter {
+      box-shadow:
+        0 1px 3px  rgba(21, 42, 50, 0.04),
+        0 4px 12px rgba(21, 42, 50, 0.06),
+        0 14px 36px rgba(21, 42, 50, 0.08);
+    }
+
+    /* Growth — elevated, most prominent */
+    .pkg-browser--growth {
+      box-shadow:
+        0 4px 10px  rgba(21, 42, 50, 0.10),
+        0 14px 40px rgba(21, 42, 50, 0.14),
+        0 36px 80px rgba(21, 42, 50, 0.17);
+    }
+
+    /* Ambient warm glow behind Growth visual */
+    .pkg-visual--growth {
+      position: relative;
+    }
+
+    .pkg-visual--growth::after {
+      content: '';
+      position: absolute;
+      inset: -70px;
+      background: radial-gradient(ellipse 75% 65% at 50% 55%, rgba(140, 94, 28, 0.08) 0%, transparent 68%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .pkg-visual--growth .pkg-browser {
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Premium — maximum richness, gold accent */
+    .pkg-browser--premium {
+      box-shadow:
+        0 4px 10px  rgba(12, 28, 36, 0.18),
+        0 16px 44px rgba(12, 28, 36, 0.26),
+        0 36px 80px rgba(12, 28, 36, 0.30),
+        0 0 0 1px rgba(200, 164, 106, 0.18);
+    }
+
+    .pkg-browser-chrome {
+      height: 42px;
+      background: #EAEAEA;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      padding: 0 1rem;
+      flex-shrink: 0;
+    }
+
+    .pkg-browser-chrome--dark {
+      background: #242424;
+    }
+
+    .pkg-browser-dots {
+      display: flex;
+      gap: 5px;
+      flex-shrink: 0;
+    }
+
+    .pkg-browser-dots span {
+      width: 11px;
+      height: 11px;
+      border-radius: 50%;
+      display: block;
+    }
+
+    .pkg-browser-dots span:nth-child(1) { background: #FF5F57; }
+    .pkg-browser-dots span:nth-child(2) { background: #FEBC2E; }
+    .pkg-browser-dots span:nth-child(3) { background: #28C840; }
+
+    .pkg-browser-bar {
+      flex: 1;
+      background: #fff;
+      border-radius: 5px;
+      height: 22px;
+      display: flex;
+      align-items: center;
+      padding: 0 0.7rem;
+      font-size: 10px;
+      color: #999;
+      font-family: var(--sans);
+      font-weight: 400;
+      letter-spacing: 0;
+    }
+
+    .pkg-browser-chrome--dark .pkg-browser-bar {
+      background: #1A1A1A;
+      color: #555;
+    }
+
+    .pkg-browser-viewport {
+      position: relative;
+      overflow: hidden;
+      height: 338px;
+      background: #fff;
+    }
+
+    /* Internal mock scale */
+    .pkg-mock {
+      position: absolute;
+      top: 0; left: 0;
+      width: 1000px;
+      height: 676px;
+      transform: scale(0.5);
+      transform-origin: top left;
+      font-family: 'DM Sans', system-ui, sans-serif;
+      font-weight: 300;
+      overflow: hidden;
+    }
+
+    /* ══════════════════════════════════════════════════════════════
+       STARTER MOCKUP  —  clean, flat, intentionally simple
+       ══════════════════════════════════════════════════════════════ */
+
+    .m-s-nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 52px;
+      height: 66px;
+      background: #fff;
+      border-bottom: 1px solid rgba(28, 45, 52, 0.07);
+    }
+
+    .m-s-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 22px;
+      font-weight: 600;
+      color: #1C2D34;
+      letter-spacing: -0.01em;
+    }
+
+    .m-s-nav-link {
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(28, 45, 52, 0.40);
+    }
+
+    /* Flat, minimal — no extra radial gradients */
+    .m-s-hero {
+      background: linear-gradient(148deg, #F0E8D5 0%, #E8E0CC 100%);
+      padding: 72px 52px 64px;
+    }
+
+    .m-s-eyebrow {
+      display: block;
+      font-size: 9px;
+      letter-spacing: 0.26em;
+      text-transform: uppercase;
+      color: #8C5E1C;
+      opacity: 0.62;
+      margin-bottom: 16px;
+    }
+
+    .m-s-heading {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 72px;
+      font-weight: 600;
+      line-height: 0.92;
+      letter-spacing: -0.022em;
+      color: #1C2D34;
+      margin-bottom: 16px;
+    }
+
+    .m-s-heading em {
+      font-style: italic;
+      font-weight: 400;
+      color: #8C5E1C;
+    }
+
+    .m-s-sub {
+      font-size: 15px;
+      color: rgba(28, 45, 52, 0.48);
+      margin-bottom: 30px;
+      line-height: 1.6;
+      max-width: 340px;
+    }
+
+    .m-s-btn {
+      display: inline-block;
+      background: #1C2D34;
+      color: #F5EDD8;
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      padding: 15px 28px;
+      border-radius: 2px;
+    }
+
+    .m-s-sections {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .m-s-about {
+      padding: 52px;
+      background: #fff;
+    }
+
+    .m-s-section-label {
+      font-size: 9px;
+      letter-spacing: 0.26em;
+      text-transform: uppercase;
+      color: #1A9184;
+      opacity: 0.62;
+      margin-bottom: 14px;
+      display: block;
+    }
+
+    .m-s-section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 32px;
+      font-weight: 600;
+      color: #1C2D34;
+      line-height: 1.08;
+      margin-bottom: 12px;
+      letter-spacing: -0.01em;
+    }
+
+    .m-s-section-title em {
+      font-style: italic;
+      font-weight: 400;
+      color: #8C5E1C;
+    }
+
+    .m-s-para {
+      font-size: 13px;
+      color: rgba(28, 45, 52, 0.50);
+      line-height: 1.7;
+    }
+
+    .m-s-contact {
+      padding: 52px;
+      background: #F2EDE4;
+    }
+
+    .m-s-contact-items {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-top: 14px;
+    }
+
+    .m-s-contact-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .m-s-contact-icon {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: rgba(140, 94, 28, 0.08);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      flex-shrink: 0;
+    }
+
+    .m-s-contact-text {
+      font-size: 13px;
+      color: rgba(28, 45, 52, 0.55);
+    }
+
+    /* ══════════════════════════════════════════════════════════════
+       GROWTH MOCKUP  —  vibrant, interactive tabs, most alive
+       ══════════════════════════════════════════════════════════════ */
+
+    .m-g-nav {
+      display: flex;
+      align-items: stretch;
+      justify-content: space-between;
+      padding: 0 52px;
+      height: 64px;
+      background: #1A2C35;
+    }
+
+    .m-g-logo-wrap {
+      display: flex;
+      align-items: center;
+    }
+
+    .m-g-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 20px;
+      font-weight: 600;
+      color: #F2E8D8;
+      letter-spacing: -0.01em;
+    }
+
+    .m-g-tabs {
+      display: flex;
+    }
+
+    .m-g-tab {
+      padding: 0 22px;
+      font-size: 10px;
+      letter-spacing: 0.17em;
+      text-transform: uppercase;
+      color: rgba(242, 232, 216, 0.36);
+      cursor: pointer;
+      border: none;
+      background: transparent;
+      border-bottom: 2px solid transparent;
+      transition: color 0.2s, border-color 0.2s;
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 400;
+    }
+
+    .m-g-tab:hover { color: rgba(242, 232, 216, 0.68); }
+
+    .m-g-tab.m-active {
+      color: #C8A46A;
+      border-bottom-color: #C8A46A;
+    }
+
+    /* Smooth panel transitions */
+    .m-g-panels-wrap {
+      position: relative;
+      overflow: hidden;
+      height: 612px;
+    }
+
+    .m-g-panel {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      opacity: 0;
+      transform: translateY(8px);
+      transition:
+        opacity 0.38s cubic-bezier(0.16, 1, 0.3, 1),
+        transform 0.38s cubic-bezier(0.16, 1, 0.3, 1);
+      pointer-events: none;
+    }
+
+    .m-g-panel.m-active {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+
+    /* Home panel */
+    .m-g-home-hero {
+      background:
+        radial-gradient(ellipse 72% 85% at 96% 48%, rgba(190, 120, 42, 0.22) 0%, transparent 62%),
+        radial-gradient(ellipse 45% 55% at 0%  80%, rgba(44, 172, 152, 0.09) 0%, transparent 55%),
+        linear-gradient(to bottom, #152A32 0%, #1A2C35 100%);
+      padding: 68px 52px 52px;
+    }
+
+    .m-g-hero-eyebrow {
+      display: block;
+      font-size: 9px;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: #3FC4B2;
+      opacity: 0.7;
+      margin-bottom: 18px;
+    }
+
+    .m-g-hero-heading {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 80px;
+      font-weight: 600;
+      line-height: 0.92;
+      letter-spacing: -0.024em;
+      color: #F2E8D8;
+      margin-bottom: 18px;
+    }
+
+    .m-g-hero-heading em {
+      font-style: italic;
+      font-weight: 400;
+      color: #C8A46A;
+    }
+
+    .m-g-hero-sub {
+      font-size: 15px;
+      color: rgba(242, 232, 216, 0.48);
+      line-height: 1.62;
+      max-width: 320px;
+      margin-bottom: 28px;
+    }
+
+    .m-g-hero-actions {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+    }
+
+    .m-g-btn-primary {
+      background: #C8A46A;
+      color: #1A2C35;
+      font-size: 9px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      padding: 15px 30px;
+      border-radius: 2px;
+      font-weight: 500;
+      display: inline-block;
+    }
+
+    .m-g-btn-ghost {
+      font-size: 9px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(242, 232, 216, 0.40);
+    }
+
+    .m-g-services {
+      background: #F2E8D8;
+      padding: 44px 52px 40px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .m-g-service-card {
+      padding: 24px 20px;
+      background: #fff;
+      border-radius: 4px;
+      border: 1px solid rgba(28, 45, 52, 0.07);
+    }
+
+    .m-g-service-icon {
+      width: 28px;
+      height: 28px;
+      border-radius: 8px;
+      background: rgba(140, 94, 28, 0.10);
+      margin-bottom: 14px;
+    }
+
+    .m-g-service-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 20px;
+      font-weight: 600;
+      color: #1C2D34;
+      margin-bottom: 6px;
+    }
+
+    .m-g-service-desc {
+      font-size: 11px;
+      color: rgba(28, 45, 52, 0.46);
+      line-height: 1.62;
+    }
+
+    /* About panel */
+    .m-g-about {
+      background: #F5EDD8;
+      padding: 60px 52px;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 48px;
+      height: 612px;
+    }
+
+    .m-g-about-label {
+      font-size: 9px;
+      letter-spacing: 0.26em;
+      text-transform: uppercase;
+      color: #1A9184;
+      opacity: 0.7;
+      margin-bottom: 16px;
+      display: block;
+    }
+
+    .m-g-about-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 52px;
+      font-weight: 600;
+      line-height: 0.95;
+      letter-spacing: -0.02em;
+      color: #1C2D34;
+      margin-bottom: 20px;
+    }
+
+    .m-g-about-title em { font-style: italic; font-weight: 400; color: #8C5E1C; }
+
+    .m-g-about-para {
+      font-size: 13px;
+      color: rgba(28, 45, 52, 0.58);
+      line-height: 1.75;
+    }
+
+    .m-g-about-photo {
+      background: linear-gradient(135deg, #E2D4BC 0%, #D5C9B0 100%);
+      border-radius: 8px;
+      display: flex;
+      align-items: flex-end;
+      padding: 20px;
+      overflow: hidden;
+    }
+
+    .m-g-about-photo-label {
+      font-size: 10px;
+      color: rgba(28, 45, 52, 0.26);
+      letter-spacing: 0.1em;
+    }
+
+    /* Contact panel */
+    .m-g-contact {
+      background: #fff;
+      padding: 60px 52px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 52px;
+      height: 612px;
+    }
+
+    .m-g-contact-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 48px;
+      font-weight: 600;
+      line-height: 1.0;
+      letter-spacing: -0.02em;
+      color: #1C2D34;
+      margin-bottom: 28px;
+    }
+
+    .m-g-contact-title em { font-style: italic; font-weight: 400; color: #8C5E1C; }
+
+    .m-g-contact-details { display: flex; flex-direction: column; gap: 18px; }
+
+    .m-g-contact-item { display: flex; flex-direction: column; gap: 4px; }
+
+    .m-g-contact-item-label {
+      font-size: 9px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: rgba(28, 45, 52, 0.28);
+    }
+
+    .m-g-contact-item-val { font-size: 14px; color: #1C2D34; }
+
+    .m-g-contact-form { display: flex; flex-direction: column; gap: 12px; }
+
+    .m-g-form-field {
+      background: #f7f3ed;
+      height: 44px;
+      border-radius: 3px;
+      border: 1px solid rgba(28, 45, 52, 0.08);
+    }
+
+    .m-g-form-field.m-g-field-tall { height: 88px; }
+
+    .m-g-form-submit {
+      height: 44px;
+      background: #1C2D34;
+      color: #F2E8D8;
+      border-radius: 3px;
+      font-size: 9px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Bookings panel */
+    .m-g-bookings {
+      background: #1A2C35;
+      padding: 52px;
+      height: 612px;
+    }
+
+    .m-g-bookings-label {
+      font-size: 9px;
+      letter-spacing: 0.26em;
+      text-transform: uppercase;
+      color: #3FC4B2;
+      opacity: 0.7;
+      display: block;
+      margin-bottom: 14px;
+    }
+
+    .m-g-bookings-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 48px;
+      font-weight: 600;
+      color: #F2E8D8;
+      line-height: 1.0;
+      letter-spacing: -0.02em;
+      margin-bottom: 8px;
+    }
+
+    .m-g-bookings-sub {
+      font-size: 13px;
+      color: rgba(242, 232, 216, 0.36);
+      margin-bottom: 32px;
+    }
+
+    .m-g-booking-slots {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+      margin-bottom: 28px;
+    }
+
+    .m-g-slot {
+      background: rgba(242, 232, 216, 0.05);
+      border: 1px solid rgba(242, 232, 216, 0.09);
+      border-radius: 6px;
+      padding: 16px 8px;
+      text-align: center;
+    }
+
+    .m-g-slot.m-slot-selected {
+      background: rgba(200, 164, 106, 0.14);
+      border-color: rgba(200, 164, 106, 0.38);
+    }
+
+    .m-g-slot.m-slot-booked {
+      background: rgba(63, 196, 178, 0.07);
+      border-color: rgba(63, 196, 178, 0.20);
+    }
+
+    .m-g-slot-time {
+      font-size: 14px;
+      font-weight: 500;
+      color: #F2E8D8;
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    .m-g-slot-status {
+      font-size: 9px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(242, 232, 216, 0.26);
+    }
+
+    .m-g-slot.m-slot-selected .m-g-slot-status { color: #C8A46A; }
+    .m-g-slot.m-slot-booked .m-g-slot-time { opacity: 0.35; }
+    .m-g-slot.m-slot-booked .m-g-slot-status { color: rgba(63, 196, 178, 0.55); }
+
+    .m-g-booking-cta {
+      background: #C8A46A;
+      color: #1A2C35;
+      font-size: 9px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      padding: 15px 28px;
+      border-radius: 2px;
+      display: inline-block;
+      font-weight: 500;
+    }
+
+    /* ══════════════════════════════════════════════════════════════
+       PREMIUM SECTION  (dark atmospheric)
+       ══════════════════════════════════════════════════════════════ */
+
+    .pkg-section--premium {
+      background:
+        radial-gradient(ellipse 72% 82% at 104% 55%, rgba(190, 120, 42, 0.14) 0%, transparent 60%),
+        radial-gradient(ellipse 58% 68% at -6%  50%, rgba(44, 172, 152, 0.08) 0%, transparent 58%),
+        radial-gradient(ellipse 40% 50% at 50%  100%, rgba(190, 120, 42, 0.05) 0%, transparent 55%),
+        linear-gradient(to bottom, #152A32 0%, #1A2C35 100%);
+
+      --white:      #F2E8D8;
+      --muted:      rgba(242, 232, 216, 0.50);
+      --very-muted: rgba(242, 232, 216, 0.22);
+      --sand:       #C8A46A;
+      --sand-light: #E2CA9E;
+      --sand-muted: #9C7E52;
+      --turq:       #3FC4B2;
+    }
+
+    .pkg-section--premium .pkg-features li { color: rgba(242, 232, 216, 0.52); }
+    .pkg-section--premium .pkg-price-block { border-top-color: rgba(242, 232, 216, 0.10); }
+    .pkg-section--premium .pkg-ideal { color: rgba(242, 232, 216, 0.26); }
+    .pkg-section--premium .pkg-ideal strong { color: rgba(242, 232, 216, 0.42); }
+
+    .pkg-section--premium .pkg-cta-btn {
+      color: var(--sand);
+      border-color: rgba(200, 164, 106, 0.32);
+    }
+
+    .pkg-section--premium .pkg-cta-btn:hover {
+      background: var(--sand);
+      color: #1A2C35;
+      border-color: var(--sand);
+    }
+
+    /* ── Premium mockup animations ────────────────────────────── */
+
+    @keyframes prm-blob-amber {
+      0%   { transform: translate(0%, 0%)   scale(1);    opacity: 0.22; }
+      30%  { transform: translate(6%, -5%)  scale(1.12); opacity: 0.30; }
+      65%  { transform: translate(-4%, 4%)  scale(1.08); opacity: 0.24; }
+      100% { transform: translate(0%, 0%)   scale(1);    opacity: 0.22; }
+    }
+
+    @keyframes prm-blob-teal {
+      0%   { transform: translate(0%, 0%)  scale(1);    opacity: 0.13; }
+      40%  { transform: translate(-8%, 6%) scale(1.14); opacity: 0.18; }
+      72%  { transform: translate(5%, -3%) scale(1.06); opacity: 0.14; }
+      100% { transform: translate(0%, 0%)  scale(1);    opacity: 0.13; }
+    }
+
+    .m-p-nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 52px;
+      height: 64px;
+      background: rgba(10, 22, 28, 0.98);
+      position: relative;
+      z-index: 2;
+      border-bottom: 1px solid rgba(200, 164, 106, 0.10);
+    }
+
+    .m-p-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 20px;
+      font-weight: 600;
+      color: #F2E8D8;
+      letter-spacing: 0.02em;
+    }
+
+    .m-p-nav-links { display: flex; gap: 32px; }
+
+    .m-p-nav-link {
+      font-size: 9px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(242, 232, 216, 0.34);
+    }
+
+    .m-p-nav-cta {
+      font-size: 9px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #C8A46A;
+      border: 1px solid rgba(200, 164, 106, 0.36);
+      padding: 6px 16px;
+      border-radius: 2px;
+    }
+
+    .m-p-hero {
+      height: 340px;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      padding: 0 52px;
+      background: linear-gradient(135deg, #0A1620 0%, #111E28 30%, #152A32 60%, #1A2C35 100%);
+    }
+
+    .m-p-blob {
+      position: absolute;
+      width: 660px;
+      height: 560px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(190, 120, 42, 1) 0%, transparent 70%);
+      right: -210px;
+      top: -150px;
+      animation: prm-blob-amber 8s ease-in-out infinite;
+      pointer-events: none;
+    }
+
+    .m-p-blob-teal {
+      position: absolute;
+      width: 460px;
+      height: 460px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(44, 172, 152, 1) 0%, transparent 70%);
+      left: -100px;
+      bottom: -100px;
+      animation: prm-blob-teal 11s ease-in-out infinite;
+      pointer-events: none;
+    }
+
+    .m-p-hero-content { position: relative; z-index: 1; }
+
+    .m-p-hero-eyebrow {
+      display: block;
+      font-size: 9px;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: #3FC4B2;
+      opacity: 0.65;
+      margin-bottom: 16px;
+    }
+
+    .m-p-hero-heading {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 96px;
+      font-weight: 600;
+      line-height: 0.88;
+      letter-spacing: -0.028em;
+      color: #F2E8D8;
+      margin-bottom: 20px;
+    }
+
+    .m-p-hero-heading em { font-style: italic; font-weight: 400; color: #C8A46A; }
+
+    .m-p-hero-sub {
+      font-size: 14px;
+      color: rgba(242, 232, 216, 0.40);
+      line-height: 1.65;
+      max-width: 300px;
+      margin-bottom: 28px;
+    }
+
+    .m-p-hero-cta { display: inline-flex; gap: 14px; align-items: center; }
+
+    .m-p-btn {
+      background: #C8A46A;
+      color: #0A1620;
+      font-size: 9px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      padding: 15px 30px;
+      border-radius: 2px;
+      font-weight: 500;
+      display: inline-block;
+    }
+
+    .m-p-btn-ghost {
+      font-size: 9px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(242, 232, 216, 0.34);
+    }
+
+    .m-p-features-strip {
+      background: #F2E8D8;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      height: 272px;
+      overflow: hidden;
+    }
+
+    .m-p-feature {
+      padding: 36px;
+      border-right: 1px solid rgba(28, 45, 52, 0.07);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .m-p-feature:last-child { border-right: 0; }
+
+    .m-p-feature-ghost {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 96px;
+      font-weight: 700;
+      color: rgba(140, 94, 28, 0.055);
+      position: absolute;
+      right: 8px;
+      bottom: -10px;
+      line-height: 1;
+    }
+
+    .m-p-feature-line {
+      width: 28px;
+      height: 2px;
+      background: #8C5E1C;
+      opacity: 0.36;
+      margin-bottom: 22px;
+    }
+
+    .m-p-feature-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 26px;
+      font-weight: 600;
+      color: #1C2D34;
+      line-height: 1.08;
+      margin-bottom: 9px;
+    }
+
+    .m-p-feature-title em { font-style: italic; font-weight: 400; }
+
+    .m-p-feature-desc {
+      font-size: 11px;
+      color: rgba(28, 45, 52, 0.46);
+      line-height: 1.68;
+    }
+
+    /* ══════════════════════════════════════════════════════════════
+       TRUST SECTION  (dark)
+       ══════════════════════════════════════════════════════════════ */
+
+    .pkg-trust {
+      background:
+        radial-gradient(ellipse 58% 70% at 98% 50%, rgba(190, 120, 42, 0.10) 0%, transparent 58%),
+        radial-gradient(ellipse 48% 60% at 0%  50%, rgba(44, 172, 152, 0.06) 0%, transparent 56%),
+        linear-gradient(to bottom, #1A2C35 0%, #152A32 100%);
+      padding: clamp(5rem, 10vw, 8rem) var(--px);
+
+      --white:      #F2E8D8;
+      --muted:      rgba(242, 232, 216, 0.50);
+      --very-muted: rgba(242, 232, 216, 0.22);
+      --sand:       #C8A46A;
+      --turq:       #3FC4B2;
+    }
+
+    .pkg-trust-inner {
+      max-width: 900px;
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: clamp(3rem, 7vw, 7rem);
+      align-items: start;
+    }
+
+    .pkg-trust-eyebrow {
+      display: block;
+      font-size: 0.65rem;
+      font-weight: 500;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--turq);
+      opacity: 0.68;
+      margin-bottom: 2rem;
+    }
+
+    .pkg-trust-heading {
+      font-family: var(--serif);
+      font-size: clamp(2.4rem, 4.5vw, 5rem);
+      font-weight: 600;
+      line-height: 1.0;
+      letter-spacing: -0.022em;
+      color: var(--white);
+    }
+
+    .pkg-trust-heading em { font-style: italic; font-weight: 400; color: var(--sand); }
+
+    .pkg-trust-notes { list-style: none; display: flex; flex-direction: column; gap: 0; }
+
+    .pkg-trust-note {
+      padding: 1.5rem 0;
+      border-bottom: 1px solid rgba(242, 232, 216, 0.08);
+    }
+
+    .pkg-trust-note:first-child { padding-top: 0; }
+    .pkg-trust-note:last-child  { border-bottom: 0; padding-bottom: 0; }
+
+    .pkg-trust-note-title {
+      display: block;
+      font-size: 0.82rem;
+      font-weight: 500;
+      color: var(--white);
+      margin-bottom: 0.3rem;
+    }
+
+    .pkg-trust-note-body {
+      font-size: 0.8rem;
+      color: var(--muted);
+      line-height: 1.72;
+    }
+
+    /* ══════════════════════════════════════════════════════════════
+       FINAL CTA
+       ══════════════════════════════════════════════════════════════ */
+
+    .pkg-cta-section {
+      background: #F2E8D8;
+      padding: clamp(7rem, 13vw, 11rem) var(--px);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .pkg-cta-section::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 70% 80% at 50% -5%, rgba(140, 94, 28, 0.07) 0%, transparent 62%);
+      pointer-events: none;
+    }
+
+    .pkg-cta-inner { position: relative; z-index: 1; }
+
+    .pkg-cta-eyebrow {
+      display: block;
+      font-size: 0.65rem;
+      font-weight: 500;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--turq);
+      opacity: 0.72;
+      margin-bottom: 2rem;
+    }
+
+    .pkg-cta-heading {
+      font-family: var(--serif);
+      font-size: clamp(3.2rem, 8vw, 10rem);
+      font-weight: 600;
+      line-height: 0.92;
+      letter-spacing: -0.026em;
+      color: var(--white);
+      margin-bottom: clamp(1.75rem, 3.5vh, 3rem);
+    }
+
+    .pkg-cta-heading em { font-style: italic; font-weight: 400; color: var(--sand); }
+
+    .pkg-cta-sub {
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: clamp(1rem, 1.6vw, 1.3rem);
+      color: var(--muted);
+      max-width: 380px;
+      margin: 0 auto clamp(2.5rem, 5vh, 4rem);
+      line-height: 1.62;
+    }
+
+    .pkg-cta-actions {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .pkg-cta-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-size: 0.68rem;
+      font-weight: 500;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: #F2E8D8;
+      background: var(--white);
+      padding: 1rem 2.4rem;
+      border-radius: 3px;
+      text-decoration: none;
+      transition: opacity 0.3s;
+    }
+
+    .pkg-cta-primary:hover { opacity: 0.82; }
+
+    .pkg-cta-secondary {
+      font-size: 0.68rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--sand-muted);
+      text-decoration: none;
+      transition: color 0.25s;
+    }
+
+    .pkg-cta-secondary:hover { color: var(--sand); }
+
+    /* ══════════════════════════════════════════════════════════════
+       RESPONSIVE
+       ══════════════════════════════════════════════════════════════ */
+
+    @media (max-width: 900px) {
+      .pkg-row { grid-template-columns: 1fr; gap: 2.5rem; }
+      .pkg-row--flip .pkg-visual { order: 1; }
+      .pkg-row--flip .pkg-body   { order: 2; }
+      .pkg-browser { max-width: 100%; }
+      .pkg-trust-inner { grid-template-columns: 1fr; gap: 3rem; }
+      .pkg-visual--growth::after { display: none; }
+    }
+
+    @media (max-width: 580px) {
+      .pkg-browser-viewport { height: 252px; }
+      .pkg-mock { transform: scale(0.372); }
+      .pkg-hero-heading { font-size: clamp(3.2rem, 13vw, 5rem); }
+    }
+
+  </style>
+</head>
+<body>
+
+  <nav class="nav">
+    <a href="index.html" class="nav-logo">
+      <img src="assets/logo-horizontal-light.svg" alt="Jesco Innovation" class="nav-logo-img">
+    </a>
+    <ul class="nav-links">
+      <li><a href="projects.html" class="nav-link">Work</a></li>
+      <li><a href="packages.html" class="nav-link active">Packages</a></li>
+      <li><a href="about.html" class="nav-link">About</a></li>
+      <li><a href="contact.html" class="nav-link">Contact</a></li>
+    </ul>
+    <a href="contact.html" class="nav-cta">Let's talk</a>
+  </nav>
+
+
+  <!-- ═══ HERO ═══ -->
+  <section class="pkg-hero">
+    <video class="pkg-hero-video" autoplay muted loop playsinline preload="metadata">
+      <source src="assets/hero.mp4" type="video/mp4">
+    </video>
+    <div class="pkg-hero-overlay"></div>
+
+    <div class="pkg-hero-inner">
+      <span class="pkg-hero-eyebrow fade-in">Packages &amp; Pricing</span>
+      <h1 class="pkg-hero-heading fade-in">
+        Honest prices.<br>
+        <em>Real results.</em>
+      </h1>
+      <p class="pkg-hero-sub fade-in">
+        Three tiers. One price upfront. No retainers, no mystery fees — pick the package that fits where you are right now.
+      </p>
+    </div>
+
+    <div class="pkg-scroll-hint">
+      <span class="pkg-scroll-line"></span>
+      <span class="pkg-scroll-label">Scroll</span>
+    </div>
+  </section>
+
+
+  <!-- ═══ PACKAGES wrapper (warm linen) ═══ -->
+  <div class="packages">
+
+    <div class="packages-intro fade-in">
+      <span class="packages-intro-label">Three tiers</span>
+      <h2 class="packages-intro-heading">
+        The right site for<br>
+        where you <em>are now.</em>
+      </h2>
+      <p class="packages-intro-body">
+        Every package includes design, copywriting, setup, and launch. The difference is depth — more pages, more features, more custom work. All prices are one-time. No monthly agency fees, no hidden costs.
+      </p>
+    </div>
+
+
+    <!-- ══ 01 · STARTER ═══════════════════════════════════════════ -->
+    <hr class="pkg-divider">
+
+    <section class="pkg-section">
+      <div class="pkg-row">
+
+        <!-- Browser — left. Intentionally flat and restrained. -->
+        <div class="pkg-visual fade-in">
+          <div class="pkg-browser pkg-browser--starter">
+            <div class="pkg-browser-chrome">
+              <div class="pkg-browser-dots"><span></span><span></span><span></span></div>
+              <div class="pkg-browser-bar">yourbusiness.com</div>
+            </div>
+            <div class="pkg-browser-viewport">
+              <div class="pkg-mock" style="pointer-events:none">
+
+                <div class="m-s-nav">
+                  <span class="m-s-logo">Kura Boutique</span>
+                  <span class="m-s-nav-link">Contact</span>
+                </div>
+
+                <div class="m-s-hero">
+                  <span class="m-s-eyebrow">Willemstad, Curaçao</span>
+                  <div class="m-s-heading">Handcrafted<br><em>island style.</em></div>
+                  <p class="m-s-sub">Clothing and accessories from the Caribbean. Find us in Pietermaai.</p>
+                  <span class="m-s-btn">Get in touch →</span>
+                </div>
+
+                <div class="m-s-sections">
+                  <div class="m-s-about">
+                    <span class="m-s-section-label">About</span>
+                    <div class="m-s-section-title">A store<br>with a <em>story.</em></div>
+                    <p class="m-s-para">We've been dressing Curaçao since 2018. Every piece is chosen for its quality, colour, and connection to this island.</p>
+                  </div>
+                  <div class="m-s-contact">
+                    <span class="m-s-section-label">Find us</span>
+                    <div class="m-s-contact-items">
+                      <div class="m-s-contact-item">
+                        <div class="m-s-contact-icon">📍</div>
+                        <span class="m-s-contact-text">Pietermaai 42, Willemstad</span>
+                      </div>
+                      <div class="m-s-contact-item">
+                        <div class="m-s-contact-icon">📱</div>
+                        <span class="m-s-contact-text">+5999 000 0000</span>
+                      </div>
+                      <div class="m-s-contact-item">
+                        <div class="m-s-contact-icon">✉️</div>
+                        <span class="m-s-contact-text">hello@kuraboutique.com</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Copy — right -->
+        <div class="pkg-body fade-in">
+          <span class="pkg-num">Package 01</span>
+          <span class="pkg-tag">Starter</span>
+
+          <h2 class="pkg-title">
+            Online,<br>
+            <em>properly.</em>
+          </h2>
+          <p class="pkg-micro">Best for: getting found fast</p>
+
+          <p class="pkg-desc">
+            A clean, single-page website that makes a solid first impression. Tells your story, shows what you offer, makes it easy to get in touch. Everything you need to be taken seriously online — nothing you don't.
+          </p>
+
+          <ul class="pkg-features">
+            <li>Single-page design — hero, about, services, contact</li>
+            <li>Mobile-ready from day one</li>
+            <li>WhatsApp &amp; Google Maps integration</li>
+            <li>SEO basics — title, description, Google-ready</li>
+            <li>Copywriting included</li>
+            <li>Domain &amp; hosting setup</li>
+            <li>Delivered in 5–7 days</li>
+          </ul>
+
+          <p class="pkg-ideal"><strong>Ideal for:</strong> restaurants, freelancers, pop-up shops, solo practitioners — anyone who needs to be found and look professional.</p>
+
+          <div class="pkg-price-block">
+            <div class="pkg-price-row">
+              <span class="pkg-price-label">From</span>
+              <span class="pkg-price-amount">€695</span>
+            </div>
+            <p class="pkg-price-note">One-time payment · no monthly fees</p>
+          </div>
+
+          <a href="contact.html" class="pkg-cta-btn">Get started →</a>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ══ 02 · GROWTH ════════════════════════════════════════════ -->
+    <hr class="pkg-divider">
+
+    <section class="pkg-section">
+      <div class="pkg-row pkg-row--flip">
+
+        <!-- Copy — left (flipped) -->
+        <div class="pkg-body fade-in">
+          <div class="pkg-popular-badge">
+            <span class="pkg-popular-dot"></span>
+            Most chosen
+          </div>
+
+          <span class="pkg-num">Package 02</span>
+          <span class="pkg-tag">Growth</span>
+
+          <h2 class="pkg-title">
+            The site that<br>
+            <em>earns its keep.</em>
+          </h2>
+          <p class="pkg-micro">For businesses ready to grow</p>
+
+          <p class="pkg-desc">
+            A full multi-page website built around conversion. Separate pages for your services, your story, and a contact or booking flow that turns visitors into customers. The one most growing businesses end up needing.
+          </p>
+
+          <ul class="pkg-features">
+            <li>Up to 5 pages — Home, About, Services, Contact, Bookings</li>
+            <li>Online booking or contact form</li>
+            <li>Blog-ready structure</li>
+            <li>Google Analytics setup</li>
+            <li>WhatsApp chat button</li>
+            <li>Photo editing &amp; image sourcing</li>
+            <li>30-day priority support after launch</li>
+            <li>Delivered in 10–14 days</li>
+          </ul>
+
+          <p class="pkg-ideal"><strong>Ideal for:</strong> dive shops, tour operators, hotels, wellness studios, salons — businesses with services that need explaining and customers that book ahead.</p>
+
+          <div class="pkg-price-block">
+            <div class="pkg-price-row">
+              <span class="pkg-price-label">From</span>
+              <span class="pkg-price-amount">€1,350</span>
+            </div>
+            <p class="pkg-price-note">One-time payment · no monthly fees</p>
+          </div>
+
+          <a href="contact.html" class="pkg-cta-btn">Get started →</a>
+        </div>
+
+        <!-- Browser with tabs — right (flipped) -->
+        <div class="pkg-visual pkg-visual--growth fade-in">
+          <div class="pkg-browser pkg-browser--growth">
+            <div class="pkg-browser-chrome">
+              <div class="pkg-browser-dots"><span></span><span></span><span></span></div>
+              <div class="pkg-browser-bar">yourbusiness.com</div>
+            </div>
+            <div class="pkg-browser-viewport">
+              <div class="pkg-mock" id="growth-mock">
+
+                <div class="m-g-nav">
+                  <div class="m-g-logo-wrap">
+                    <span class="m-g-logo">Reef Divers</span>
+                  </div>
+                  <div class="m-g-tabs">
+                    <button class="m-g-tab m-active" data-gtab="home">Home</button>
+                    <button class="m-g-tab" data-gtab="about">About</button>
+                    <button class="m-g-tab" data-gtab="contact">Contact</button>
+                    <button class="m-g-tab" data-gtab="bookings">Bookings</button>
+                  </div>
+                </div>
+
+                <div class="m-g-panels-wrap">
+
+                  <div class="m-g-panel m-active" data-gpanel="home">
+                    <div class="m-g-home-hero">
+                      <span class="m-g-hero-eyebrow">Curaçao · Dive center</span>
+                      <div class="m-g-hero-heading">Dive into<br><em>something real.</em></div>
+                      <p class="m-g-hero-sub">Guided reef dives, courses, and underwater adventures for every level.</p>
+                      <div class="m-g-hero-actions">
+                        <span class="m-g-btn-primary">Book a dive →</span>
+                        <span class="m-g-btn-ghost">View courses</span>
+                      </div>
+                    </div>
+                    <div class="m-g-services">
+                      <div class="m-g-service-card">
+                        <div class="m-g-service-icon"></div>
+                        <div class="m-g-service-name">Reef tours</div>
+                        <p class="m-g-service-desc">Daily guided dives to Curaçao's most vibrant reefs.</p>
+                      </div>
+                      <div class="m-g-service-card">
+                        <div class="m-g-service-icon"></div>
+                        <div class="m-g-service-name">Courses</div>
+                        <p class="m-g-service-desc">PADI Open Water to Divemaster certification.</p>
+                      </div>
+                      <div class="m-g-service-card">
+                        <div class="m-g-service-icon"></div>
+                        <div class="m-g-service-name">Equipment</div>
+                        <p class="m-g-service-desc">Full gear rental, servicing, and sales on-site.</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="m-g-panel" data-gpanel="about">
+                    <div class="m-g-about">
+                      <div class="m-g-about-left">
+                        <span class="m-g-about-label">Our story</span>
+                        <div class="m-g-about-title">Born from<br><em>the water.</em></div>
+                        <p class="m-g-about-para">
+                          Reef Divers was started in 2015 by two instructors who fell in love with Curaçao's underwater world. Since then we've taken over 4,000 guests beneath the surface — from first-timers to tech divers.
+                        </p>
+                        <br>
+                        <p class="m-g-about-para">
+                          Our team of eight certified instructors speaks Dutch, English, Spanish, and Papiamentu.
+                        </p>
+                      </div>
+                      <div class="m-g-about-photo">
+                        <span class="m-g-about-photo-label">Team photo</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="m-g-panel" data-gpanel="contact">
+                    <div class="m-g-contact">
+                      <div class="m-g-contact-left">
+                        <div class="m-g-contact-title">Let's<br><em>connect.</em></div>
+                        <div class="m-g-contact-details">
+                          <div class="m-g-contact-item">
+                            <span class="m-g-contact-item-label">Address</span>
+                            <span class="m-g-contact-item-val">Caracasbaaiweg 12, Willemstad</span>
+                          </div>
+                          <div class="m-g-contact-item">
+                            <span class="m-g-contact-item-label">WhatsApp</span>
+                            <span class="m-g-contact-item-val">+5999 000 0000</span>
+                          </div>
+                          <div class="m-g-contact-item">
+                            <span class="m-g-contact-item-label">Email</span>
+                            <span class="m-g-contact-item-val">hello@reefdivers.com</span>
+                          </div>
+                          <div class="m-g-contact-item">
+                            <span class="m-g-contact-item-label">Open</span>
+                            <span class="m-g-contact-item-val">Daily 7:00 – 18:00</span>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="m-g-contact-form">
+                        <div class="m-g-form-field"></div>
+                        <div class="m-g-form-field"></div>
+                        <div class="m-g-form-field m-g-field-tall"></div>
+                        <div class="m-g-form-submit">Send message →</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="m-g-panel" data-gpanel="bookings">
+                    <div class="m-g-bookings">
+                      <span class="m-g-bookings-label">Pick a slot</span>
+                      <div class="m-g-bookings-title">Book your<br>dive.</div>
+                      <p class="m-g-bookings-sub">Available slots for tomorrow — Reef Explorer tour</p>
+                      <div class="m-g-booking-slots">
+                        <div class="m-g-slot">
+                          <span class="m-g-slot-time">07:30</span>
+                          <span class="m-g-slot-status">Available</span>
+                        </div>
+                        <div class="m-g-slot m-slot-selected">
+                          <span class="m-g-slot-time">09:00</span>
+                          <span class="m-g-slot-status">Selected</span>
+                        </div>
+                        <div class="m-g-slot m-slot-booked">
+                          <span class="m-g-slot-time">11:00</span>
+                          <span class="m-g-slot-status">Full</span>
+                        </div>
+                        <div class="m-g-slot">
+                          <span class="m-g-slot-time">14:00</span>
+                          <span class="m-g-slot-status">Available</span>
+                        </div>
+                      </div>
+                      <span class="m-g-booking-cta">Confirm booking →</span>
+                    </div>
+                  </div>
+
+                </div><!-- /m-g-panels-wrap -->
+
+              </div><!-- /pkg-mock -->
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </div><!-- /packages (warm linen) -->
+
+
+  <!-- ══ 03 · PREMIUM (dark atmospheric) ══════════════════════════ -->
+  <section class="pkg-section pkg-section--premium">
+    <div class="pkg-row">
+
+      <!-- Browser — left -->
+      <div class="pkg-visual fade-in">
+        <div class="pkg-browser pkg-browser--premium">
+          <div class="pkg-browser-chrome pkg-browser-chrome--dark">
+            <div class="pkg-browser-dots"><span></span><span></span><span></span></div>
+            <div class="pkg-browser-bar">yourbrand.com</div>
+          </div>
+          <div class="pkg-browser-viewport">
+            <div class="pkg-mock" style="pointer-events:none">
+
+              <div class="m-p-nav">
+                <span class="m-p-logo">Villa Serena</span>
+                <div class="m-p-nav-links">
+                  <span class="m-p-nav-link">Rooms</span>
+                  <span class="m-p-nav-link">Experiences</span>
+                  <span class="m-p-nav-link">Dining</span>
+                </div>
+                <span class="m-p-nav-cta">Reserve</span>
+              </div>
+
+              <div class="m-p-hero">
+                <div class="m-p-blob"></div>
+                <div class="m-p-blob-teal"></div>
+                <div class="m-p-hero-content">
+                  <span class="m-p-hero-eyebrow">Boutique hotel · Bonaire</span>
+                  <div class="m-p-hero-heading">
+                    Where the<br>island <em>breathes.</em>
+                  </div>
+                  <p class="m-p-hero-sub">Nine suites. Private terrace. Steps from the coral reef.</p>
+                  <div class="m-p-hero-cta">
+                    <span class="m-p-btn">Reserve a suite →</span>
+                    <span class="m-p-btn-ghost">Explore rooms</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="m-p-features-strip">
+                <div class="m-p-feature">
+                  <span class="m-p-feature-ghost">I</span>
+                  <div class="m-p-feature-line"></div>
+                  <div class="m-p-feature-title">The<br><em>rooms</em></div>
+                  <p class="m-p-feature-desc">Nine suites, each with a private terrace and sea view.</p>
+                </div>
+                <div class="m-p-feature">
+                  <span class="m-p-feature-ghost">II</span>
+                  <div class="m-p-feature-line"></div>
+                  <div class="m-p-feature-title">The<br><em>kitchen</em></div>
+                  <p class="m-p-feature-desc">Farm-to-table Caribbean cuisine, open for guests and visitors.</p>
+                </div>
+                <div class="m-p-feature">
+                  <span class="m-p-feature-ghost">III</span>
+                  <div class="m-p-feature-line"></div>
+                  <div class="m-p-feature-title">The<br><em>reef</em></div>
+                  <p class="m-p-feature-desc">Direct access to Bonaire's marine park — 15 metres from your door.</p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Copy — right -->
+      <div class="pkg-body fade-in">
+        <span class="pkg-num">Package 03</span>
+        <span class="pkg-tag">Premium</span>
+
+        <h2 class="pkg-title">
+          Presence, not<br>
+          just a <em>website.</em>
+        </h2>
+        <p class="pkg-micro">For brands that want to stand out</p>
+
+        <p class="pkg-desc">
+          Fully custom design, rich motion, and everything needed to position your business as the best in its category. Built for businesses where first impression decides whether someone books or moves on.
+        </p>
+
+        <ul class="pkg-features">
+          <li>Fully custom design — nothing templated</li>
+          <li>Unlimited pages</li>
+          <li>Cinematic hero with motion &amp; atmosphere</li>
+          <li>Booking system or reservation integration</li>
+          <li>Multilingual (Dutch / English / Papiamentu)</li>
+          <li>Professional photo editing &amp; asset preparation</li>
+          <li>Google Search Console &amp; Analytics</li>
+          <li>90-day priority support after launch</li>
+          <li>Delivered in 3–5 weeks</li>
+        </ul>
+
+        <p class="pkg-ideal"><strong>Ideal for:</strong> boutique hotels, high-end restaurants, established tour operators, villas, wedding venues — anyone where looking exceptional is not optional.</p>
+
+        <div class="pkg-price-block">
+          <div class="pkg-price-row">
+            <span class="pkg-price-label">Investment from</span>
+            <span class="pkg-price-amount">€2,500</span>
+          </div>
+          <p class="pkg-price-note">One-time · scoped per project</p>
+        </div>
+
+        <a href="contact.html" class="pkg-cta-btn">Let's talk →</a>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ═══ TRUST NOTES ═══ -->
+  <section class="pkg-trust">
+    <div class="pkg-trust-inner">
+      <div class="fade-in">
+        <span class="pkg-trust-eyebrow">The fine print</span>
+        <h2 class="pkg-trust-heading">
+          No surprises.<br>
+          <em>Ever.</em>
+        </h2>
+      </div>
+      <ul class="pkg-trust-notes fade-in">
+        <li class="pkg-trust-note">
+          <span class="pkg-trust-note-title">One price, everything included</span>
+          <span class="pkg-trust-note-body">Design, copywriting, setup, launch — it's all in. The price I quote is the price you pay.</span>
+        </li>
+        <li class="pkg-trust-note">
+          <span class="pkg-trust-note-title">You own everything</span>
+          <span class="pkg-trust-note-body">Your domain, your hosting, your code. When the site is done, it belongs to you — fully and permanently.</span>
+        </li>
+        <li class="pkg-trust-note">
+          <span class="pkg-trust-note-title">Not sure which package?</span>
+          <span class="pkg-trust-note-body">That's what the first conversation is for. Tell me about your business and I'll tell you what makes sense — no pressure, no proposal, just an honest chat.</span>
+        </li>
+        <li class="pkg-trust-note">
+          <span class="pkg-trust-note-title">Hosting &amp; domain</span>
+          <span class="pkg-trust-note-body">Typically €10–20 per month depending on your setup. I'll explain exactly what you're paying for and help you find the right option.</span>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+
+  <!-- ═══ FINAL CTA ═══ -->
+  <section class="pkg-cta-section">
+    <div class="pkg-cta-inner">
+      <span class="pkg-cta-eyebrow fade-in">Ready when you are</span>
+      <h2 class="pkg-cta-heading fade-in">
+        Let's build<br>
+        <em>something.</em>
+      </h2>
+      <p class="pkg-cta-sub fade-in">
+        No intake forms, no discovery packages. Just a conversation about your business and what you need.
+      </p>
+      <div class="pkg-cta-actions fade-in">
+        <a href="https://wa.me/31637660930" class="pkg-cta-primary">WhatsApp →</a>
+        <a href="mailto:info@jescoinnovation.com" class="pkg-cta-secondary">info@jescoinnovation.com</a>
+      </div>
+    </div>
+  </section>
+
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a href="index.html" class="footer-logo">
+          <img src="assets/logo-horizontal-light.svg" alt="Jesco Innovation" class="footer-logo-img">
+        </a>
+        <span class="footer-descriptor">Web design &middot; Cura&ccedil;ao &amp; Bonaire</span>
+      </div>
+
+      <div class="footer-mid">
+        <span class="footer-tag">Websites that simply work.</span>
+        <a href="contact.html" class="footer-cta-link">Send me your website &rarr;</a>
+      </div>
+
+      <span class="footer-copy">&copy; 2026 Jesco Innovation &middot; Cura&ccedil;ao &amp; Bonaire</span>
+    </div>
+
+    <div class="footer-links">
+      <span class="footer-links-label">Explore</span>
+      <nav class="footer-links-nav" aria-label="Site navigation">
+        <a href="index.html" class="footer-link">Home</a>
+        <a href="about.html" class="footer-link">About</a>
+        <a href="contact.html" class="footer-link">Contact</a>
+        <span class="footer-link-sep" aria-hidden="true">&middot;</span>
+        <a href="bonaire-webdesign.html" class="footer-link">Website Bonaire</a>
+        <a href="curacao-webdesign.html" class="footer-link">Website Cura&ccedil;ao</a>
+        <a href="website-tour-operators.html" class="footer-link">Tour operators</a>
+        <a href="website-restaurants.html" class="footer-link">Restaurants</a>
+        <span class="footer-link-sep" aria-hidden="true">&middot;</span>
+        <a href="bonaire.html" class="footer-link">Visit Bonaire</a>
+        <a href="sailing.html" class="footer-link">Caribbean Sailing</a>
+        <a href="citychronicals.html" class="footer-link">CityChronicles</a>
+      </nav>
+    </div>
+  </footer>
+
+
+  <script>
+    /* ── Scroll fade-in ─────────────────────────────────────── */
+    (function () {
+      const els = document.querySelectorAll('.fade-in');
+      if (!els.length) return;
+      const obs = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+          if (e.isIntersecting) {
+            e.target.classList.add('visible');
+            obs.unobserve(e.target);
+          }
+        });
+      }, { threshold: 0.08 });
+      els.forEach(el => obs.observe(el));
+    })();
+
+    /* ── Nav on scroll ──────────────────────────────────────── */
+    (function () {
+      const nav = document.querySelector('.nav');
+      if (!nav) return;
+      window.addEventListener('scroll', () => {
+        nav.classList.toggle('nav--scrolled', window.scrollY > 60);
+      }, { passive: true });
+    })();
+
+    /* ── Growth mockup smooth tab switching ─────────────────── */
+    (function () {
+      const mock = document.getElementById('growth-mock');
+      if (!mock) return;
+
+      mock.querySelectorAll('.m-g-tab').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const target = btn.dataset.gtab;
+
+          mock.querySelectorAll('.m-g-tab').forEach(b => b.classList.remove('m-active'));
+          btn.classList.add('m-active');
+
+          mock.querySelectorAll('.m-g-panel').forEach(p => p.classList.remove('m-active'));
+          const panel = mock.querySelector(`[data-gpanel="${target}"]`);
+          if (panel) panel.classList.add('m-active');
+        });
+      });
+    })();
+  </script>
+
+</body>
+</html>

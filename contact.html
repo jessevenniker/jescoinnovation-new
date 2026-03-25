@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact · Web design Curaçao & Bonaire · Jesco Innovation</title>
+  <meta name="description" content="Get in touch with Jesco Innovation. Premium web design for local businesses on Curaçao and Bonaire. WhatsApp or email — I respond within a few hours.">
+  <link rel="canonical" href="https://jescoinnovation.com/contact.html">
+  <link rel="icon" type="image/svg+xml" href="assets/icon-light.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="main.css">
+  <style>
+
+    /* ── Contact page ────────────────────────────────────────── */
+
+    body {
+      background:
+        radial-gradient(ellipse 80% 40% at 15% 0%, rgba(190, 120, 42, 0.04) 0%, transparent 55%),
+        var(--navy);
+    }
+
+    .contact-main {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: clamp(7rem, 14vh, 10rem) var(--px) clamp(4rem, 8vh, 6rem);
+      position: relative;
+      overflow: hidden;
+
+      /* Dark atmospheric — same system as homepage hero */
+      --white:      #F2E8D8;
+      --muted:      rgba(242, 232, 216, 0.50);
+      --very-muted: rgba(242, 232, 216, 0.22);
+      --sand:       #C8A46A;
+      --sand-light: #E2CA9E;
+      --sand-muted: #9C7E52;
+      --turq:       #3FC4B2;
+
+      background:
+        radial-gradient(ellipse 65% 75% at 105% 55%, rgba(190, 120, 42, 0.10) 0%, transparent 62%),
+        radial-gradient(ellipse 50% 60% at -5% 50%,  rgba(44, 172, 152, 0.07) 0%, transparent 60%),
+        linear-gradient(to bottom, #152A32 0%, #1A2C35 100%);
+    }
+
+    /* ghost number — ambient depth */
+    .contact-main::before {
+      content: 'J';
+      position: absolute;
+      right: -0.1em;
+      bottom: -0.2em;
+      font-family: var(--serif);
+      font-size: clamp(18rem, 32vw, 38rem);
+      font-weight: 700;
+      color: var(--sand);
+      opacity: 0.028;
+      line-height: 1;
+      letter-spacing: -0.02em;
+      pointer-events: none;
+      user-select: none;
+    }
+
+    .contact-inner {
+      position: relative; z-index: 2;
+      max-width: 720px;
+    }
+
+    .contact-eyebrow {
+      display: block;
+      font-size: 0.65rem;
+      font-weight: 500;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--turq);
+      opacity: 0.65;
+      margin-bottom: 2rem;
+      border-left: 1px solid rgba(63, 196, 178, 0.35);
+      padding-left: 0.85rem;
+    }
+
+    .contact-heading {
+      font-family: var(--serif);
+      font-size: clamp(3.5rem, 8.5vw, 10rem);
+      font-weight: 600;
+      line-height: 0.92;
+      letter-spacing: -0.024em;
+      color: var(--white);
+      margin-bottom: clamp(2rem, 5vh, 3.5rem);
+    }
+
+    .contact-heading em {
+      font-style: italic;
+      font-weight: 400;
+      color: var(--sand);
+    }
+
+    .contact-sub {
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: clamp(1.1rem, 1.8vw, 1.45rem);
+      line-height: 1.55;
+      color: var(--muted);
+      max-width: 420px;
+      margin-bottom: clamp(3rem, 6vh, 4.5rem);
+    }
+
+    /* ── Contact options ─────────────────────────────────────── */
+
+    .contact-options {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      max-width: 480px;
+    }
+
+    .contact-option {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.75rem 0;
+      border-top: 1px solid rgba(244, 237, 224, 0.09);
+      gap: 1.5rem;
+      text-decoration: none;
+      color: inherit;
+      transition: background 0.3s;
+    }
+    .contact-option:last-child { border-bottom: 1px solid rgba(244, 237, 224, 0.09); }
+
+    .contact-option-left {}
+
+    .contact-option-label {
+      display: block;
+      font-size: 0.62rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--sand-muted);
+      margin-bottom: 0.4rem;
+      transition: color 0.25s;
+    }
+
+    .contact-option-value {
+      font-family: var(--serif);
+      font-size: clamp(1.3rem, 2.2vw, 1.85rem);
+      font-weight: 600;
+      color: var(--white);
+      letter-spacing: -0.008em;
+      transition: color 0.25s;
+    }
+
+    .contact-option-value em {
+      font-style: italic;
+      font-weight: 400;
+    }
+
+    .contact-option-arrow {
+      font-size: 1.2rem;
+      color: var(--sand-muted);
+      transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), color 0.25s;
+      flex-shrink: 0;
+    }
+
+    .contact-option:hover .contact-option-label { color: var(--sand); }
+    .contact-option:hover .contact-option-value  { color: var(--sand-light); }
+    .contact-option:hover .contact-option-arrow  { transform: translateX(5px); color: var(--sand); }
+
+    /* ── Bottom note ─────────────────────────────────────────── */
+
+    .contact-note {
+      margin-top: clamp(3rem, 6vh, 5rem);
+      font-size: 0.82rem;
+      line-height: 1.8;
+      color: var(--very-muted);
+      max-width: 360px;
+      padding-left: 1.25rem;
+      border-left: 1px solid rgba(244, 237, 224, 0.12);
+    }
+
+    /* ── Responsive ──────────────────────────────────────────── */
+
+    @media (max-width: 540px) {
+      .contact-main { justify-content: flex-start; }
+      .contact-option-value { font-size: clamp(1.1rem, 5.5vw, 1.5rem); }
+    }
+
+  </style>
+</head>
+<body>
+
+  <nav class="nav">
+    <a href="index.html" class="nav-logo">
+      <img src="assets/logo-horizontal-light.svg" alt="Jesco Innovation" class="nav-logo-img">
+    </a>
+    <ul class="nav-links">
+      <li><a href="projects.html" class="nav-link">Work</a></li>
+      <li><a href="packages.html" class="nav-link">Packages</a></li>
+      <li><a href="about.html" class="nav-link">About</a></li>
+      <li><a href="contact.html" class="nav-link active">Contact</a></li>
+    </ul>
+    <a href="contact.html" class="nav-cta">Let's talk</a>
+  </nav>
+
+  <!-- ═══ MAIN CONTACT ═══ -->
+  <section class="contact-main">
+    <video class="hero-video" autoplay muted loop playsinline preload="metadata">
+      <source src="assets/hero.mp4" type="video/mp4">
+    </video>
+    <div class="contact-inner">
+
+      <span class="contact-eyebrow fade-in">Get in touch</span>
+
+      <h1 class="contact-heading fade-in">
+        Let's build<br>
+        <em>something.</em>
+      </h1>
+
+      <p class="contact-sub fade-in">
+        No intake forms, no discovery packages. Just a conversation about your business and what you need.
+      </p>
+
+      <div class="contact-options fade-in">
+
+        <a href="https://wa.me/31637660930" class="contact-option">
+          <div class="contact-option-left">
+            <span class="contact-option-label">WhatsApp</span>
+            <span class="contact-option-value">Send a message <em>directly</em></span>
+          </div>
+          <span class="contact-option-arrow">→</span>
+        </a>
+
+        <a href="mailto:info@jescoinnovation.com" class="contact-option">
+          <div class="contact-option-left">
+            <span class="contact-option-label">Email</span>
+            <span class="contact-option-value">info@jescoinnovation.com</span>
+          </div>
+          <span class="contact-option-arrow">→</span>
+        </a>
+
+      </div>
+
+      <p class="contact-note fade-in">
+        Based on Curaçao, working across Curaçao and Bonaire. I typically respond within a few hours — the same day at the latest.
+      </p>
+
+      <a href="packages.html" class="fade-in" style="display:inline-block;margin-top:2rem;font-size:0.62rem;letter-spacing:0.2em;text-transform:uppercase;color:rgba(242,232,216,0.32);text-decoration:none;transition:color 0.25s;" onmouseover="this.style.color='rgba(200,164,106,0.7)'" onmouseout="this.style.color='rgba(242,232,216,0.32)'">Not sure what you need? View packages →</a>
+
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a href="index.html" class="footer-logo">
+          <img src="assets/logo-horizontal-light.svg" alt="Jesco Innovation" class="footer-logo-img">
+        </a>
+        <span class="footer-descriptor">Web design &middot; Cura&ccedil;ao &amp; Bonaire</span>
+      </div>
+
+      <div class="footer-mid">
+        <span class="footer-tag">Websites that simply work.</span>
+        <a href="contact.html" class="footer-cta-link">Send me your website &rarr;</a>
+      </div>
+
+      <span class="footer-copy">&copy; 2026 Jesco Innovation &middot; Cura&ccedil;ao &amp; Bonaire</span>
+    </div>
+
+    <div class="footer-links">
+      <span class="footer-links-label">Explore</span>
+      <nav class="footer-links-nav" aria-label="Site navigation">
+        <a href="index.html" class="footer-link">Home</a>
+        <a href="about.html" class="footer-link">About</a>
+        <a href="contact.html" class="footer-link">Contact</a>
+        <span class="footer-link-sep" aria-hidden="true">&middot;</span>
+        <a href="bonaire-webdesign.html" class="footer-link">Website Bonaire</a>
+        <a href="curacao-webdesign.html" class="footer-link">Website Cura&ccedil;ao</a>
+        <a href="website-tour-operators.html" class="footer-link">Tour operators</a>
+        <a href="website-restaurants.html" class="footer-link">Restaurants</a>
+        <span class="footer-link-sep" aria-hidden="true">&middot;</span>
+        <a href="bonaire.html" class="footer-link">Visit Bonaire</a>
+        <a href="sailing.html" class="footer-link">Caribbean Sailing</a>
+        <a href="citychronicals.html" class="footer-link">CityChronicles</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      const els = document.querySelectorAll('.fade-in');
+      if (!els.length) return;
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.08 });
+      els.forEach(el => observer.observe(el));
+    })();
+
+    (function () {
+      const nav = document.querySelector('.nav');
+      if (!nav) return;
+      window.addEventListener('scroll', () => {
+        nav.classList.toggle('nav--scrolled', window.scrollY > 60);
+      }, { passive: true });
+    })();
+  </script>
+</body>
+</html>

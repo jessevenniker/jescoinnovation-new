@@ -1,0 +1,1107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Web design Bonaire · Jesco Innovation</title>
+  <meta name="description" content="Web design for local businesses on Bonaire. Fast, clear websites built to get you found and booked — by a designer who knows the island. From €695.">
+  <link rel="canonical" href="https://jescoinnovation.com/bonaire-webdesign.html">
+
+  <meta property="og:title" content="Web design Bonaire · Jesco Innovation">
+  <meta property="og:description" content="Premium web design for local businesses on Bonaire. Fast, clear, conversion-focused — from €695.">
+  <meta property="og:type" content="website">
+
+  <link rel="icon" type="image/svg+xml" href="assets/icon-light.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="main.css">
+
+  <!-- Structured data — LocalBusiness + Service -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "LocalBusiness",
+        "name": "Jesco Innovation",
+        "url": "https://jescoinnovation.com",
+        "email": "info@jescoinnovation.com",
+        "description": "Premium web design studio for local businesses on Curaçao and Bonaire.",
+        "areaServed": ["Bonaire", "Curaçao"],
+        "priceRange": "€€",
+        "knowsLanguage": ["nl", "en", "pap"]
+      },
+      {
+        "@type": "Service",
+        "name": "Web design Bonaire",
+        "serviceType": "Web Design",
+        "provider": { "@type": "LocalBusiness", "name": "Jesco Innovation" },
+        "areaServed": { "@type": "Place", "name": "Bonaire" },
+        "description": "Custom web design for local businesses on Bonaire — dive centers, tour operators, restaurants, and hotels.",
+        "offers": {
+          "@type": "AggregateOffer",
+          "priceCurrency": "EUR",
+          "lowPrice": "695",
+          "highPrice": "2500"
+        }
+      }
+    ]
+  }
+  </script>
+
+  <style>
+
+    body { background: #152A32; }
+
+    /* ══════════════════════════════════════════════════════════════
+       HERO
+       ══════════════════════════════════════════════════════════════ */
+
+    .seo-hero {
+      position: relative;
+      min-height: 85vh;
+      display: flex;
+      align-items: flex-end;
+      padding: clamp(9rem, 18vh, 14rem) var(--px) clamp(5rem, 10vh, 8rem);
+      overflow: hidden;
+
+      --white:      #F2E8D8;
+      --muted:      rgba(242, 232, 216, 0.50);
+      --very-muted: rgba(242, 232, 216, 0.22);
+      --sand:       #C8A46A;
+      --sand-light: #E2CA9E;
+      --sand-muted: #9C7E52;
+      --turq:       #3FC4B2;
+
+      background:
+        radial-gradient(ellipse 70% 80% at 105% 55%, rgba(190, 120, 42, 0.14) 0%, transparent 62%),
+        radial-gradient(ellipse 55% 65% at -4%  50%, rgba(44, 172, 152, 0.08) 0%, transparent 58%),
+        radial-gradient(ellipse 45% 55% at 55%  115%, rgba(190, 120, 42, 0.10) 0%, transparent 60%),
+        linear-gradient(to bottom, #152A32 0%, #1A2C35 100%);
+    }
+
+    .seo-hero-video {
+      position: absolute;
+      inset: 0;
+      width: 100%; height: 100%;
+      object-fit: cover;
+      object-position: center 30%;
+      opacity: 0.07;
+      filter: blur(14px) saturate(0.5) brightness(0.65);
+      pointer-events: none;
+    }
+
+    .seo-hero-overlay {
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 85% 50% at 50% 115%, rgba(200, 118, 38, 0.24) 0%, transparent 62%);
+      pointer-events: none;
+    }
+
+    .seo-hero-inner {
+      position: relative;
+      z-index: 2;
+      max-width: 860px;
+    }
+
+    .seo-hero-eyebrow {
+      display: block;
+      font-size: 0.65rem;
+      font-weight: 500;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      color: var(--turq);
+      opacity: 0.68;
+      margin-bottom: 2rem;
+      border-left: 1px solid rgba(63, 196, 178, 0.35);
+      padding-left: 0.85rem;
+    }
+
+    .seo-hero-h1 {
+      font-family: var(--serif);
+      font-size: clamp(3.8rem, 9vw, 11rem);
+      font-weight: 600;
+      line-height: 0.9;
+      letter-spacing: -0.026em;
+      color: var(--white);
+      margin-bottom: clamp(1.5rem, 3vh, 2.5rem);
+    }
+
+    .seo-hero-h1 em {
+      font-style: italic;
+      font-weight: 400;
+      color: var(--sand);
+    }
+
+    .seo-hero-sub {
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: clamp(1rem, 1.6vw, 1.35rem);
+      color: var(--muted);
+      max-width: 460px;
+      line-height: 1.65;
+      margin-bottom: clamp(2.5rem, 5vh, 4rem);
+    }
+
+    .seo-hero-actions {
+      display: flex;
+      align-items: center;
+      gap: 1.75rem;
+      flex-wrap: wrap;
+    }
+
+    .seo-hero-cta-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.68rem;
+      font-weight: 500;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: #1A2C35;
+      background: var(--sand);
+      padding: 0.95rem 2rem;
+      border-radius: 3px;
+      text-decoration: none;
+      transition: opacity 0.3s;
+    }
+
+    .seo-hero-cta-primary:hover { opacity: 0.84; }
+
+    .seo-hero-cta-secondary {
+      font-size: 0.68rem;
+      font-weight: 400;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(242, 232, 216, 0.44);
+      text-decoration: none;
+      transition: color 0.25s;
+    }
+
+    .seo-hero-cta-secondary:hover { color: rgba(242, 232, 216, 0.78); }
+
+    /* ══════════════════════════════════════════════════════════════
+       SHARED SECTION STYLES
+       ══════════════════════════════════════════════════════════════ */
+
+    .seo-section {
+      padding: clamp(5rem, 10vw, 8rem) var(--px);
+    }
+
+    .seo-section-label {
+      display: block;
+      font-size: 0.65rem;
+      font-weight: 500;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      opacity: 0.68;
+      margin-bottom: 2.5rem;
+    }
+
+    .seo-h2 {
+      font-family: var(--serif);
+      font-size: clamp(2.2rem, 4.5vw, 5.2rem);
+      font-weight: 600;
+      line-height: 1.02;
+      letter-spacing: -0.02em;
+      margin-bottom: 1.5rem;
+    }
+
+    .seo-h2 em {
+      font-style: italic;
+      font-weight: 400;
+    }
+
+    .seo-lead-text {
+      font-size: clamp(0.95rem, 1.4vw, 1.1rem);
+      line-height: 1.82;
+      max-width: 560px;
+    }
+
+    /* ══════════════════════════════════════════════════════════════
+       SECTION 01  —  PROBLEM  (warm linen)
+       ══════════════════════════════════════════════════════════════ */
+
+    .seo-problem {
+      background: #F2E8D8;
+    }
+
+    .seo-problem .seo-section-label { color: var(--turq); }
+    .seo-problem .seo-h2            { color: var(--white); }
+    .seo-problem .seo-lead-text     { color: var(--muted); margin-bottom: clamp(3rem, 6vh, 5rem); }
+
+    .seo-problem-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: clamp(1.5rem, 3vw, 3rem);
+      max-width: 960px;
+    }
+
+    .seo-problem-item {
+      padding-top: 1.75rem;
+      border-top: 1px solid rgba(28, 45, 52, 0.10);
+    }
+
+    .seo-problem-num {
+      font-family: var(--serif);
+      font-size: 3.5rem;
+      font-weight: 700;
+      color: rgba(28, 45, 52, 0.06);
+      line-height: 1;
+      margin-bottom: 0.75rem;
+      letter-spacing: -0.02em;
+    }
+
+    .seo-problem-title {
+      font-family: var(--serif);
+      font-size: clamp(1.2rem, 1.8vw, 1.6rem);
+      font-weight: 600;
+      color: var(--white);
+      line-height: 1.15;
+      margin-bottom: 0.75rem;
+      letter-spacing: -0.01em;
+    }
+
+    .seo-problem-body {
+      font-size: 0.88rem;
+      color: var(--muted);
+      line-height: 1.78;
+    }
+
+    /* ══════════════════════════════════════════════════════════════
+       SECTION 02  —  SOLUTION  (dark atmospheric)
+       ══════════════════════════════════════════════════════════════ */
+
+    .seo-solution {
+      background:
+        radial-gradient(ellipse 60% 70% at 98% 45%, rgba(190, 120, 42, 0.11) 0%, transparent 58%),
+        radial-gradient(ellipse 50% 60% at 0%  55%, rgba(44, 172, 152, 0.07) 0%, transparent 56%),
+        linear-gradient(to bottom, #152A32 0%, #1A2C35 100%);
+
+      --white:      #F2E8D8;
+      --muted:      rgba(242, 232, 216, 0.50);
+      --very-muted: rgba(242, 232, 216, 0.22);
+      --sand:       #C8A46A;
+      --turq:       #3FC4B2;
+    }
+
+    .seo-solution .seo-section-label { color: var(--turq); }
+    .seo-solution .seo-h2            { color: var(--white); }
+    .seo-solution .seo-lead-text     { color: var(--muted); margin-bottom: clamp(3rem, 6vh, 5rem); }
+
+    .seo-solution-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: clamp(2rem, 4vw, 4rem);
+      max-width: 960px;
+    }
+
+    .seo-solution-item {
+      padding-top: 1.75rem;
+      border-top: 1px solid rgba(242, 232, 216, 0.09);
+    }
+
+    .seo-solution-title {
+      font-family: var(--serif);
+      font-size: clamp(1.2rem, 1.8vw, 1.55rem);
+      font-weight: 600;
+      color: var(--white);
+      line-height: 1.15;
+      margin-bottom: 0.75rem;
+      letter-spacing: -0.01em;
+    }
+
+    .seo-solution-title em {
+      font-style: italic;
+      font-weight: 400;
+      color: var(--sand);
+    }
+
+    .seo-solution-body {
+      font-size: 0.88rem;
+      color: var(--muted);
+      line-height: 1.78;
+    }
+
+    /* ══════════════════════════════════════════════════════════════
+       SECTION 03  —  PROOF  (warm linen)
+       ══════════════════════════════════════════════════════════════ */
+
+    .seo-proof {
+      background: #EAE0CD;
+    }
+
+    .seo-proof .seo-section-label { color: var(--turq); }
+    .seo-proof .seo-h2            { color: var(--white); }
+
+    .seo-proof-inner {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: clamp(3rem, 7vw, 6rem);
+      align-items: center;
+      max-width: 1040px;
+    }
+
+    .seo-proof-quote {
+      font-family: var(--serif);
+      font-size: clamp(1.25rem, 2.2vw, 1.85rem);
+      font-style: italic;
+      font-weight: 400;
+      color: var(--white);
+      line-height: 1.55;
+      margin-bottom: 1.75rem;
+      letter-spacing: -0.008em;
+    }
+
+    .seo-proof-attr {
+      font-size: 0.78rem;
+      color: var(--muted);
+      letter-spacing: 0.06em;
+      margin-bottom: 2.5rem;
+    }
+
+    .seo-proof-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.68rem;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--sand);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(140, 94, 28, 0.28);
+      padding-bottom: 0.2rem;
+      transition: border-color 0.25s, opacity 0.25s;
+    }
+
+    .seo-proof-link:hover { opacity: 0.72; }
+
+    .seo-proof-card {
+      background:
+        radial-gradient(ellipse 70% 65% at 90% 40%, rgba(200, 148, 60, 0.14) 0%, transparent 62%),
+        linear-gradient(148deg, #F0E8D4 0%, #E8DFD0 100%);
+      border-radius: 16px;
+      overflow: hidden;
+      padding: 2.5rem;
+      min-height: 260px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      position: relative;
+    }
+
+    .seo-proof-card-label {
+      font-size: 0.6rem;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: rgba(28, 45, 52, 0.35);
+      margin-bottom: 0.5rem;
+    }
+
+    .seo-proof-card-title {
+      font-family: var(--serif);
+      font-size: 2rem;
+      font-weight: 600;
+      color: rgba(28, 45, 52, 0.82);
+      line-height: 1.05;
+      letter-spacing: -0.015em;
+    }
+
+    .seo-proof-card-title em {
+      font-style: italic;
+      font-weight: 400;
+      color: var(--sand);
+    }
+
+    .seo-proof-card-tag {
+      position: absolute;
+      top: 1.75rem;
+      right: 1.75rem;
+      font-size: 0.58rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--turq);
+      border: 1px solid rgba(26, 145, 132, 0.3);
+      border-radius: 20px;
+      padding: 0.28rem 0.7rem;
+    }
+
+    /* ══════════════════════════════════════════════════════════════
+       SECTION 04  —  INDUSTRIES  (warm linen)
+       ══════════════════════════════════════════════════════════════ */
+
+    .seo-industries {
+      background: #F2E8D8;
+    }
+
+    .seo-industries .seo-section-label { color: var(--turq); }
+    .seo-industries .seo-h2            { color: var(--white); margin-bottom: 0.75rem; }
+
+    .seo-industries-sub {
+      font-size: clamp(0.92rem, 1.3vw, 1.05rem);
+      color: var(--muted);
+      line-height: 1.75;
+      max-width: 480px;
+      margin-bottom: clamp(3rem, 6vh, 4.5rem);
+    }
+
+    .seo-industries-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: rgba(28, 45, 52, 0.08);
+      border: 1px solid rgba(28, 45, 52, 0.08);
+      border-radius: 8px;
+      overflow: hidden;
+      max-width: 860px;
+    }
+
+    .seo-industry {
+      background: #F2E8D8;
+      padding: 2rem 2rem;
+      transition: background 0.25s;
+    }
+
+    .seo-industry:hover { background: #EDE4CF; }
+
+    .seo-industry-icon {
+      width: 28px;
+      height: 2px;
+      background: var(--sand);
+      opacity: 0.4;
+      margin-bottom: 1.1rem;
+    }
+
+    .seo-industry-title {
+      font-family: var(--serif);
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: var(--white);
+      letter-spacing: -0.01em;
+      margin-bottom: 0.4rem;
+    }
+
+    .seo-industry-body {
+      font-size: 0.82rem;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+
+    /* ══════════════════════════════════════════════════════════════
+       SECTION 05  —  PROCESS  (dark atmospheric)
+       ══════════════════════════════════════════════════════════════ */
+
+    .seo-process {
+      background:
+        radial-gradient(ellipse 55% 65% at 100% 50%, rgba(190, 120, 42, 0.10) 0%, transparent 58%),
+        linear-gradient(to bottom, #1A2C35 0%, #152A32 100%);
+
+      --white:      #F2E8D8;
+      --muted:      rgba(242, 232, 216, 0.50);
+      --very-muted: rgba(242, 232, 216, 0.22);
+      --sand:       #C8A46A;
+      --turq:       #3FC4B2;
+    }
+
+    .seo-process .seo-section-label { color: var(--turq); }
+    .seo-process .seo-h2            { color: var(--white); margin-bottom: clamp(3rem, 6vh, 5rem); }
+
+    .seo-steps {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: clamp(2rem, 4vw, 4rem);
+      max-width: 860px;
+    }
+
+    .seo-step {
+      padding-top: 1.75rem;
+      border-top: 1px solid rgba(242, 232, 216, 0.09);
+    }
+
+    .seo-step-num {
+      font-family: var(--serif);
+      font-size: 3rem;
+      font-weight: 700;
+      color: rgba(242, 232, 216, 0.06);
+      line-height: 1;
+      margin-bottom: 0.75rem;
+    }
+
+    .seo-step-title {
+      font-family: var(--serif);
+      font-size: 1.45rem;
+      font-weight: 600;
+      color: var(--white);
+      margin-bottom: 0.65rem;
+      letter-spacing: -0.01em;
+    }
+
+    .seo-step-body {
+      font-size: 0.88rem;
+      color: var(--muted);
+      line-height: 1.78;
+    }
+
+    /* ══════════════════════════════════════════════════════════════
+       SECTION 06  —  FAQ  (warm linen)
+       ══════════════════════════════════════════════════════════════ */
+
+    .seo-faq {
+      background: #F2E8D8;
+    }
+
+    .seo-faq .seo-section-label { color: var(--turq); }
+    .seo-faq .seo-h2            { color: var(--white); margin-bottom: clamp(3rem, 6vh, 5rem); }
+
+    .seo-faq-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      max-width: 860px;
+    }
+
+    .seo-faq-item {
+      padding: 2rem 0;
+      border-bottom: 1px solid rgba(28, 45, 52, 0.08);
+      padding-right: 3rem;
+    }
+
+    .seo-faq-item:nth-child(even) {
+      padding-right: 0;
+      padding-left: 2rem;
+      border-left: 1px solid rgba(28, 45, 52, 0.08);
+    }
+
+    .seo-faq-item:nth-child(3),
+    .seo-faq-item:nth-child(4) {
+      border-bottom: 0;
+    }
+
+    .seo-faq-q {
+      font-family: var(--serif);
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--white);
+      line-height: 1.25;
+      margin-bottom: 0.75rem;
+      letter-spacing: -0.01em;
+    }
+
+    .seo-faq-a {
+      font-size: 0.88rem;
+      color: var(--muted);
+      line-height: 1.78;
+    }
+
+    .seo-faq-a a {
+      color: var(--sand);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(140, 94, 28, 0.25);
+      transition: opacity 0.25s;
+    }
+
+    .seo-faq-a a:hover { opacity: 0.7; }
+
+    /* ══════════════════════════════════════════════════════════════
+       SECTION 07  —  FINAL CTA  (dark)
+       ══════════════════════════════════════════════════════════════ */
+
+    .seo-cta {
+      background:
+        radial-gradient(ellipse 68% 78% at 105% 55%, rgba(190, 120, 42, 0.13) 0%, transparent 60%),
+        radial-gradient(ellipse 55% 65% at -5%  50%, rgba(44, 172, 152, 0.08) 0%, transparent 58%),
+        linear-gradient(to bottom, #152A32 0%, #1A2C35 100%);
+      padding: clamp(7rem, 13vw, 11rem) var(--px);
+
+      --white:      #F2E8D8;
+      --muted:      rgba(242, 232, 216, 0.50);
+      --sand:       #C8A46A;
+      --turq:       #3FC4B2;
+    }
+
+    .seo-cta-inner { max-width: 720px; }
+
+    .seo-cta .seo-section-label { color: var(--turq); }
+
+    .seo-cta-heading {
+      font-family: var(--serif);
+      font-size: clamp(3rem, 7.5vw, 9rem);
+      font-weight: 600;
+      line-height: 0.92;
+      letter-spacing: -0.026em;
+      color: var(--white);
+      margin-bottom: clamp(1.5rem, 3vh, 2.5rem);
+    }
+
+    .seo-cta-heading em {
+      font-style: italic;
+      font-weight: 400;
+      color: var(--sand);
+    }
+
+    .seo-cta-sub {
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: clamp(1rem, 1.6vw, 1.3rem);
+      color: var(--muted);
+      max-width: 400px;
+      line-height: 1.65;
+      margin-bottom: clamp(2.5rem, 5vh, 4rem);
+    }
+
+    .seo-cta-actions {
+      display: flex;
+      align-items: center;
+      gap: 1.75rem;
+      flex-wrap: wrap;
+    }
+
+    .seo-cta-wa {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.68rem;
+      font-weight: 500;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: #1A2C35;
+      background: var(--sand);
+      padding: 0.95rem 2rem;
+      border-radius: 3px;
+      text-decoration: none;
+      transition: opacity 0.3s;
+    }
+
+    .seo-cta-wa:hover { opacity: 0.84; }
+
+    .seo-cta-email {
+      font-size: 0.68rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(242, 232, 216, 0.36);
+      text-decoration: none;
+      transition: color 0.25s;
+    }
+
+    .seo-cta-email:hover { color: rgba(242, 232, 216, 0.72); }
+
+    .seo-cta-pkg {
+      display: block;
+      margin-top: 1.75rem;
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(242, 232, 216, 0.28);
+      text-decoration: none;
+      transition: color 0.25s;
+    }
+
+    .seo-cta-pkg:hover { color: rgba(200, 164, 106, 0.65); }
+
+    /* ══════════════════════════════════════════════════════════════
+       RESPONSIVE
+       ══════════════════════════════════════════════════════════════ */
+
+    @media (max-width: 900px) {
+      .seo-problem-grid,
+      .seo-solution-grid,
+      .seo-steps { grid-template-columns: 1fr; gap: 2rem; }
+
+      .seo-industries-grid { grid-template-columns: 1fr 1fr; }
+
+      .seo-proof-inner { grid-template-columns: 1fr; }
+
+      .seo-faq-list { grid-template-columns: 1fr; }
+      .seo-faq-item:nth-child(even) { padding-left: 0; border-left: 0; }
+      .seo-faq-item:nth-child(3) { border-bottom: 1px solid rgba(28, 45, 52, 0.08); }
+      .seo-faq-item:last-child { border-bottom: 0; }
+    }
+
+    @media (max-width: 580px) {
+      .seo-industries-grid { grid-template-columns: 1fr; }
+    }
+
+  </style>
+</head>
+<body>
+
+  <nav class="nav">
+    <a href="index.html" class="nav-logo">
+      <img src="assets/logo-horizontal-light.svg" alt="Jesco Innovation — web design Curaçao en Bonaire" class="nav-logo-img">
+    </a>
+    <ul class="nav-links">
+      <li><a href="projects.html" class="nav-link">Work</a></li>
+      <li><a href="packages.html" class="nav-link">Packages</a></li>
+      <li><a href="about.html" class="nav-link">About</a></li>
+      <li><a href="contact.html" class="nav-link">Contact</a></li>
+    </ul>
+    <a href="contact.html" class="nav-cta">Let's talk</a>
+  </nav>
+
+
+  <!-- ═══ HERO ═══ -->
+  <section class="seo-hero">
+    <video class="seo-hero-video" autoplay muted loop playsinline preload="metadata">
+      <source src="assets/hero.mp4" type="video/mp4">
+    </video>
+    <div class="seo-hero-overlay"></div>
+
+    <div class="seo-hero-inner">
+      <span class="seo-hero-eyebrow fade-in">Bonaire · Web design</span>
+
+      <h1 class="seo-hero-h1 fade-in">
+        Bonaire's<br>
+        local web <em>designer.</em>
+      </h1>
+
+      <p class="seo-hero-sub fade-in">
+        For dive shops, tour operators, restaurants, and guesthouses on Bonaire — a website that gets you found, builds trust, and makes it easy for people to book you directly.
+      </p>
+
+      <div class="seo-hero-actions fade-in">
+        <a href="packages.html" class="seo-hero-cta-primary">View packages →</a>
+        <a href="contact.html" class="seo-hero-cta-secondary">or send me a message</a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══ PROBLEM ═══ -->
+  <section class="seo-problem seo-section">
+    <span class="seo-section-label fade-in">Why it matters</span>
+
+    <h2 class="seo-h2 fade-in">
+      Most businesses on Bonaire<br>
+      are <em>invisible online.</em>
+    </h2>
+
+    <p class="seo-lead-text fade-in">
+      Bonaire has around thirty restaurants, a handful of dive shops, and a few dozen tour operations. When a tourist — fresh off a dive or browsing their hotel WiFi — searches for something to do tomorrow, only a few businesses show up. The ones with a clear, well-built website. If yours isn't one of them, that customer goes to someone who is.
+    </p>
+
+    <div class="seo-problem-grid">
+
+      <div class="seo-problem-item fade-in">
+        <div class="seo-problem-num">01</div>
+        <h3 class="seo-problem-title">You're not being found.</h3>
+        <p class="seo-problem-body">
+          Most Bonaire business websites have no real SEO structure. No clear titles, no geographic signals, no content that tells Google what you offer. If you're not on the first page, you might as well not exist.
+        </p>
+      </div>
+
+      <div class="seo-problem-item fade-in">
+        <div class="seo-problem-num">02</div>
+        <h3 class="seo-problem-title">Visitors leave without contacting you.</h3>
+        <p class="seo-problem-body">
+          A slow load, no clear next step, no WhatsApp button, photos that don't load on mobile — visitors make a decision in three seconds. If your site doesn't immediately answer "can I trust this business?", they're gone.
+        </p>
+      </div>
+
+      <div class="seo-problem-item fade-in">
+        <div class="seo-problem-num">03</div>
+        <h3 class="seo-problem-title">The site doesn't reflect who you are.</h3>
+        <p class="seo-problem-body">
+          A generic Wix template doesn't tell the story of a boutique dive shop that's been operating on Bonaire for fifteen years. Your website is often the first impression — and it should feel like you.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ═══ SOLUTION ═══ -->
+  <section class="seo-solution seo-section">
+    <span class="seo-section-label fade-in">A different approach</span>
+
+    <h2 class="seo-h2 fade-in">
+      Built to get you<br>
+      <em>customers, not compliments.</em>
+    </h2>
+
+    <p class="seo-lead-text fade-in">
+      Every decision on your website — the layout, the copy, the structure — should point toward one outcome: making it easy for the right person to get in touch or book. That's what I build toward.
+    </p>
+
+    <div class="seo-solution-grid">
+
+      <div class="seo-solution-item fade-in">
+        <h3 class="seo-solution-title">Strategy <em>before</em> design.</h3>
+        <p class="seo-solution-body">
+          Before I open a design tool, we talk about your customers, your business, and what your website needs to do. That conversation drives every decision — the layout, the copy, the structure. Nothing is guesswork.
+        </p>
+      </div>
+
+      <div class="seo-solution-item fade-in">
+        <h3 class="seo-solution-title">Clean, <em>fast,</em> premium.</h3>
+        <p class="seo-solution-body">
+          Sites built to load quickly on any connection, look great on any screen, and feel like a business worth booking. No bloated page builders. No code that slows everything down. Just clean, hand-built work.
+        </p>
+      </div>
+
+      <div class="seo-solution-item fade-in">
+        <h3 class="seo-solution-title">SEO <em>built in</em> from the start.</h3>
+        <p class="seo-solution-body">
+          The right page titles, heading structure, geographic signals, and speed — all of it built in from day one. Not as an afterthought. Your site should be as findable as it is beautiful.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ═══ PROOF ═══ -->
+  <section class="seo-proof seo-section">
+    <span class="seo-section-label fade-in">On Bonaire</span>
+
+    <div class="seo-proof-inner">
+
+      <div class="fade-in">
+        <h2 class="seo-h2" style="color: var(--white); margin-bottom: 1.75rem;">
+          Real results for<br>
+          a real <em>business.</em>
+        </h2>
+
+        <p class="seo-proof-quote">
+          "Within the first two weeks, she was sending the site link in replies to enquiry emails — something she'd avoided doing before because the old site didn't look professional."
+        </p>
+        <p class="seo-proof-attr">— Bonaire tourism business, redesigned 2024</p>
+
+        <a href="bonaire.html" class="seo-proof-link">See the full case study →</a>
+      </div>
+
+      <div class="fade-in">
+        <a href="bonaire.html" class="seo-proof-card" style="display:flex; text-decoration:none;">
+          <span class="seo-proof-card-tag">Case study</span>
+          <span class="seo-proof-card-label">Bonaire · Tourism website</span>
+          <div class="seo-proof-card-title">
+            Built for<br>the <em>island.</em>
+          </div>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ═══ INDUSTRIES ═══ -->
+  <section class="seo-industries seo-section">
+    <span class="seo-section-label fade-in">Who I work with</span>
+
+    <h2 class="seo-h2 fade-in">
+      Every kind of<br>
+      <em>local business.</em>
+    </h2>
+
+    <p class="seo-industries-sub fade-in">
+      Whether you run a dive center, a guesthouse, a restaurant, or a tour operation — the need is the same: a clear, professional presence that gets you found and makes it easy for customers to say yes.
+    </p>
+
+    <div class="seo-industries-grid fade-in">
+
+      <div class="seo-industry">
+        <div class="seo-industry-icon"></div>
+        <div class="seo-industry-title">Dive centers</div>
+        <p class="seo-industry-body">Course pages, dive schedules, booking integration. Built for the mix of international and local divers.</p>
+      </div>
+
+      <div class="seo-industry">
+        <div class="seo-industry-icon"></div>
+        <div class="seo-industry-title">Tour operators</div>
+        <p class="seo-industry-body">Flamingo tours, boat trips, snorkel excursions. See what a <a href="website-tour-operators.html">tour operator website</a> on Bonaire should include.</p>
+      </div>
+
+      <div class="seo-industry">
+        <div class="seo-industry-icon"></div>
+        <div class="seo-industry-title">Hotels &amp; guesthouses</div>
+        <p class="seo-industry-body">Room presentation, availability, and a clear booking flow that doesn't lose guests to OTAs.</p>
+      </div>
+
+      <div class="seo-industry">
+        <div class="seo-industry-icon"></div>
+        <div class="seo-industry-title">Restaurants &amp; cafés</div>
+        <p class="seo-industry-body">Menu, atmosphere, location, and a WhatsApp reservation link. See what a <a href="website-restaurants.html">restaurant website</a> needs to convert hungry tourists.</p>
+      </div>
+
+      <div class="seo-industry">
+        <div class="seo-industry-icon"></div>
+        <div class="seo-industry-title">Watersports &amp; charters</div>
+        <p class="seo-industry-body">Kite schools, boat charters, sailing experiences — built to capture seasonal and tourist traffic.</p>
+      </div>
+
+      <div class="seo-industry">
+        <div class="seo-industry-icon"></div>
+        <div class="seo-industry-title">Rentals &amp; services</div>
+        <p class="seo-industry-body">Car and scooter rentals, local services, and more. Clean, professional, and easy to find.</p>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ═══ PROCESS ═══ -->
+  <section class="seo-process seo-section">
+    <span class="seo-section-label fade-in">How it works</span>
+
+    <h2 class="seo-h2 fade-in">
+      From first message<br>
+      <em>to live site.</em>
+    </h2>
+
+    <div class="seo-steps">
+
+      <div class="seo-step fade-in">
+        <div class="seo-step-num">01</div>
+        <h3 class="seo-step-title">We talk.</h3>
+        <p class="seo-step-body">
+          A short conversation — WhatsApp, phone, or a quick video call. You tell me about your business. I tell you what I think makes sense. No obligation, no intake forms.
+        </p>
+      </div>
+
+      <div class="seo-step fade-in">
+        <div class="seo-step-num">02</div>
+        <h3 class="seo-step-title">I build.</h3>
+        <p class="seo-step-body">
+          I handle everything: design, copy, setup, and launch. You stay in the loop and review before anything goes live. Most sites are ready within two weeks.
+        </p>
+      </div>
+
+      <div class="seo-step fade-in">
+        <div class="seo-step-num">03</div>
+        <h3 class="seo-step-title">You go live.</h3>
+        <p class="seo-step-body">
+          Your site is online — fast, clean, and working. I stay reachable after launch. If something needs adjusting, I'm a WhatsApp message away.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ═══ FAQ ═══ -->
+  <section class="seo-faq seo-section">
+    <span class="seo-section-label fade-in">Common questions</span>
+
+    <h2 class="seo-h2 fade-in">Straight <em>answers.</em></h2>
+
+    <div class="seo-faq-list">
+
+      <div class="seo-faq-item fade-in">
+        <h3 class="seo-faq-q">Do you work specifically with businesses on Bonaire?</h3>
+        <p class="seo-faq-a">
+          Yes. I'm based in the Caribbean — Curaçao — and work regularly with businesses on Bonaire. I know the local market, the Dutch-English mix of visitors, and what actually matters to customers here.
+        </p>
+      </div>
+
+      <div class="seo-faq-item fade-in">
+        <h3 class="seo-faq-q">How long does it take to build a site?</h3>
+        <p class="seo-faq-a">
+          Starter packages (one-page sites) are typically done in 5–7 days. Growth packages (multi-page, with booking or contact forms) take 10–14 days. Premium projects are scoped per project — usually 3–5 weeks.
+        </p>
+      </div>
+
+      <div class="seo-faq-item fade-in">
+        <h3 class="seo-faq-q">What does a website cost on Bonaire?</h3>
+        <p class="seo-faq-a">
+          My packages start at €695 for a clean, professional one-page site. A full multi-page site with booking and contact forms starts at €1,350. See full pricing on the <a href="packages.html">packages page</a>. All prices are one-time — no monthly fees.
+        </p>
+      </div>
+
+      <div class="seo-faq-item fade-in">
+        <h3 class="seo-faq-q">Do I need to provide content and photos?</h3>
+        <p class="seo-faq-a">
+          No. Copywriting and basic photo sourcing are included in every package. If you have your own photos, I'll make them work. If not, I'll find the right visuals for your business.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ═══ FINAL CTA ═══ -->
+  <section class="seo-cta">
+    <div class="seo-cta-inner">
+      <span class="seo-section-label fade-in" style="color: var(--turq);">Bonaire · Let's get started</span>
+
+      <h2 class="seo-cta-heading fade-in">
+        Let's build something<br>
+        <em>for Bonaire.</em>
+      </h2>
+
+      <p class="seo-cta-sub fade-in">
+        A short conversation is all it takes. WhatsApp works fine — most projects start there.
+      </p>
+
+      <div class="seo-cta-actions fade-in">
+        <a href="https://wa.me/31637660930" class="seo-cta-wa">WhatsApp →</a>
+        <a href="mailto:info@jescoinnovation.com" class="seo-cta-email">info@jescoinnovation.com</a>
+      </div>
+
+      <a href="packages.html" class="seo-cta-pkg fade-in">Not sure which package fits? View pricing →</a>
+    </div>
+  </section>
+
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a href="index.html" class="footer-logo">
+          <img src="assets/logo-horizontal-light.svg" alt="Jesco Innovation" class="footer-logo-img">
+        </a>
+        <span class="footer-descriptor">Web design &middot; Cura&ccedil;ao &amp; Bonaire</span>
+      </div>
+
+      <div class="footer-mid">
+        <span class="footer-tag">Websites that simply work.</span>
+        <a href="contact.html" class="footer-cta-link">Send me your website &rarr;</a>
+      </div>
+
+      <span class="footer-copy">&copy; 2026 Jesco Innovation &middot; Cura&ccedil;ao &amp; Bonaire</span>
+    </div>
+
+    <div class="footer-links">
+      <span class="footer-links-label">Explore</span>
+      <nav class="footer-links-nav" aria-label="Site navigation">
+        <a href="index.html" class="footer-link">Home</a>
+        <a href="about.html" class="footer-link">About</a>
+        <a href="contact.html" class="footer-link">Contact</a>
+        <span class="footer-link-sep" aria-hidden="true">&middot;</span>
+        <a href="bonaire-webdesign.html" class="footer-link">Website Bonaire</a>
+        <a href="curacao-webdesign.html" class="footer-link">Website Cura&ccedil;ao</a>
+        <a href="website-tour-operators.html" class="footer-link">Tour operators</a>
+        <a href="website-restaurants.html" class="footer-link">Restaurants</a>
+        <span class="footer-link-sep" aria-hidden="true">&middot;</span>
+        <a href="bonaire.html" class="footer-link">Visit Bonaire</a>
+        <a href="sailing.html" class="footer-link">Caribbean Sailing</a>
+        <a href="citychronicals.html" class="footer-link">CityChronicles</a>
+      </nav>
+    </div>
+  </footer>
+
+
+  <script>
+    (function () {
+      const els = document.querySelectorAll('.fade-in');
+      if (!els.length) return;
+      const obs = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+          if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }
+        });
+      }, { threshold: 0.08 });
+      els.forEach(el => obs.observe(el));
+    })();
+
+    (function () {
+      const nav = document.querySelector('.nav');
+      if (!nav) return;
+      window.addEventListener('scroll', () => {
+        nav.classList.toggle('nav--scrolled', window.scrollY > 60);
+      }, { passive: true });
+    })();
+  </script>
+
+</body>
+</html>
