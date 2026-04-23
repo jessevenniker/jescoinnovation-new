@@ -1,0 +1,26 @@
+{
+  "redirects": [
+    {
+      "source": "/sailing.html",
+      "destination": "/stagestart.html",
+      "permanent": true
+    },
+    {
+      "source": "/nl/sailing.html",
+      "destination": "/nl/stagestart.html",
+      "permanent": true
+    },
+    {
+      "source": "/services-wordpress.html",
+      "destination": "/packages.html",
+      "permanent": true
+    },
+    {
+      "source": "/services-wordpress",
+      "destination": "/packages.html",
+      "permanent": true
+    }
+  ],
+  "cleanUrls": false,
+  "trailingSlash": false
+}

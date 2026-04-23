@@ -1,99 +1,220 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
 
-  <!-- Core pages -->
+  <!-- ═══ CORE (EN) ═══ -->
   <url>
     <loc>https://jescoinnovation.com/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jescoinnovation.com/" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://jescoinnovation.com/nl/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jescoinnovation.com/" />
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
-
   <url>
     <loc>https://jescoinnovation.com/packages.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jescoinnovation.com/packages.html" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://jescoinnovation.com/nl/packages.html" />
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
+  <url>
+    <loc>https://jescoinnovation.com/projects.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jescoinnovation.com/projects.html" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://jescoinnovation.com/nl/projects.html" />
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://jescoinnovation.com/about.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jescoinnovation.com/about.html" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://jescoinnovation.com/nl/about.html" />
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
   <url>
     <loc>https://jescoinnovation.com/contact.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jescoinnovation.com/contact.html" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://jescoinnovation.com/nl/contact.html" />
     <changefreq>yearly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.8</priority>
   </url>
 
-  <!-- SEO landing pages -->
+  <!-- ═══ SEO LANDING (EN) ═══ -->
   <url>
     <loc>https://jescoinnovation.com/bonaire-webdesign.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jescoinnovation.com/bonaire-webdesign.html" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://jescoinnovation.com/nl/bonaire-webdesign.html" />
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
     <loc>https://jescoinnovation.com/curacao-webdesign.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jescoinnovation.com/curacao-webdesign.html" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://jescoinnovation.com/nl/curacao-webdesign.html" />
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-
   <url>
     <loc>https://jescoinnovation.com/website-tour-operators.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jescoinnovation.com/website-tour-operators.html" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://jescoinnovation.com/nl/website-tour-operators.html" />
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-
   <url>
     <loc>https://jescoinnovation.com/website-restaurants.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jescoinnovation.com/website-restaurants.html" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://jescoinnovation.com/nl/website-restaurants.html" />
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-
   <url>
     <loc>https://jescoinnovation.com/website-kosten.html</loc>
     <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- ═══ CASE STUDIES (EN) ═══ -->
+  <url>
+    <loc>https://jescoinnovation.com/bonaire.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jescoinnovation.com/bonaire.html" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://jescoinnovation.com/nl/bonaire.html" />
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://jescoinnovation.com/stagestart.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jescoinnovation.com/stagestart.html" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://jescoinnovation.com/nl/stagestart.html" />
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://jescoinnovation.com/citychronicals.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jescoinnovation.com/citychronicals.html" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://jescoinnovation.com/nl/citychronicals.html" />
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://jescoinnovation.com/dive-center.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jescoinnovation.com/dive-center.html" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://jescoinnovation.com/nl/dive-center.html" />
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://jescoinnovation.com/dive-school.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jescoinnovation.com/dive-school.html" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://jescoinnovation.com/nl/dive-school.html" />
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- ═══ CORE (NL) ═══ -->
+  <url>
+    <loc>https://jescoinnovation.com/nl/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jescoinnovation.com/" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://jescoinnovation.com/nl/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://jescoinnovation.com/" />
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://jescoinnovation.com/nl/packages.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jescoinnovation.com/packages.html" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://jescoinnovation.com/nl/packages.html" />
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://jescoinnovation.com/nl/projects.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jescoinnovation.com/projects.html" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://jescoinnovation.com/nl/projects.html" />
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://jescoinnovation.com/nl/about.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jescoinnovation.com/about.html" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://jescoinnovation.com/nl/about.html" />
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://jescoinnovation.com/nl/contact.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jescoinnovation.com/contact.html" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://jescoinnovation.com/nl/contact.html" />
+    <changefreq>yearly</changefreq>
     <priority>0.8</priority>
   </url>
 
-  <!-- Work / portfolio -->
+  <!-- ═══ SEO LANDING (NL) ═══ -->
   <url>
-    <loc>https://jescoinnovation.com/projects.html</loc>
+    <loc>https://jescoinnovation.com/nl/bonaire-webdesign.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jescoinnovation.com/bonaire-webdesign.html" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://jescoinnovation.com/nl/bonaire-webdesign.html" />
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://jescoinnovation.com/nl/curacao-webdesign.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jescoinnovation.com/curacao-webdesign.html" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://jescoinnovation.com/nl/curacao-webdesign.html" />
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://jescoinnovation.com/nl/website-tour-operators.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jescoinnovation.com/website-tour-operators.html" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://jescoinnovation.com/nl/website-tour-operators.html" />
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://jescoinnovation.com/nl/website-restaurants.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jescoinnovation.com/website-restaurants.html" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://jescoinnovation.com/nl/website-restaurants.html" />
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
-  <!-- Case studies -->
+  <!-- ═══ CASE STUDIES (NL) ═══ -->
   <url>
-    <loc>https://jescoinnovation.com/bonaire.html</loc>
+    <loc>https://jescoinnovation.com/nl/bonaire.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jescoinnovation.com/bonaire.html" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://jescoinnovation.com/nl/bonaire.html" />
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
-
   <url>
-    <loc>https://jescoinnovation.com/citychronicals.html</loc>
+    <loc>https://jescoinnovation.com/nl/stagestart.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jescoinnovation.com/stagestart.html" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://jescoinnovation.com/nl/stagestart.html" />
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://jescoinnovation.com/nl/citychronicals.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jescoinnovation.com/citychronicals.html" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://jescoinnovation.com/nl/citychronicals.html" />
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
-
   <url>
-    <loc>https://jescoinnovation.com/dive-center.html</loc>
+    <loc>https://jescoinnovation.com/nl/dive-center.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jescoinnovation.com/dive-center.html" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://jescoinnovation.com/nl/dive-center.html" />
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
-
   <url>
-    <loc>https://jescoinnovation.com/stagestart.html</loc>
+    <loc>https://jescoinnovation.com/nl/dive-school.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://jescoinnovation.com/dive-school.html" />
+    <xhtml:link rel="alternate" hreflang="nl" href="https://jescoinnovation.com/nl/dive-school.html" />
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
-  </url>
-
-  <url>
-    <loc>https://jescoinnovation.com/dive-school.html</loc>
-    <changefreq>yearly</changefreq>
-    <priority>0.6</priority>
-  </url>
-
-  <!-- About -->
-  <url>
-    <loc>https://jescoinnovation.com/about.html</loc>
-    <changefreq>yearly</changefreq>
-    <priority>0.5</priority>
   </url>
 
 </urlset>
