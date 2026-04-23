@@ -312,6 +312,22 @@
     }
 
   </style>
+
+  <!-- Structured data — LocalBusiness -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "Jesco Innovation",
+    "url": "https://jescoinnovation.com",
+    "email": "info@jescoinnovation.com",
+    "description": "Premium web design studio for local businesses on Curaçao and Bonaire.",
+    "areaServed": ["Curaçao", "Bonaire"],
+    "priceRange": "€€",
+    "knowsLanguage": ["nl", "en", "pap"],
+    "serviceType": "Web Design"
+  }
+  </script>
 </head>
 <body>
 
@@ -359,7 +375,7 @@
       <div class="work-entry-image-link work-entry-image">
         <div class="bonaire-iframe-wrap">
           <iframe
-            src="https://www.visit-bonaire.com"
+            data-src="https://www.visit-bonaire.com"
             class="bonaire-live-iframe"
             title="Visit Bonaire — live preview"
             loading="lazy"
@@ -382,7 +398,7 @@
       <div class="work-entry-image-link work-entry-image">
         <div class="stage-iframe-wrap">
           <iframe
-            src="https://stagestartcuracao.nl"
+            data-src="https://stagestartcuracao.nl"
             class="stage-live-iframe"
             title="Stagestart Curaçao — live preview"
             loading="lazy"
@@ -405,7 +421,7 @@
       <div class="work-entry-image-link work-entry-image">
         <div class="city-iframe-wrap">
           <iframe
-            src="https://citychronicles.app/"
+            data-src="https://citychronicles.app/"
             class="city-live-iframe"
             title="CityChronicles — live preview"
             loading="lazy"
@@ -494,6 +510,27 @@
       window.addEventListener('scroll', () => {
         nav.classList.toggle('nav--scrolled', window.scrollY > 60);
       }, { passive: true });
+    })();
+  </script>
+
+  <!-- Defer external iframes until near viewport -->
+  <script>
+    (function () {
+      const frames = document.querySelectorAll('iframe[data-src]');
+      if (!frames.length) return;
+      if (!('IntersectionObserver' in window)) {
+        frames.forEach(f => f.src = f.dataset.src);
+        return;
+      }
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+          if (e.isIntersecting) {
+            e.target.src = e.target.dataset.src;
+            io.unobserve(e.target);
+          }
+        });
+      }, { rootMargin: '300px 0px' });
+      frames.forEach(f => io.observe(f));
     })();
   </script>
 </body>

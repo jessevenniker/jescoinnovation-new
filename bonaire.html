@@ -875,6 +875,22 @@
     .proj-next-link  { transition: transform 0.25s ease; }
     .proj-next-link:hover { transform: translateX(6px); }
   </style>
+
+  <!-- Structured data — LocalBusiness -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "Jesco Innovation",
+    "url": "https://jescoinnovation.com",
+    "email": "info@jescoinnovation.com",
+    "description": "Premium web design studio for local businesses on Curaçao and Bonaire.",
+    "areaServed": ["Curaçao", "Bonaire"],
+    "priceRange": "€€",
+    "knowsLanguage": ["nl", "en", "pap"],
+    "serviceType": "Web Design"
+  }
+  </script>
 </head>
 <body>
 
@@ -916,7 +932,7 @@
 
         <!-- Atmospheric video layer — blurred, low opacity, contained behind the screenshot -->
         <div class="bon-hero-right-bg">
-          <video autoplay muted loop playsinline preload="metadata">
+          <video autoplay muted loop playsinline preload="none">
             <source src="assets/hero.mp4" type="video/mp4">
           </video>
         </div>
@@ -956,7 +972,7 @@
         <span class="bon-iframe-label">Live website</span>
         <div class="bon-iframe-wrap" style="position:relative;">
           <iframe
-            src="https://www.visit-bonaire.com"
+            data-src="https://www.visit-bonaire.com"
             class="bon-iframe"
             title="Visit Bonaire — live preview"
             loading="lazy"
@@ -1126,7 +1142,7 @@
         </div>
         <div class="proj-preview-viewport">
           <iframe
-            src="https://www.visit-bonaire.com"
+            data-src="https://www.visit-bonaire.com"
             class="proj-preview-iframe"
             title="Visit Bonaire — live website preview"
             loading="lazy"
@@ -1217,6 +1233,27 @@
       iframe.addEventListener('load', function () {
         clearTimeout(timer);
       });
+    })();
+  </script>
+
+  <!-- Defer external iframes until near viewport -->
+  <script>
+    (function () {
+      const frames = document.querySelectorAll('iframe[data-src]');
+      if (!frames.length) return;
+      if (!('IntersectionObserver' in window)) {
+        frames.forEach(f => f.src = f.dataset.src);
+        return;
+      }
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+          if (e.isIntersecting) {
+            e.target.src = e.target.dataset.src;
+            io.unobserve(e.target);
+          }
+        });
+      }, { rootMargin: '300px 0px' });
+      frames.forEach(f => io.observe(f));
     })();
   </script>
 </body>

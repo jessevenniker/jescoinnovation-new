@@ -586,6 +586,22 @@
     .proj-next-link:hover { transform: translateX(6px); }
 
   </style>
+
+  <!-- Structured data — LocalBusiness -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "Jesco Innovation",
+    "url": "https://jescoinnovation.com",
+    "email": "info@jescoinnovation.com",
+    "description": "Premium web design studio for local businesses on Curaçao and Bonaire.",
+    "areaServed": ["Curaçao", "Bonaire"],
+    "priceRange": "€€",
+    "knowsLanguage": ["nl", "en", "pap"],
+    "serviceType": "Web Design"
+  }
+  </script>
 </head>
 <body>
 
@@ -626,7 +642,7 @@
       <div class="city-hero-right fade-in">
         <!-- Atmospheric video layer behind the browser frame -->
         <div class="city-hero-right-bg">
-          <video autoplay muted loop playsinline preload="metadata">
+          <video autoplay muted loop playsinline preload="none">
             <source src="assets/hero.mp4" type="video/mp4">
           </video>
         </div>
@@ -639,7 +655,7 @@
           </div>
           <div class="city-hero-viewport">
             <iframe
-              src="https://citychronicles.app/"
+              data-src="https://citychronicles.app/"
               class="city-hero-iframe"
               title="CityChronicles — live preview"
               loading="lazy"
@@ -676,7 +692,7 @@
         <span class="city-iframe-label">Live platform</span>
         <div class="city-iframe-wrap">
           <iframe
-            src="https://citychronicles.app/"
+            data-src="https://citychronicles.app/"
             class="city-iframe"
             title="CityChronicles — live platform preview"
             loading="lazy"
@@ -784,7 +800,7 @@
         </div>
         <div class="proj-preview-viewport">
           <iframe
-            src="https://citychronicles.app/"
+            data-src="https://citychronicles.app/"
             class="proj-preview-iframe"
             title="CityChronicles — live platform preview"
             loading="lazy"
@@ -858,5 +874,26 @@
     })();
   </script>
 
+
+  <!-- Defer external iframes until near viewport -->
+  <script>
+    (function () {
+      const frames = document.querySelectorAll('iframe[data-src]');
+      if (!frames.length) return;
+      if (!('IntersectionObserver' in window)) {
+        frames.forEach(f => f.src = f.dataset.src);
+        return;
+      }
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+          if (e.isIntersecting) {
+            e.target.src = e.target.dataset.src;
+            io.unobserve(e.target);
+          }
+        });
+      }, { rootMargin: '300px 0px' });
+      frames.forEach(f => io.observe(f));
+    })();
+  </script>
 </body>
 </html>

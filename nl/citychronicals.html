@@ -150,6 +150,22 @@
     .nav-lang-link--active { color: rgba(244, 237, 224, 0.72); }
     .nav-lang-sep { font-size: 0.6rem; color: rgba(244, 237, 224, 0.16); user-select: none; }
   </style>
+
+  <!-- Structured data — LocalBusiness NL -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "Jesco Innovation",
+    "url": "https://jescoinnovation.com/nl/",
+    "email": "info@jescoinnovation.com",
+    "description": "Webdesign studio voor lokale ondernemers op Curaçao en Bonaire.",
+    "areaServed": ["Curaçao", "Bonaire"],
+    "priceRange": "€€",
+    "knowsLanguage": ["nl", "en", "pap"],
+    "serviceType": "Web Design"
+  }
+  </script>
 </head>
 <body>
 
@@ -196,7 +212,7 @@
 
       <div class="city-hero-right fade-in">
         <div class="city-hero-right-bg">
-          <video autoplay muted loop playsinline preload="metadata">
+          <video autoplay muted loop playsinline preload="none">
             <source src="../assets/hero.mp4" type="video/mp4">
           </video>
         </div>
@@ -206,7 +222,7 @@
             <div class="city-hero-chrome-url">citychronicles.app</div>
           </div>
           <div class="city-hero-viewport">
-            <iframe src="https://citychronicles.app/" class="city-hero-iframe" title="CityChronicles — live preview" loading="lazy" scrolling="no" tabindex="-1" aria-hidden="true"></iframe>
+            <iframe data-src="https://citychronicles.app/" class="city-hero-iframe" title="CityChronicles — live preview" loading="lazy" scrolling="no" tabindex="-1" aria-hidden="true"></iframe>
           </div>
         </div>
       </div>
@@ -235,7 +251,7 @@
       <div class="fade-in">
         <span class="city-iframe-label">Live platform</span>
         <div class="city-iframe-wrap">
-          <iframe src="https://citychronicles.app/" class="city-iframe" title="CityChronicles — live platform preview" loading="lazy" scrolling="yes"></iframe>
+          <iframe data-src="https://citychronicles.app/" class="city-iframe" title="CityChronicles — live platform preview" loading="lazy" scrolling="yes"></iframe>
         </div>
       </div>
 
@@ -314,7 +330,7 @@
           <div class="proj-preview-url">citychronicles.app</div>
         </div>
         <div class="proj-preview-viewport">
-          <iframe src="https://citychronicles.app/" class="proj-preview-iframe" title="CityChronicles — live platform preview" loading="lazy" referrerpolicy="no-referrer"></iframe>
+          <iframe data-src="https://citychronicles.app/" class="proj-preview-iframe" title="CityChronicles — live platform preview" loading="lazy" referrerpolicy="no-referrer"></iframe>
           <div class="proj-preview-fallback" id="city-preview-fallback">
             <p class="proj-preview-fallback-text">Live preview niet beschikbaar in deze browser.<br>Open het platform direct om het te verkennen.</p>
             <a href="https://citychronicles.app/" target="_blank" rel="noopener noreferrer" class="proj-preview-open">Platform openen <span>↗</span></a>
@@ -361,6 +377,27 @@
       if (!iframe || !fallback) return;
       const timer = setTimeout(function () { fallback.classList.add('visible'); iframe.style.display = 'none'; }, 7000);
       iframe.addEventListener('load', function () { clearTimeout(timer); });
+    })();
+  </script>
+
+  <!-- Defer external iframes until near viewport -->
+  <script>
+    (function () {
+      const frames = document.querySelectorAll('iframe[data-src]');
+      if (!frames.length) return;
+      if (!('IntersectionObserver' in window)) {
+        frames.forEach(f => f.src = f.dataset.src);
+        return;
+      }
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+          if (e.isIntersecting) {
+            e.target.src = e.target.dataset.src;
+            io.unobserve(e.target);
+          }
+        });
+      }, { rootMargin: '300px 0px' });
+      frames.forEach(f => io.observe(f));
     })();
   </script>
 </body>

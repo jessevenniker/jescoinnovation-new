@@ -182,6 +182,22 @@
     .nav-lang-link--active { color: rgba(244, 237, 224, 0.72); }
     .nav-lang-sep { font-size: 0.6rem; color: rgba(244, 237, 224, 0.16); user-select: none; }
   </style>
+
+  <!-- Structured data — LocalBusiness NL -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "Jesco Innovation",
+    "url": "https://jescoinnovation.com/nl/",
+    "email": "info@jescoinnovation.com",
+    "description": "Webdesign studio voor lokale ondernemers op Curaçao en Bonaire.",
+    "areaServed": ["Curaçao", "Bonaire"],
+    "priceRange": "€€",
+    "knowsLanguage": ["nl", "en", "pap"],
+    "serviceType": "Web Design"
+  }
+  </script>
 </head>
 <body>
 
@@ -228,7 +244,7 @@
 
       <div class="bon-hero-right fade-in">
         <div class="bon-hero-right-bg">
-          <video autoplay muted loop playsinline preload="metadata">
+          <video autoplay muted loop playsinline preload="none">
             <source src="../assets/hero.mp4" type="video/mp4">
           </video>
         </div>
@@ -265,7 +281,7 @@
         <span class="bon-iframe-label">Live website</span>
         <div class="bon-iframe-wrap">
           <iframe
-            src="https://visit-bonaire.com"
+            data-src="https://visit-bonaire.com"
             class="bon-iframe"
             title="Visit Bonaire — live preview"
             loading="lazy"
@@ -381,6 +397,27 @@
       const nav = document.querySelector('.proj-nav');
       if (!nav) return;
       window.addEventListener('scroll', () => { nav.classList.toggle('proj-nav--scrolled', window.scrollY > 60); }, { passive: true });
+    })();
+  </script>
+
+  <!-- Defer external iframes until near viewport -->
+  <script>
+    (function () {
+      const frames = document.querySelectorAll('iframe[data-src]');
+      if (!frames.length) return;
+      if (!('IntersectionObserver' in window)) {
+        frames.forEach(f => f.src = f.dataset.src);
+        return;
+      }
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+          if (e.isIntersecting) {
+            e.target.src = e.target.dataset.src;
+            io.unobserve(e.target);
+          }
+        });
+      }, { rootMargin: '300px 0px' });
+      frames.forEach(f => io.observe(f));
     })();
   </script>
 </body>
