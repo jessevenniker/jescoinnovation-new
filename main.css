@@ -313,6 +313,11 @@ a { color: inherit; text-decoration: none; }
   margin-top: 0.04em;
 }
 
+.hero-cta {
+  margin-top: clamp(2rem, 4vh, 3rem);
+  gap: 1.25rem;
+}
+
 .hero-sub {
   position: absolute;
   bottom: clamp(4rem, 8vh, 7rem);
@@ -1097,4 +1102,100 @@ a { color: inherit; text-decoration: none; }
   .footer-link { padding: 0.2rem 0.5rem; }
 
   .nav { padding: 1.25rem var(--px); }
+}
+
+
+/* ================================================================
+   INDUSTRIES — who this is for
+   ================================================================ */
+
+.industries {
+  padding: clamp(5rem, 10vh, 8rem) var(--px);
+  background: var(--navy-2);
+  border-top: 1px solid rgba(28, 45, 52, 0.05);
+  border-bottom: 1px solid rgba(28, 45, 52, 0.05);
+}
+
+.industries-inner {
+  max-width: 1160px;
+  margin: 0 auto;
+}
+
+.industries-heading {
+  font-family: var(--serif);
+  font-size: clamp(2rem, 4vw, 3.4rem);
+  font-weight: 600;
+  line-height: 1.05;
+  letter-spacing: -0.018em;
+  color: var(--white);
+  margin: 1rem 0 clamp(2.5rem, 5vh, 4rem);
+}
+
+.industries-heading em {
+  font-style: italic;
+  font-weight: 400;
+  color: var(--sand);
+}
+
+.industries-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: clamp(0.75rem, 1.4vw, 1.25rem);
+}
+
+.industry-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 0.35rem;
+  min-height: 170px;
+  padding: 1.5rem 1.25rem 1.35rem;
+  background: var(--navy-1);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 6px;
+  text-decoration: none;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.3s ease,
+              background 0.3s ease;
+}
+
+.industry-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(200, 164, 106, 0.28);
+  background: #0E1C28;
+}
+
+.industry-label {
+  font-family: var(--serif);
+  font-size: clamp(1rem, 1.3vw, 1.22rem);
+  font-weight: 600;
+  color: var(--white);
+  letter-spacing: -0.008em;
+  line-height: 1.15;
+}
+
+.industry-sub {
+  font-size: 0.68rem;
+  font-weight: 400;
+  color: rgba(240, 228, 208, 0.46);
+  letter-spacing: 0.02em;
+  line-height: 1.5;
+}
+
+.industries-footnote {
+  margin-top: clamp(2rem, 4vh, 3rem);
+  font-size: 0.82rem;
+  font-style: italic;
+  color: rgba(240, 228, 208, 0.4);
+  text-align: center;
+}
+
+@media (max-width: 880px) {
+  .industries-grid { grid-template-columns: repeat(2, 1fr); }
+  .industry-card { min-height: 140px; }
+}
+@media (max-width: 440px) {
+  .industries-grid { grid-template-columns: 1fr; }
+  .industry-card { min-height: auto; flex-direction: row; align-items: baseline; justify-content: space-between; }
+  .industry-sub { text-align: right; }
 }
