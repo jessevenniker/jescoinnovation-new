@@ -540,5 +540,21 @@
       frames.forEach(f => io.observe(f));
     })();
   </script>
+
+  <!-- Gate hero video: skip autoplay on mobile, reduce-motion, or save-data -->
+  <script>
+    (function () {
+      var mq = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      var narrow = window.innerWidth < 860;
+      var saveData = navigator.connection && navigator.connection.saveData;
+      if (!(mq || narrow || saveData)) return;
+      document.querySelectorAll('video.hero-video').forEach(function (v) {
+        v.removeAttribute('autoplay');
+        try { v.pause(); } catch (e) {}
+        while (v.firstChild) v.removeChild(v.firstChild);
+        try { v.load(); } catch (e) {}
+      });
+    })();
+  </script>
 </body>
 </html>

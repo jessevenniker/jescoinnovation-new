@@ -320,10 +320,14 @@
             <input type="text" name="name" required autocomplete="name">
           </label>
           <label class="audit-field">
-            <span class="audit-label">Jouw website</span>
-            <input type="url" name="website" placeholder="https://…" required autocomplete="url">
+            <span class="audit-label">Jouw e-mail</span>
+            <input type="email" name="email" required autocomplete="email" placeholder="jij@voorbeeld.nl">
           </label>
         </div>
+        <label class="audit-field">
+          <span class="audit-label">Jouw website</span>
+          <input type="url" name="website" placeholder="https://…" required autocomplete="url">
+        </label>
         <label class="audit-field">
           <span class="audit-label">Branche</span>
           <select name="industry" required>
@@ -408,6 +412,7 @@
         const d = new FormData(form);
         return {
           name: (d.get('name') || '').trim(),
+          email: (d.get('email') || '').trim(),
           website: (d.get('website') || '').trim(),
           industry: (d.get('industry') || '').trim(),
           note: (d.get('note') || '').trim(),
@@ -420,12 +425,13 @@
           'Ik wil graag een gratis 3-punts audit van mijn site.',
           '',
           'Naam: ' + v.name,
+          'E-mail: ' + v.email,
           'Website: ' + v.website,
           'Branche: ' + v.industry,
           v.note ? ('Waar gaat het vooral om: ' + v.note) : '',
         ].filter(Boolean).join('\n');
       }
-      function validate(v) { return v.name && v.website && v.industry; }
+      function validate(v) { return v.name && v.email && v.website && v.industry; }
 
       form.addEventListener('submit', function (e) {
         e.preventDefault();
@@ -452,5 +458,21 @@
     })();
   </script>
 
+
+  <!-- Gate hero video: skip autoplay on mobile, reduce-motion, or save-data -->
+  <script>
+    (function () {
+      var mq = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      var narrow = window.innerWidth < 860;
+      var saveData = navigator.connection && navigator.connection.saveData;
+      if (!(mq || narrow || saveData)) return;
+      document.querySelectorAll('video.hero-video').forEach(function (v) {
+        v.removeAttribute('autoplay');
+        try { v.pause(); } catch (e) {}
+        while (v.firstChild) v.removeChild(v.firstChild);
+        try { v.load(); } catch (e) {}
+      });
+    })();
+  </script>
 </body>
 </html>

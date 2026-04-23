@@ -2,12 +2,12 @@
   "redirects": [
     {
       "source": "/sailing.html",
-      "destination": "/stagestart.html",
+      "destination": "/website-tour-operators.html",
       "permanent": true
     },
     {
       "source": "/nl/sailing.html",
-      "destination": "/nl/stagestart.html",
+      "destination": "/nl/website-tour-operators.html",
       "permanent": true
     },
     {
