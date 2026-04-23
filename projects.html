@@ -249,14 +249,16 @@
     /* ── Live preview cards — shared pattern ───────────────────── */
 
     .bonaire-iframe-wrap,
-    .city-iframe-wrap {
+    .city-iframe-wrap,
+    .stage-iframe-wrap {
       position: absolute;
       inset: 0;
       overflow: hidden;
     }
 
     .bonaire-live-iframe,
-    .city-live-iframe {
+    .city-live-iframe,
+    .stage-live-iframe {
       position: absolute;
       top: -20px;
       left: 50%;
@@ -270,7 +272,8 @@
     }
 
     .bonaire-preview-overlay,
-    .city-preview-overlay {
+    .city-preview-overlay,
+    .stage-preview-overlay {
       position: absolute;
       inset: 0;
       z-index: 2;
@@ -366,14 +369,25 @@
     </article>
 
     <article class="work-entry">
-      <a href="sailing.html" class="work-entry-image-link work-entry-image">
-        <img src="assets/BON-SAIL.jpg" alt="Caribbean Sailing Experience website — Bonaire">
-      </a>
+      <div class="work-entry-image-link work-entry-image">
+        <div class="stage-iframe-wrap">
+          <iframe
+            src="https://stagestartcuracao.nl"
+            class="stage-live-iframe"
+            title="Stagestart Curaçao — live preview"
+            loading="lazy"
+            scrolling="no"
+            tabindex="-1"
+            aria-hidden="true"
+          ></iframe>
+        </div>
+        <a href="stagestart.html" class="stage-preview-overlay" aria-label="View Stagestart Curaçao project"></a>
+      </div>
       <div class="work-entry-body fade-in">
-        <p class="work-entry-location">Bonaire · Web design</p>
-        <h2 class="work-entry-title">Caribbean<br><em>Sailing Experience</em></h2>
-        <p class="work-entry-desc">Warm, premium website concept for a local sailing and tour business on Bonaire, designed to feel elegant, clear and easy to book.</p>
-        <a href="sailing.html" class="work-entry-link">View project</a>
+        <p class="work-entry-location">Curaçao · Web design</p>
+        <h2 class="work-entry-title">Stagestart<br><em>Curaçao</em></h2>
+        <p class="work-entry-desc">Internship platform connecting students with local businesses on Curaçao — built to make finding a meaningful stage feel clear, calm and human.</p>
+        <a href="stagestart.html" class="work-entry-link">View project</a>
       </div>
     </article>
 
@@ -443,7 +457,7 @@
         <a href="website-restaurants.html" class="footer-link">Restaurants</a>
         <span class="footer-link-sep" aria-hidden="true">&middot;</span>
         <a href="bonaire.html" class="footer-link">Visit Bonaire</a>
-        <a href="sailing.html" class="footer-link">Caribbean Sailing</a>
+        <a href="stagestart.html" class="footer-link">Stagestart Curaçao</a>
         <a href="citychronicals.html" class="footer-link">CityChronicles</a>
       </nav>
     </div>

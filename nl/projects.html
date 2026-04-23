@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Webdesign portfolio · Curaçao &amp; Bonaire · Jesco Innovation</title>
+  <meta name="description" content="Geselecteerde webdesign projecten voor duikcentra, tour operators, hotels en lokale bedrijven op Curaçao en Bonaire.">
+  <link rel="canonical" href="https://jescoinnovation.com/nl/projects.html">
+  <link rel="alternate" hreflang="en" href="https://jescoinnovation.com/projects.html" />
+  <link rel="alternate" hreflang="nl" href="https://jescoinnovation.com/nl/projects.html" />
+  <link rel="alternate" hreflang="x-default" href="https://jescoinnovation.com/projects.html" />
+  <link rel="icon" type="image/svg+xml" href="../assets/icon-light.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../main.css">
+  <style>
+
+    .work-intro {
+      padding: calc(var(--py) * 1.6) var(--px) var(--py);
+      position: relative; overflow: hidden;
+      --white: #F2E8D8; --muted: rgba(242,232,216,0.50); --very-muted: rgba(242,232,216,0.22);
+      --sand: #C8A46A; --sand-light: #E2CA9E; --sand-muted: #9C7E52; --turq: #3FC4B2;
+      background:
+        radial-gradient(ellipse 65% 75% at 105% 55%, rgba(190,120,42,0.10) 0%, transparent 62%),
+        radial-gradient(ellipse 55% 60% at -5% 50%, rgba(44,172,152,0.07) 0%, transparent 60%),
+        linear-gradient(to bottom, #152A32 0%, #1A2C35 100%);
+    }
+
+    .work-intro-inner { position: relative; z-index: 2; max-width: 820px; }
+    .work-eyebrow { display: block; font-size: 0.65rem; font-weight: 500; letter-spacing: 0.3em; text-transform: uppercase; color: var(--turq); opacity: 0.65; margin-bottom: 2.25rem; }
+    .work-title { font-family: var(--serif); font-size: clamp(3.5rem, 8vw, 9.5rem); font-weight: 600; line-height: 0.93; letter-spacing: -0.02em; color: var(--white); margin-bottom: 3rem; }
+    .work-title em { font-style: italic; font-weight: 400; color: var(--sand); }
+    .work-intro-text { font-size: clamp(0.92rem, 1.2vw, 1.06rem); line-height: 1.9; color: var(--muted); max-width: 480px; margin-left: clamp(2rem, 18%, 220px); padding-left: 1.25rem; border-left: 1px solid rgba(200,164,106,0.2); }
+
+    .work-list {
+      background:
+        radial-gradient(ellipse 65% 75% at 105% 55%, rgba(190,120,42,0.06) 0%, transparent 62%),
+        linear-gradient(to bottom, var(--navy-1) 0%, var(--navy-2) 100%);
+    }
+
+    .work-entry {
+      display: grid; grid-template-columns: 1fr 1fr; min-height: 540px;
+      border-top: 1px solid rgba(28,45,52,0.07); overflow: hidden; position: relative;
+    }
+    .work-entry:last-child { border-bottom: 1px solid rgba(28,45,52,0.07); }
+    .work-entry:nth-child(even) { direction: rtl; }
+    .work-entry:nth-child(even) > * { direction: ltr; }
+
+    .work-entry-image { position: relative; overflow: hidden; display: block; }
+    .work-entry-image img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: center top; filter: brightness(0.8) saturate(0.88); transition: transform 0.9s cubic-bezier(0.16,1,0.3,1), filter 0.6s ease; }
+    .work-entry:hover .work-entry-image img { transform: scale(1.04); filter: brightness(0.9) saturate(1); }
+
+    .work-entry-body { display: flex; flex-direction: column; justify-content: center; padding: clamp(3rem,6vw,6rem) clamp(2.5rem,5vw,5rem); position: relative; }
+
+    .work-entry-num { font-family: var(--serif); font-size: clamp(5rem,8vw,9rem); font-weight: 700; color: var(--sand); opacity: 0.06; position: absolute; top: 1.5rem; right: 2rem; line-height: 1; letter-spacing: -0.02em; pointer-events: none; user-select: none; }
+
+    .work-entry-location { font-size: 0.65rem; font-weight: 500; letter-spacing: 0.28em; text-transform: uppercase; color: var(--turq); opacity: 0.6; margin-bottom: 1.25rem; }
+
+    .work-entry-title { font-family: var(--serif); font-size: clamp(1.9rem,3vw,3.2rem); font-weight: 600; line-height: 1.08; letter-spacing: -0.012em; color: var(--white); margin-bottom: 1.5rem; }
+    .work-entry-title em { font-style: italic; font-weight: 400; }
+
+    .work-entry-desc { font-size: clamp(0.88rem,1.05vw,0.98rem); line-height: 1.88; color: var(--muted); max-width: 380px; margin-bottom: 2.25rem; }
+
+    .work-entry-link { display: inline-flex; align-items: center; gap: 0.75rem; font-size: 0.72rem; font-weight: 400; letter-spacing: 0.14em; text-transform: uppercase; color: var(--sand-muted); text-decoration: none; transition: color 0.3s, gap 0.3s; }
+    .work-entry-link::after { content: '→'; font-size: 1rem; transition: transform 0.3s cubic-bezier(0.16,1,0.3,1); }
+    .work-entry:hover .work-entry-link { color: var(--sand); }
+    .work-entry:hover .work-entry-link::after { transform: translateX(5px); }
+
+    .work-entry-image-link { display: block; height: 100%; position: relative; }
+
+    .work-footer-cta { padding: var(--py) var(--px); background: radial-gradient(ellipse 55% 70% at 5% 60%, rgba(44,172,152,0.05) 0%, transparent 60%), var(--navy-2); text-align: center; }
+    .work-footer-cta p { font-family: var(--serif); font-size: clamp(1.5rem,3vw,2.5rem); font-style: italic; font-weight: 400; color: var(--sand-light); opacity: 0.72; margin-bottom: 2.5rem; line-height: 1.4; }
+
+    .bonaire-iframe-wrap, .city-iframe-wrap, .stage-iframe-wrap { position: absolute; inset: 0; overflow: hidden; }
+    .bonaire-live-iframe, .city-live-iframe, .stage-live-iframe { position: absolute; top: -20px; left: 50%; width: 1400px; height: 960px; border: 0; display: block; pointer-events: none; transform-origin: top center; transform: translateX(-50%) scale(0.60); }
+    .bonaire-preview-overlay, .city-preview-overlay, .stage-preview-overlay { position: absolute; inset: 0; z-index: 2; display: block; }
+
+    @media (max-width: 860px) {
+      .work-entry { grid-template-columns: 1fr; min-height: auto; direction: ltr !important; }
+      .work-entry-image-link { height: 55vw; min-height: 260px; max-height: 400px; }
+      .work-intro-text { margin-left: 0; padding-left: 0; border-left: none; }
+    }
+    @media (max-width: 540px) { .work-entry-image-link { height: 68vw; } }
+
+  </style>
+</head>
+<body>
+
+  <nav class="nav">
+    <a href="index.html" class="nav-logo">
+      <img src="../assets/logo-horizontal-light.svg" alt="Jesco Innovation" class="nav-logo-img">
+    </a>
+    <ul class="nav-links">
+      <li><a href="projects.html" class="nav-link active">Werk</a></li>
+      <li><a href="packages.html" class="nav-link">Pakketten</a></li>
+      <li><a href="about.html" class="nav-link">Over mij</a></li>
+      <li><a href="contact.html" class="nav-link">Contact</a></li>
+    </ul>
+    <div class="nav-right">
+      <div class="nav-lang">
+        <a href="../projects.html" class="nav-lang-link">EN</a>
+        <span class="nav-lang-sep">·</span>
+        <a href="#" class="nav-lang-link nav-lang-link--active" aria-current="true">NL</a>
+      </div>
+      <a href="contact.html" class="nav-cta">Neem contact op</a>
+    </div>
+  </nav>
+
+  <!-- ═══ INTRO ═══ -->
+  <section class="work-intro">
+    <video class="hero-video" autoplay muted loop playsinline preload="metadata">
+      <source src="../assets/hero.mp4" type="video/mp4">
+    </video>
+    <div class="work-intro-inner">
+      <span class="work-eyebrow fade-in">Geselecteerd werk</span>
+      <h1 class="work-title fade-in">
+        Projecten<br>
+        <em>die werken.</em>
+      </h1>
+      <p class="work-intro-text fade-in">
+        Drie websiteconcepten gebouwd voor lokale bedrijven op Curaçao en Bonaire. Elk ontworpen voor een specifiek bedrijf, een specifiek publiek en een specifiek doel.
+      </p>
+    </div>
+  </section>
+
+  <!-- ═══ PROJECTLIJST ═══ -->
+  <section class="work-list">
+
+    <article class="work-entry">
+      <div class="work-entry-image-link work-entry-image">
+        <div class="bonaire-iframe-wrap">
+          <iframe
+            src="https://www.visit-bonaire.com"
+            class="bonaire-live-iframe"
+            title="Visit Bonaire — live preview"
+            loading="lazy" scrolling="no" tabindex="-1" aria-hidden="true"
+          ></iframe>
+        </div>
+        <a href="../bonaire.html" class="bonaire-preview-overlay" aria-label="Bekijk Bonaire project"></a>
+      </div>
+      <div class="work-entry-body fade-in">
+        <p class="work-entry-location">Bonaire · Webdesign</p>
+        <h2 class="work-entry-title">Visit Bonaire<br><em>Tour operator</em></h2>
+        <p class="work-entry-desc">Premium concept voor een lokale ondernemer op Bonaire, gericht op sfeer, vertrouwen en een duidelijkere boekingsflow.</p>
+        <a href="../bonaire.html" class="work-entry-link">Bekijk project</a>
+      </div>
+    </article>
+
+    <article class="work-entry">
+      <div class="work-entry-image-link work-entry-image">
+        <div class="stage-iframe-wrap">
+          <iframe
+            src="https://stagestartcuracao.nl"
+            class="stage-live-iframe"
+            title="Stagestart Curaçao — live preview"
+            loading="lazy" scrolling="no" tabindex="-1" aria-hidden="true"
+          ></iframe>
+        </div>
+        <a href="../stagestart.html" class="stage-preview-overlay" aria-label="Bekijk Stagestart Curaçao project"></a>
+      </div>
+      <div class="work-entry-body fade-in">
+        <p class="work-entry-location">Curaçao · Webdesign</p>
+        <h2 class="work-entry-title">Stagestart<br><em>Curaçao</em></h2>
+        <p class="work-entry-desc">Stageplatform dat studenten verbindt met lokale bedrijven op Curaçao — gebouwd om een betekenisvolle stage vinden helder, rustig en menselijk te laten aanvoelen.</p>
+        <a href="../stagestart.html" class="work-entry-link">Bekijk project</a>
+      </div>
+    </article>
+
+    <article class="work-entry">
+      <div class="work-entry-image-link work-entry-image">
+        <div class="city-iframe-wrap">
+          <iframe
+            src="https://citychronicles.app/"
+            class="city-live-iframe"
+            title="CityChronicles — live preview"
+            loading="lazy" scrolling="no" tabindex="-1" aria-hidden="true"
+          ></iframe>
+        </div>
+        <a href="../citychronicals.html" class="city-preview-overlay" aria-label="Bekijk CityChronicles project"></a>
+      </div>
+      <div class="work-entry-body fade-in">
+        <p class="work-entry-location">Internationaal · Webdesign</p>
+        <h2 class="work-entry-title">City<br><em>Chronicles</em></h2>
+        <p class="work-entry-desc">Een digitaal concept voor meeslepende, verhaalgestuurde stadsdiscovery — ontworpen om verkennen speels, gecureerd en gedenkwaardig te laten aanvoelen.</p>
+        <a href="../citychronicals.html" class="work-entry-link">Bekijk project</a>
+      </div>
+    </article>
+
+  </section>
+
+  <!-- ═══ AFSLUITENDE CTA ═══ -->
+  <section class="work-footer-cta">
+    <p class="fade-in">Jouw bedrijf kan de volgende zijn.</p>
+    <div class="cta-actions fade-in" style="justify-content:center;">
+      <a href="https://wa.me/31637660930" class="btn-primary">Neem contact op</a>
+      <span class="cta-sep">of</span>
+      <a href="mailto:info@jescoinnovation.com" class="btn-text">Stuur een e-mail</a>
+    </div>
+    <a href="packages.html" class="fade-in" style="display:inline-block;margin-top:2.5rem;font-size:0.68rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--sand-muted);text-decoration:none;transition:color 0.25s;" onmouseover="this.style.color='var(--sand)'" onmouseout="this.style.color='var(--sand-muted)'">Bekijk het juiste pakket →</a>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a href="index.html" class="footer-logo">
+          <img src="../assets/logo-horizontal-light.svg" alt="Jesco Innovation" class="footer-logo-img">
+        </a>
+        <span class="footer-descriptor">Webdesign &middot; Cura&ccedil;ao &amp; Bonaire</span>
+      </div>
+      <div class="footer-mid">
+        <span class="footer-tag">Websites die gewoon werken.</span>
+        <a href="contact.html" class="footer-cta-link">Stuur me jouw website &rarr;</a>
+      </div>
+      <span class="footer-copy">&copy; 2026 Jesco Innovation &middot; Cura&ccedil;ao &amp; Bonaire</span>
+    </div>
+    <div class="footer-links">
+      <span class="footer-links-label">Verkennen</span>
+      <nav class="footer-links-nav" aria-label="Sitenavigatie">
+        <a href="index.html" class="footer-link">Home</a>
+        <a href="about.html" class="footer-link">Over mij</a>
+        <a href="contact.html" class="footer-link">Contact</a>
+        <span class="footer-link-sep" aria-hidden="true">&middot;</span>
+        <a href="bonaire-webdesign.html" class="footer-link">Website Bonaire</a>
+        <a href="curacao-webdesign.html" class="footer-link">Website Cura&ccedil;ao</a>
+        <a href="website-tour-operators.html" class="footer-link">Tour operators</a>
+        <a href="website-restaurants.html" class="footer-link">Restaurants</a>
+        <span class="footer-link-sep" aria-hidden="true">&middot;</span>
+        <a href="../bonaire.html" class="footer-link">Visit Bonaire</a>
+        <a href="../stagestart.html" class="footer-link">Stagestart Curaçao</a>
+        <a href="../citychronicals.html" class="footer-link">CityChronicles</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      const els = document.querySelectorAll('.fade-in');
+      if (!els.length) return;
+      const obs = new IntersectionObserver((entries) => {
+        entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+      }, { threshold: 0.08 });
+      els.forEach(el => obs.observe(el));
+    })();
+    (function () {
+      const nav = document.querySelector('.nav');
+      if (!nav) return;
+      window.addEventListener('scroll', () => { nav.classList.toggle('nav--scrolled', window.scrollY > 60); }, { passive: true });
+    })();
+  </script>
+</body>
+</html>
