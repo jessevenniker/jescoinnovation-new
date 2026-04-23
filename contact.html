@@ -197,6 +197,184 @@
       .contact-option-value { font-size: clamp(1.1rem, 5.5vw, 1.5rem); }
     }
 
+    .contact-sub-link {
+      color: var(--sand-light);
+      border-bottom: 1px solid rgba(200, 164, 106, 0.32);
+      transition: color 0.25s, border-color 0.25s;
+    }
+    .contact-sub-link:hover { color: var(--sand); border-bottom-color: rgba(200, 164, 106, 0.6); }
+
+    /* ── Audit section ───────────────────────────────────────── */
+
+    .audit {
+      padding: clamp(5rem, 10vh, 8rem) var(--px);
+      background: var(--navy-2);
+      border-top: 1px solid rgba(28, 45, 52, 0.05);
+      position: relative;
+    }
+
+    .audit-inner {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    .audit-eyebrow {
+      display: block;
+      font-size: 0.65rem;
+      font-weight: 500;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--turq);
+      opacity: 0.72;
+      margin-bottom: 1.5rem;
+    }
+
+    .audit-heading {
+      font-family: var(--serif);
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      font-weight: 600;
+      line-height: 1.05;
+      letter-spacing: -0.018em;
+      color: var(--white);
+      margin-bottom: 1.25rem;
+    }
+    .audit-heading em {
+      font-style: italic;
+      font-weight: 400;
+      color: var(--sand);
+    }
+
+    .audit-sub {
+      font-size: clamp(0.95rem, 1.1vw, 1.05rem);
+      line-height: 1.8;
+      color: var(--muted);
+      max-width: 560px;
+      margin-bottom: clamp(2.5rem, 5vh, 3.5rem);
+    }
+
+    .audit-form {
+      display: flex;
+      flex-direction: column;
+      gap: 1.4rem;
+    }
+
+    .audit-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.4rem;
+    }
+    @media (max-width: 540px) {
+      .audit-row { grid-template-columns: 1fr; }
+    }
+
+    .audit-field {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .audit-label {
+      font-size: 0.6rem;
+      font-weight: 500;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--sand-muted);
+    }
+
+    .audit-optional {
+      font-weight: 400;
+      letter-spacing: 0.05em;
+      text-transform: none;
+      color: var(--very-muted);
+      font-size: 0.72rem;
+    }
+
+    .audit-field input,
+    .audit-field select,
+    .audit-field textarea {
+      font-family: inherit;
+      font-size: 0.95rem;
+      font-weight: 300;
+      color: var(--white);
+      background: transparent;
+      border: 1px solid rgba(28, 45, 52, 0.14);
+      border-radius: 2px;
+      padding: 0.85rem 1rem;
+      width: 100%;
+      line-height: 1.5;
+      transition: border-color 0.25s, background 0.25s;
+    }
+    .audit-field input::placeholder,
+    .audit-field textarea::placeholder {
+      color: var(--very-muted);
+    }
+    .audit-field input:focus,
+    .audit-field select:focus,
+    .audit-field textarea:focus {
+      outline: none;
+      border-color: rgba(140, 94, 28, 0.42);
+      background: rgba(255, 255, 255, 0.04);
+    }
+    .audit-field textarea { resize: vertical; min-height: 96px; }
+
+    .audit-field select {
+      appearance: none;
+      -webkit-appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%238C5E1C' stroke-width='1.2' fill='none'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 1rem center;
+      padding-right: 2.5rem;
+    }
+
+    .audit-actions {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 1.5rem;
+      margin-top: 0.5rem;
+    }
+
+    .audit-submit {
+      cursor: pointer;
+      font-family: inherit;
+    }
+
+    .audit-wa {
+      cursor: pointer;
+      background: none;
+      font-family: inherit;
+      font-size: 0.85rem;
+      color: var(--muted);
+      padding: 0;
+      border: none;
+      border-bottom: 1px solid rgba(28, 45, 52, 0.18);
+      padding-bottom: 2px;
+      transition: color 0.3s ease, border-color 0.3s ease;
+    }
+    .audit-wa:hover {
+      color: var(--sand);
+      border-bottom-color: rgba(140, 94, 28, 0.45);
+    }
+
+    .audit-disclaimer {
+      margin-top: 0.5rem;
+      font-size: 0.72rem;
+      color: var(--very-muted);
+      line-height: 1.6;
+    }
+
+    .audit-success {
+      margin-top: 1.5rem;
+      padding: 1rem 1.25rem;
+      background: rgba(63, 196, 178, 0.08);
+      border-left: 2px solid rgba(63, 196, 178, 0.48);
+      color: var(--turq);
+      font-size: 0.88rem;
+      line-height: 1.6;
+      display: none;
+    }
+    .audit-success.visible { display: block; }
+
   </style>
 
   <!-- Structured data — LocalBusiness -->
@@ -239,7 +417,7 @@
 
   <!-- ═══ MAIN CONTACT ═══ -->
   <section class="contact-main">
-    <video class="hero-video" autoplay muted loop playsinline preload="metadata">
+    <video class="hero-video" autoplay muted loop playsinline preload="none">
       <source src="assets/hero.mp4" type="video/mp4">
     </video>
     <div class="contact-inner">
@@ -252,7 +430,7 @@
       </h1>
 
       <p class="contact-sub fade-in">
-        No intake forms, no discovery packages. Just a conversation about your business and what you need.
+        No discovery packages, no long pitches. Message me directly — or send me your site and I'll reply with a <a href="#audit" class="contact-sub-link">free 3-point audit</a>.
       </p>
 
       <div class="contact-options fade-in">
@@ -280,6 +458,58 @@
       </p>
 
       <a href="packages.html" class="fade-in" style="display:inline-block;margin-top:2rem;font-size:0.62rem;letter-spacing:0.2em;text-transform:uppercase;color:rgba(242,232,216,0.32);text-decoration:none;transition:color 0.25s;" onmouseover="this.style.color='rgba(200,164,106,0.7)'" onmouseout="this.style.color='rgba(242,232,216,0.32)'">Not sure what you need? View packages →</a>
+
+    </div>
+  </section>
+
+  <!-- ═══ FREE 3-POINT AUDIT ═══ -->
+  <section class="audit" id="audit">
+    <div class="audit-inner">
+
+      <span class="audit-eyebrow fade-in">Free 3-point audit</span>
+
+      <h2 class="audit-heading fade-in">
+        Send me your site.<br>
+        <em>I'll tell you what's leaking bookings.</em>
+      </h2>
+
+      <p class="audit-sub fade-in">
+        No pitch. No follow-up sequence. I look at your site the way a first-time visitor would, then reply with the three biggest things I'd fix — speed, clarity, conversion. Usually within 48 hours.
+      </p>
+
+      <form class="audit-form fade-in" id="audit-form" novalidate>
+        <div class="audit-row">
+          <label class="audit-field">
+            <span class="audit-label">Your name</span>
+            <input type="text" name="name" required autocomplete="name">
+          </label>
+          <label class="audit-field">
+            <span class="audit-label">Your website</span>
+            <input type="url" name="website" placeholder="https://…" required autocomplete="url">
+          </label>
+        </div>
+        <label class="audit-field">
+          <span class="audit-label">Industry</span>
+          <select name="industry" required>
+            <option value="" disabled selected>Select your business type</option>
+            <option>Restaurant</option>
+            <option>Tour operator</option>
+            <option>Dive center</option>
+            <option>Hotel / guesthouse</option>
+            <option>Charter / sailing</option>
+            <option>Other</option>
+          </select>
+        </label>
+        <label class="audit-field">
+          <span class="audit-label">What matters most? <span class="audit-optional">(optional)</span></span>
+          <textarea name="note" rows="3" placeholder="e.g. more direct bookings, better mobile, showing up on Google Maps…"></textarea>
+        </label>
+        <div class="audit-actions">
+          <button type="submit" class="btn-primary audit-submit">Send for audit</button>
+          <button type="button" class="btn-text audit-wa" id="audit-whatsapp">or send via WhatsApp →</button>
+        </div>
+        <p class="audit-disclaimer">Your info is only used to reply. No newsletters, no sharing.</p>
+      </form>
 
     </div>
   </section>
@@ -341,6 +571,69 @@
       window.addEventListener('scroll', () => {
         nav.classList.toggle('nav--scrolled', window.scrollY > 60);
       }, { passive: true });
+    })();
+
+    /* ── Audit form: builds mailto / WhatsApp with structured body ── */
+    (function () {
+      const form = document.getElementById('audit-form');
+      if (!form) return;
+      const waBtn = document.getElementById('audit-whatsapp');
+
+      function collect() {
+        const d = new FormData(form);
+        return {
+          name: (d.get('name') || '').trim(),
+          website: (d.get('website') || '').trim(),
+          industry: (d.get('industry') || '').trim(),
+          note: (d.get('note') || '').trim(),
+        };
+      }
+
+      function buildBody(v) {
+        return [
+          'Hi Jesse,',
+          '',
+          "I'd like a free 3-point audit of my site.",
+          '',
+          'Name: ' + v.name,
+          'Website: ' + v.website,
+          'Industry: ' + v.industry,
+          v.note ? ('What matters most: ' + v.note) : '',
+        ].filter(Boolean).join('\n');
+      }
+
+      function validate(v) {
+        return v.name && v.website && v.industry;
+      }
+
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        const v = collect();
+        if (!validate(v)) {
+          form.reportValidity();
+          return;
+        }
+        const subject = 'Free audit request — ' + v.website;
+        const body = buildBody(v);
+        const href = 'mailto:info@jescoinnovation.com?subject=' +
+          encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+        if (window.plausible) plausible('audit_submit', { props: { channel: 'email', industry: v.industry } });
+        window.location.href = href;
+      });
+
+      if (waBtn) {
+        waBtn.addEventListener('click', function () {
+          const v = collect();
+          if (!validate(v)) {
+            form.reportValidity();
+            return;
+          }
+          const msg = buildBody(v);
+          const href = 'https://wa.me/31637660930?text=' + encodeURIComponent(msg);
+          if (window.plausible) plausible('audit_submit', { props: { channel: 'whatsapp', industry: v.industry } });
+          window.open(href, '_blank', 'noopener');
+        });
+      }
     })();
   </script>
 </body>
