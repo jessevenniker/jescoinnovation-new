@@ -19,6 +19,16 @@
       "source": "/services-wordpress",
       "destination": "/packages.html",
       "permanent": true
+    },
+    {
+      "source": "/citychronicals.html",
+      "destination": "/citychronicles.html",
+      "permanent": true
+    },
+    {
+      "source": "/nl/citychronicals.html",
+      "destination": "/nl/citychronicles.html",
+      "permanent": true
     }
   ],
   "cleanUrls": false,
