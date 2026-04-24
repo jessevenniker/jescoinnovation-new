@@ -29,6 +29,26 @@
       "source": "/nl/citychronicals.html",
       "destination": "/nl/citychronicles.html",
       "permanent": true
+    },
+    {
+      "source": "/dive-center.html",
+      "destination": "/projects.html",
+      "permanent": true
+    },
+    {
+      "source": "/dive-school.html",
+      "destination": "/projects.html",
+      "permanent": true
+    },
+    {
+      "source": "/nl/dive-center.html",
+      "destination": "/nl/projects.html",
+      "permanent": true
+    },
+    {
+      "source": "/nl/dive-school.html",
+      "destination": "/nl/projects.html",
+      "permanent": true
     }
   ],
   "cleanUrls": false,

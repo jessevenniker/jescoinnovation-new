@@ -97,20 +97,6 @@
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
-  <url>
-    <loc>https://jescoinnovation.com/dive-center.html</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://jescoinnovation.com/dive-center.html" />
-    <xhtml:link rel="alternate" hreflang="nl" href="https://jescoinnovation.com/nl/dive-center.html" />
-    <changefreq>yearly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://jescoinnovation.com/dive-school.html</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://jescoinnovation.com/dive-school.html" />
-    <xhtml:link rel="alternate" hreflang="nl" href="https://jescoinnovation.com/nl/dive-school.html" />
-    <changefreq>yearly</changefreq>
-    <priority>0.6</priority>
-  </url>
 
   <!-- ═══ CORE (NL) ═══ -->
   <url>
@@ -199,20 +185,6 @@
     <loc>https://jescoinnovation.com/nl/citychronicles.html</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://jescoinnovation.com/citychronicles.html" />
     <xhtml:link rel="alternate" hreflang="nl" href="https://jescoinnovation.com/nl/citychronicles.html" />
-    <changefreq>yearly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://jescoinnovation.com/nl/dive-center.html</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://jescoinnovation.com/dive-center.html" />
-    <xhtml:link rel="alternate" hreflang="nl" href="https://jescoinnovation.com/nl/dive-center.html" />
-    <changefreq>yearly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://jescoinnovation.com/nl/dive-school.html</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://jescoinnovation.com/dive-school.html" />
-    <xhtml:link rel="alternate" hreflang="nl" href="https://jescoinnovation.com/nl/dive-school.html" />
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
