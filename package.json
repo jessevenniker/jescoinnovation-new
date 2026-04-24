@@ -1,0 +1,20 @@
+{
+  "name": "jescoinnovation-site",
+  "version": "1.0.0",
+  "private": true,
+  "description": "jescoinnovation.com static site + content QA pipeline.",
+  "scripts": {
+    "lint:html": "html-validate '*.html' 'nl/*.html'",
+    "lint:spell": "cspell --no-progress --show-suggestions 'content/**' '*.html' 'nl/*.html' 'sitemap.xml'",
+    "lint:links": "linkinator . --recurse --skip 'node_modules|\\.git|\\.vercel' --silent",
+    "lint": "npm run lint:html && npm run lint:spell && npm run lint:links",
+    "prepare": "husky"
+  },
+  "devDependencies": {
+    "@cspell/dict-nl-nl": "^2.3.0",
+    "cspell": "^8.17.0",
+    "html-validate": "^9.0.0",
+    "husky": "^9.1.0",
+    "linkinator": "^6.1.0"
+  }
+}

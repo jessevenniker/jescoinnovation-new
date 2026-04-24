@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+# Pre-commit: content QA on staged HTML files only (keeps it fast).
+# Skip entirely if no HTML is staged.
+
+set -e
+
+staged_html=$(git diff --cached --name-only --diff-filter=ACM | grep -E '\.html$' || true)
+
+if [ -z "$staged_html" ]; then
+  exit 0
+fi
+
+echo "pre-commit: running content QA on staged HTML…"
+
+# Spell-check staged files only
+echo "  → cspell"
+# shellcheck disable=SC2086
+npx --no-install cspell --no-progress --show-suggestions $staged_html
+
+# HTML validate staged files only
+echo "  → html-validate"
+# shellcheck disable=SC2086
+npx --no-install html-validate $staged_html
+
+echo "pre-commit: OK"

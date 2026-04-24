@@ -1,0 +1,46 @@
+{
+  "version": "0.2",
+  "language": "en,nl",
+  "import": [
+    "@cspell/dict-nl-nl/cspell-ext.json"
+  ],
+  "dictionaries": ["en_US", "nl_NL", "custom-words"],
+  "dictionaryDefinitions": [
+    {
+      "name": "custom-words",
+      "path": "./cspell-custom.txt",
+      "addWords": true
+    }
+  ],
+  "ignorePaths": [
+    "node_modules/**",
+    ".git/**",
+    ".vercel/**",
+    "assets/**",
+    "sitemap.xml",
+    "*.js",
+    "*.json",
+    "*.css",
+    "*.svg",
+    ".github/**",
+    ".husky/**",
+    "cspell-custom.txt"
+  ],
+  "overrides": [
+    {
+      "filename": "*.html",
+      "languageId": "html",
+      "ignoreRegExpList": [
+        "/<style[\\s\\S]*?<\\/style>/g",
+        "/<script[\\s\\S]*?<\\/script>/g",
+        "/<!--[\\s\\S]*?-->/g",
+        "/<[^>]+>/g",
+        "/&[a-z]+;/gi",
+        "/&#\\d+;/g",
+        "/https?:\\/\\/[^\\s\"']+/g"
+      ]
+    }
+  ],
+  "flagWords": [],
+  "ignoreWords": []
+}
